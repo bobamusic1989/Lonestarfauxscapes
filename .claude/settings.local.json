@@ -23,7 +23,9 @@
       "Bash(del \"C:\\dev\\loanstar\\content\\blog\\sample-post.md\")",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(dir:*)",
+      "Bash(del \"C:\\Users\\geran\\.claude-worktrees\\loanstar\\awesome-almeida\\scripts\\add-utils.js\")"
     ],
     "deny": [],
     "ask": []

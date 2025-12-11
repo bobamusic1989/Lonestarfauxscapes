@@ -1,12 +1,24 @@
 (function() {
   'use strict';
 
+  // Wait for utils to be available
+  const utils = window.LonestarUtils || {
+    throttleRAF: (fn) => fn,
+    isMobile: () => window.innerWidth < 768,
+    prefersReducedMotion: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  };
+
   // Respect reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) return;
+  if (utils.prefersReducedMotion()) return;
+
+  // Skip heavy effects on mobile
+  const isMobile = utils.isMobile();
 
   // ===== 1. CURSOR-REACTIVE SPOTLIGHT & TILT =====
   const initCardEffects = () => {
+    // Skip on mobile - these effects don't work well with touch
+    if (isMobile) return;
+
     const cards = document.querySelectorAll('.card, .system-card-enhanced, .project-card, .spec-card, .process-card, .flip-card-grid');
 
     cards.forEach(card => {
@@ -19,7 +31,8 @@
         card.appendChild(spotlight);
       }
 
-      card.addEventListener('mousemove', (e) => {
+      // Throttled mousemove handler
+      const handleMouseMove = utils.throttleRAF((e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -37,6 +50,8 @@
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
       });
 
+      card.addEventListener('mousemove', handleMouseMove, { passive: true });
+
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
       });
@@ -45,10 +60,13 @@
 
   // ===== 2. MAGNETIC BUTTONS =====
   const initMagneticButtons = () => {
+    // Skip on mobile
+    if (isMobile) return;
+
     const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta');
 
     buttons.forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
+      const handleMouseMove = utils.throttleRAF((e) => {
         const rect = btn.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
@@ -60,6 +78,8 @@
         btn.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
       });
 
+      btn.addEventListener('mousemove', handleMouseMove, { passive: true });
+
       btn.addEventListener('mouseleave', () => {
         btn.style.transform = 'translate(0, 0) scale(1)';
       });
@@ -68,6 +88,9 @@
 
   // ===== 3. SCROLL PARALLAX LAYERS =====
   const initParallax = () => {
+    // Skip on mobile for performance
+    if (isMobile) return;
+
     const hero = document.querySelector('.hero');
     if (!hero) return;
 
@@ -76,7 +99,8 @@
     const lede = hero.querySelector('.lede');
     const specCard = hero.querySelector('.spec-card');
 
-    window.addEventListener('scroll', () => {
+    // Throttled scroll handler
+    const handleScroll = utils.throttleRAF(() => {
       const scrollY = window.scrollY;
       const rate = 0.3;
 
@@ -84,7 +108,9 @@
       if (h1) h1.style.transform = `translateY(${scrollY * rate * 0.5}px)`;
       if (lede) lede.style.transform = `translateY(${scrollY * rate * 0.4}px)`;
       if (specCard) specCard.style.transform = `translateY(${scrollY * rate * 0.2}px)`;
-    }, { passive: true });
+    });
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
   };
 
   // ===== 4. SCROLL PROGRESS INDICATOR =====
@@ -93,19 +119,26 @@
     progress.className = 'scroll-progress';
     document.body.appendChild(progress);
 
-    window.addEventListener('scroll', () => {
+    // Throttled scroll handler
+    const handleScroll = utils.throttleRAF(() => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
       progress.style.width = `${scrollPercent}%`;
-    }, { passive: true });
+    });
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
   };
 
   // ===== 5. BACKGROUND GRADIENT SHIFT ON SCROLL =====
   const initGradientShift = () => {
+    // Skip on mobile
+    if (isMobile) return;
+
     const body = document.body;
 
-    window.addEventListener('scroll', () => {
+    // Throttled scroll handler
+    const handleScroll = utils.throttleRAF(() => {
       const scrollY = window.scrollY;
       const maxScroll = 1000;
       const progress = Math.min(scrollY / maxScroll, 1);
@@ -116,7 +149,9 @@
 
       body.style.setProperty('--glow-x', `${glowX}%`);
       body.style.setProperty('--glow-y', `${glowY}%`);
-    }, { passive: true });
+    });
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
   };
 
   // ===== 6. SECTION REVEAL ON SCROLL =====
@@ -136,9 +171,13 @@
 
   // ===== 7. ELEMENT GLOW ON CURSOR PROXIMITY =====
   const initProximityGlow = () => {
+    // Skip on mobile - not applicable
+    if (isMobile) return;
+
     const glowElements = document.querySelectorAll('h1, h2, .hero-metric-value');
 
-    document.addEventListener('mousemove', (e) => {
+    // Throttled mousemove handler
+    const handleMouseMove = utils.throttleRAF((e) => {
       glowElements.forEach(el => {
         const rect = el.getBoundingClientRect();
         const elCenterX = rect.left + rect.width / 2;
@@ -154,7 +193,9 @@
 
         el.style.setProperty('--glow-intensity', glowIntensity);
       });
-    }, { passive: true });
+    });
+
+    document.addEventListener('mousemove', handleMouseMove, { passive: true });
   };
 
   // ===== INJECT STYLES =====

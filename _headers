@@ -1,0 +1,30 @@
+# Static assets - aggressive caching (hashed filenames)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - long cache
+/images/*
+  Cache-Control: public, max-age=2592000
+
+# Fonts - long cache
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages - short cache with revalidation
+/*.html
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+# Homepage
+/
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+# Blog - fresh content
+/blog/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Security headers for all pages
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()

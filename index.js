@@ -1,4 +1,22 @@
 (() => {
+  // Utility functions
+  const isMobile = () => window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // RAF-based throttle
+  const throttleRAF = (fn) => {
+    let ticking = false;
+    return function(...args) {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          fn.apply(this, args);
+          ticking = false;
+        });
+      }
+    };
+  };
+
   const onReady = (callback) => {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', callback, { once: true });
@@ -8,11 +26,16 @@
   };
 
   const initLiveCards = () => {
+    // Skip on mobile
+    if (isMobile()) return;
+
     const cards = document.querySelectorAll('.live-card');
 
     cards.forEach((card) => {
       const el = card;
-      el.addEventListener('mousemove', (event) => {
+
+      // Throttled mousemove handler
+      const handleMouseMove = throttleRAF((event) => {
         const rect = el.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
@@ -27,6 +50,8 @@
 
         el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
       });
+
+      el.addEventListener('mousemove', handleMouseMove, { passive: true });
 
       el.addEventListener('mouseleave', () => {
         el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
@@ -144,17 +169,21 @@
     };
 
     const initParallaxMedia = () => {
+        // Skip on mobile
+        if (isMobile()) return;
+
         const parallaxEls = document.querySelectorAll('[data-parallax]');
         if (!parallaxEls.length) return;
 
-    const onMove = (event) => {
+    // Throttled mousemove handler
+    const onMove = throttleRAF((event) => {
       const { innerWidth, innerHeight } = window;
       const x = (event.clientX / innerWidth - 0.5) * 10;
       const y = (event.clientY / innerHeight - 0.5) * 6;
       parallaxEls.forEach((el) => {
         el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       });
-    };
+    });
 
     window.addEventListener('mousemove', onMove, { passive: true });
 
@@ -501,14 +530,15 @@
     let mouseX = 0;
     let mouseY = 0;
 
-    const onMouseMove = (event) => {
+    // Throttled mouse handler for Three.js
+    const onMouseMove = throttleRAF((event) => {
       const rect = container.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
       mouseX = (x / rect.width) * 2 - 1;
       mouseY = -(y / rect.height) * 2 + 1;
-    };
-    window.addEventListener('mousemove', onMouseMove);
+    });
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
 
     const clock = new THREE.Clock();
 
@@ -541,6 +571,15 @@
 
   // Lazy-load Three.js when canvas container is visible
   const lazyLoadThreeJS = () => {
+    // Skip Three.js entirely on mobile - major performance win
+    if (isMobile() || prefersReducedMotion()) {
+      const container = document.getElementById('canvas-container');
+      if (container) {
+        container.style.display = 'none';
+      }
+      return;
+    }
+
     const container = document.getElementById('canvas-container');
     if (!container) return;
 

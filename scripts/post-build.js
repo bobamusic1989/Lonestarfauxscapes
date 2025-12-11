@@ -7,8 +7,10 @@ const DIST_DIR = './dist';
 const filesToCopy = [
   { src: './sitemap.xml', dest: 'sitemap.xml' },
   { src: './robots.txt', dest: 'robots.txt' },
+  { src: './_headers', dest: '_headers' },
   { src: './admin/config.yml', dest: 'admin/config.yml' },
   // JavaScript files (not bundled due to missing type="module")
+  { src: './utils.js', dest: 'utils.js' },
   { src: './index.js', dest: 'index.js' },
   { src: './nav.js', dest: 'nav.js' },
   { src: './reveal.js', dest: 'reveal.js' },

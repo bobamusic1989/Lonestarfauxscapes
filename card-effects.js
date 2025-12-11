@@ -6,11 +6,28 @@
   // Respect reduced motion preference
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+  // Skip on mobile
+  if (window.innerWidth < 768) return;
+
+  // Use shared throttle utility or fallback
+  const throttleRAF = (window.LonestarUtils && window.LonestarUtils.throttleRAF) || ((fn) => {
+    let ticking = false;
+    return function(...args) {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          fn.apply(this, args);
+          ticking = false;
+        });
+      }
+    };
+  });
+
   const cards = document.querySelectorAll('.card, .live-card');
 
   cards.forEach(card => {
-    // Track mouse position for spotlight effect
-    card.addEventListener('mousemove', (e) => {
+    // Throttled mousemove handler
+    const handleMouseMove = throttleRAF((e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -18,7 +35,7 @@
       card.style.setProperty('--mouse-x', `${x}px`);
       card.style.setProperty('--mouse-y', `${y}px`);
 
-      // Optional: Subtle 3D tilt effect
+      // Subtle 3D tilt effect
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       const rotateX = (y - centerY) / 20;
@@ -31,6 +48,8 @@
         translateY(-8px)
       `;
     });
+
+    card.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
