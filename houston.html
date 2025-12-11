@@ -114,8 +114,23 @@
         <a class="nav-item" href="blog.html">Blog</a>
         <a class="nav-item nav-cta" href="index.html#contact">Get Quote</a>
       </nav>
+      <div class="mobile-toggle" id="mobile-toggle-btn" aria-label="Open navigation">&#9776;</div>
     </div>
   </header>
+
+  <div id="mobile-menu">
+    <div class="mobile-close" id="mobile-close-btn" aria-label="Close navigation">&times;</div>
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="products.html" class="mobile-link">Products</a>
+    <a href="living-wall.html" class="mobile-link mobile-link-sub">Living Wall</a>
+    <a href="commercial-wall.html" class="mobile-link mobile-link-sub">Commercial Wall</a>
+    <a href="fence-extensions.html" class="mobile-link mobile-link-sub">Fence Extensions</a>
+    <a href="artificial-hedge.html" class="mobile-link mobile-link-sub">Artificial Hedge</a>
+    <a href="commercial.html" class="mobile-link">Commercial</a>
+    <a href="residential.html" class="mobile-link">Residential</a>
+    <a href="blog.html" class="mobile-link">Blog</a>
+    <a href="index.html#contact" class="mobile-link mobile-link-cta">Get Quote</a>
+  </div>
 
   <main>
     <section class="hero">
@@ -251,5 +266,23 @@
   <script defer src="magnetic.js"></script>
   <script defer src="split-text.js"></script>
   <script defer src="card-effects.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileToggle = document.getElementById('mobile-toggle-btn');
+      const mobileClose = document.getElementById('mobile-close-btn');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      function toggleMenu() {
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      }
+      if (mobileToggle) mobileToggle.addEventListener('click', toggleMenu);
+      if (mobileClose) mobileClose.addEventListener('click', toggleMenu);
+      mobileLinks.forEach(link => link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      }));
+    });
+  </script>
 </body>
 </html>

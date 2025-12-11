@@ -740,3 +740,110 @@ details[open] summary::after {
     text-overflow: ellipsis;
   }
 }
+
+/* ==========================================================================
+   UNIVERSAL MOBILE MENU STYLES (for all pages)
+   ========================================================================== */
+
+/* Mobile toggle button - show on mobile only */
+.mobile-toggle {
+  display: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .mobile-toggle {
+    display: flex !important;
+  }
+
+  /* Hide desktop nav on mobile */
+  .nav-links {
+    display: none !important;
+  }
+}
+
+/* Mobile menu overlay */
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(5, 10, 7, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 9999;
+  padding: 5rem 2rem 2rem;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow-y: auto;
+}
+
+#mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Mobile menu close button */
+.mobile-close,
+#mobile-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile menu links */
+.mobile-link {
+  font-family: var(--font-heading, 'Helvetica Neue', Helvetica, Arial, sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease;
+  padding: 0.5rem 0;
+  text-decoration: none;
+}
+
+.mobile-link:hover {
+  color: var(--color-accent, #4caf50);
+}
+
+/* Sub-links (indented) */
+.mobile-link-sub {
+  font-size: 1rem !important;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 1rem;
+}
+
+.mobile-link-sub:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* CTA link styling */
+.mobile-link-cta {
+  color: var(--color-accent, #4caf50) !important;
+  margin-top: 1rem;
+}
