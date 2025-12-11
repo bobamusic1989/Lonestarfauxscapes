@@ -8,6 +8,14 @@ const filesToCopy = [
   { src: './sitemap.xml', dest: 'sitemap.xml' },
   { src: './robots.txt', dest: 'robots.txt' },
   { src: './admin/config.yml', dest: 'admin/config.yml' },
+  // JavaScript files (not bundled due to missing type="module")
+  { src: './index.js', dest: 'index.js' },
+  { src: './nav.js', dest: 'nav.js' },
+  { src: './reveal.js', dest: 'reveal.js' },
+  { src: './magnetic.js', dest: 'magnetic.js' },
+  { src: './split-text.js', dest: 'split-text.js' },
+  { src: './card-effects.js', dest: 'card-effects.js' },
+  { src: './reactive-effects.js', dest: 'reactive-effects.js' },
 ];
 
 console.log('Running post-build tasks...');
