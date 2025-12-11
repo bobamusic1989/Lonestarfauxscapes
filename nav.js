@@ -20,11 +20,24 @@
   document.head.appendChild(style);
 
   const header = document.querySelector('header');
+  let lastScrolled = null;
+
+  // Throttled scroll handler - only update when state actually changes
   const handleScroll = () => {
     if (!header) return;
-    if (window.scrollY > 80) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
+    const isScrolled = window.scrollY > 80;
+
+    // Only modify DOM if state changed
+    if (lastScrolled !== isScrolled) {
+      lastScrolled = isScrolled;
+      if (isScrolled) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
   };
+
   handleScroll();
   window.addEventListener('scroll', handleScroll, { passive: true });
 

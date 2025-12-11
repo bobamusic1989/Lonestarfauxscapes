@@ -89,14 +89,7 @@
 
     gsapLib.registerPlugin(scrollTrigger);
 
-    const header = document.getElementById('main-header');
-    if (header) {
-      const handleScroll = () => {
-        header.classList.toggle('scrolled', window.scrollY > 50);
-      };
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      handleScroll();
-    }
+    // Header scroll is handled by nav.js - removed duplicate here
 
     const heroElements = document.querySelectorAll('.gs-fade-up');
     gsapLib.fromTo(
