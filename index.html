@@ -674,12 +674,16 @@
             animation: mapPulse 2.8s ease-out infinite;
         }
         .map-label {
-            font-size: 10px;
-            letter-spacing: 0.05em;
+            font-size: 9px;
+            letter-spacing: 0.03em;
             text-transform: uppercase;
-            fill: rgba(255,255,255,0.85);
-            font-weight: 600;
-            text-anchor: start;
+            fill: rgba(255,255,255,0.95);
+            font-weight: 700;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            paint-order: stroke fill;
+            stroke: rgba(5,10,7,0.9);
+            stroke-width: 3px;
         }
         .map-legend {
             display: inline-flex;
@@ -1553,7 +1557,7 @@
                         <div class="texas-map-card" aria-hidden="true">
                             <div class="texas-map-heading">Statewide Coverage</div>
                             <div class="texas-map">
-                                <svg viewBox="0 0 260 210">
+                                <svg viewBox="0 0 260 220">
                                     <defs>
                                         <linearGradient id="txGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                             <stop offset="0%" stop-color="rgba(76,175,80,0.18)"/>
@@ -1570,26 +1574,26 @@
                                         <path class="map-outline" d="M70 18 L142 18 L142 66 L188 66 Q198 70 206 78 L206 98 Q214 110 212 130 L206 158 Q198 164 192 176 L192 190 Q178 194 164 192 L150 198 Q136 194 124 188 L110 188 Q102 186 96 178 L82 180 L70 168 L58 156 L44 148 Q32 134 26 118 L34 98 L28 80 L42 64 L64 62 L64 34 Z"></path>
                                         <path class="map-arc" d="M128 136 Q150 116 172 96"></path>
                                         <path class="map-arc" d="M128 136 Q154 148 182 150"></path>
-                                        <path class="map-arc" d="M128 136 Q122 148 116 160"></path>
+                                        <path class="map-arc" d="M128 136 Q114 153 100 170"></path>
                                         <g class="map-city" transform="translate(172 96)">
                                             <circle class="map-node-ring" r="6"></circle>
                                             <circle class="map-node" r="5"></circle>
-                                            <text class="map-label" x="-8" y="-12">Dallas</text>
+                                            <text class="map-label" x="0" y="18">Dallas</text>
                                         </g>
                                         <g class="map-city" transform="translate(182 150)">
                                             <circle class="map-node-ring" r="6"></circle>
                                             <circle class="map-node" r="5"></circle>
-                                            <text class="map-label" x="10" y="-8">Houston</text>
+                                            <text class="map-label" x="0" y="18">Houston</text>
                                         </g>
                                         <g class="map-city" transform="translate(128 136)">
                                             <circle class="map-node-ring" r="6"></circle>
                                             <circle class="map-node" r="5"></circle>
-                                            <text class="map-label" x="10" y="-8">Austin</text>
+                                            <text class="map-label" x="0" y="18">Austin</text>
                                         </g>
-                                        <g class="map-city" transform="translate(116 160)">
+                                        <g class="map-city" transform="translate(100 170)">
                                             <circle class="map-node-ring" r="6"></circle>
                                             <circle class="map-node" r="5"></circle>
-                                            <text class="map-label" x="-70" y="4">San Antonio</text>
+                                            <text class="map-label" x="0" y="18">San Antonio</text>
                                         </g>
                                     </g>
                                 </svg>
