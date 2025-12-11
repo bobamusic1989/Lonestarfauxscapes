@@ -510,12 +510,12 @@
 
         /* Hero Section */
         #hero {
-            min-height: 100vh;
+            min-height: 100svh; /* svh = stable viewport height, doesn't jump with iOS URL bar */
             position: relative;
             display: flex;
             align-items: flex-start;
             overflow: hidden;
-            padding-top: clamp(8rem, 10vh, 11rem);
+            padding-top: clamp(8rem, 10svh, 11rem); /* Use svh to prevent iOS URL bar jump */
             padding-bottom: 6rem;
             background: var(--color-bg);
         }
@@ -525,7 +525,7 @@
             left: 0;
             right: 0;
             bottom: -1px;
-            height: 25vh; /* subtle gradient on the bottom 25% for a soft carry-over */
+            height: 25svh; /* svh for stable sizing */
             pointer-events: none;
             background: linear-gradient(180deg,
                 rgba(12,24,18,0) 0%,
@@ -1266,7 +1266,7 @@
         /* Mobile Menu */
         #mobile-menu {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100vh;
+            top: 0; left: 0; width: 100%; height: 100svh;
             background: rgba(5, 10, 7, 0.98);
             backdrop-filter: blur(20px);
             z-index: 9999;

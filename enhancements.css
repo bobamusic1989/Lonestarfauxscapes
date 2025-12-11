@@ -435,7 +435,7 @@ details[open] summary::after {
 
   /* Reduce hero padding on mobile for better content positioning */
   #hero {
-    padding-top: clamp(6rem, 8vh, 9rem) !important;
+    padding-top: clamp(6rem, 8svh, 9rem) !important; /* svh = stable viewport */
     padding-bottom: 4rem !important;
   }
 }
