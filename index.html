@@ -1867,29 +1867,7 @@
 <script src="nav.js"></script>
 <script src="reveal.js"></script>
 <script>
-(function() {
-    // Skip parallax on mobile - causes scroll jank and text jumping
-    const isMobile = window.innerWidth < 992 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    if (isMobile) return;
-
-    const media = document.querySelector('.hero-media');
-    const content = document.querySelector('.hero-content');
-    let ticking = false;
-    const onScroll = () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-            const y = window.scrollY || 0;
-            const mediaOffset = Math.min(45, y * 0.08);
-            const contentOffset = Math.min(26, y * 0.05);
-            if (media) media.style.transform = `translateY(${mediaOffset * -1}px)`;
-            if (content) content.style.transform = `translateY(${contentOffset * -1}px)`;
-            ticking = false;
-        });
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-})();
+/* Hero parallax DISABLED - was causing scroll jank on all touch devices */
 
 (function() {
     const form = document.getElementById('cta-form');
