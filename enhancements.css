@@ -367,23 +367,21 @@ details[open] summary::after {
    ========================================================================== */
 
 @media (max-width: 991px) {
-  /* Dim the hero image on mobile so text is readable */
-  .hero-media {
-    opacity: 0.35 !important;
-    mask-image: none !important;
-    -webkit-mask-image: none !important;
-    /* CRITICAL: Remove GPU promotion that causes scroll jank */
-    will-change: auto !important;
-    transform: none !important;
-    position: absolute !important;
+  /* MOBILE: Hero uses CSS background-image like commercial.html - hide all hero-media elements */
+  .hero-media,
+  .hero-blend,
+  .hero-motif,
+  .hero-gradient-glow,
+  .hero-gradient-glow-1,
+  .hero-gradient-glow-2,
+  .bg-glow,
+  .bg-glow-1,
+  .bg-glow-2,
+  .grain {
+    display: none !important;
   }
 
-  .hero-media picture, .hero-media img {
-    transform: none !important;
-    will-change: auto !important;
-  }
-
-  /* NUCLEAR: Force all hero content to be static and not shift */
+  /* Force hero content to be simple static positioned text */
   .hero-content,
   .hero-content *,
   .gs-fade-up {

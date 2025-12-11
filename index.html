@@ -565,29 +565,59 @@
 
         /* Hero line accents */
 
+        /* MOBILE: Use simple background like commercial.html - NO separate hero-media element */
+        @media (max-width: 991px) {
+            #hero {
+                background:
+                    linear-gradient(115deg, rgba(5,10,7,0.85) 0%, rgba(5,10,7,0.6) 45%, rgba(5,10,7,0.7) 70%),
+                    url('images/hero/hero-main.jpg') center/cover no-repeat !important;
+            }
+            .hero-media,
+            .hero-blend,
+            .hero-motif,
+            .hero-gradient-glow,
+            .hero-gradient-glow-1,
+            .hero-gradient-glow-2 {
+                display: none !important;
+            }
+        }
+
+        /* DESKTOP ONLY: complex hero-media with effects */
+        @media (min-width: 992px) {
+            .hero-media {
+                position: absolute;
+                inset: 0;
+                z-index: 0;
+                overflow: hidden;
+                mask-image: linear-gradient(120deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 45%, transparent 75%);
+                -webkit-mask-image: linear-gradient(120deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 45%, transparent 75%);
+                box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+                filter: drop-shadow(0 28px 48px rgba(0,0,0,0.6));
+                border-left: 1px solid rgba(255, 255, 255, 0.04);
+                will-change: transform;
+            }
+            .hero-media picture, .hero-media img {
+                width: 100%;
+                height: 110%;
+                object-fit: cover;
+                transition: transform 0.6s ease, filter 0.6s ease;
+                filter: saturate(0.9) brightness(0.9);
+                transform: translate3d(0,0,0);
+            }
+            .hero-content { will-change: transform; }
+        }
+
+        /* Fallback for desktop without media query support */
         .hero-media {
             position: absolute;
             inset: 0;
             z-index: 0;
             overflow: hidden;
-            mask-image: linear-gradient(120deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 45%, transparent 75%);
-            -webkit-mask-image: linear-gradient(120deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 45%, transparent 75%);
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
-            filter: drop-shadow(0 28px 48px rgba(0,0,0,0.6));
-            border-left: 1px solid rgba(255, 255, 255, 0.04);
         }
         .hero-media picture, .hero-media img {
             width: 100%;
             height: 110%;
             object-fit: cover;
-            transition: transform 0.6s ease, filter 0.6s ease;
-            filter: saturate(0.9) brightness(0.9);
-        }
-        /* Desktop only: enable GPU acceleration for parallax */
-        @media (min-width: 992px) {
-            .hero-media { will-change: transform; }
-            .hero-media picture, .hero-media img { transform: translate3d(0,0,0); }
-            .hero-content { will-change: transform; }
         }
         .hero-media::after {
             content: '';
