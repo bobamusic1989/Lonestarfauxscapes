@@ -161,6 +161,27 @@
             100% { transform: translate(30px, 18px); }
         }
 
+        /* MOBILE: Disable all animated transforms - they cause scroll jank */
+        @media (max-width: 991px) {
+            .bg-glow,
+            .hero-gradient-glow,
+            .hero-gradient-glow-1,
+            .hero-gradient-glow-2 {
+                animation: none !important;
+                transform: none !important;
+            }
+            .live-card,
+            .card {
+                will-change: auto !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            .live-card .card-media img {
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+
         /* Subtle texture to avoid flat black */
         body::before {
             content: '';

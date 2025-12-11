@@ -26,7 +26,10 @@
       "Bash(git push)",
       "Bash(dir:*)",
       "Bash(del \"C:\\Users\\geran\\.claude-worktrees\\loanstar\\awesome-almeida\\scripts\\add-utils.js\")",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(done)",
+      "Bash(else echo \"$file not found\")",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []
