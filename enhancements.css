@@ -164,14 +164,17 @@ section.hero h1,
 
 /* ==========================================================================
    BLUR-TO-SHARP REVEAL ANIMATION
+   DESKTOP ONLY - blur filter destroys mobile scroll performance
    ========================================================================== */
 
-[data-reveal] {
-  filter: blur(8px);
-}
+@media (min-width: 992px) {
+  [data-reveal] {
+    filter: blur(8px);
+  }
 
-[data-reveal].reveal-in {
-  filter: blur(0);
+  [data-reveal].reveal-in {
+    filter: blur(0);
+  }
 }
 
 /* ==========================================================================
