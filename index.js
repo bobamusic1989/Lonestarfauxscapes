@@ -122,21 +122,38 @@
       );
     });
 
-    // Micro-motion: hero headline lift as products come in
-    const heroHeadline = document.querySelector('#hero h1');
-    if (heroHeadline) {
-      gsapLib.to(heroHeadline, {
-        y: -4,
-        scrollTrigger: {
-          trigger: '#products',
-          start: 'top bottom',
-          end: 'top center',
-          scrub: true,
-        },
-      });
+    // Skip scroll-based parallax animations on mobile - causes overlap/stutter
+    if (!isMobile()) {
+      // Micro-motion: hero headline lift as products come in
+      const heroHeadline = document.querySelector('#hero h1');
+      if (heroHeadline) {
+        gsapLib.to(heroHeadline, {
+          y: -4,
+          scrollTrigger: {
+            trigger: '#products',
+            start: 'top bottom',
+            end: 'top center',
+            scrub: true,
+          },
+        });
+      }
+
+      // Parallax shift between hero media and following panel
+      const heroMedia = document.querySelector('.hero-media');
+      if (heroMedia) {
+        gsapLib.to(heroMedia, {
+          yPercent: 4,
+          scrollTrigger: {
+            trigger: '#hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+      }
     }
 
-    // Micro-motion: bottom motif single drop
+    // Micro-motion: bottom motif single drop (keep on all devices - it's just an entrance animation)
     const motif = document.querySelector('.hero-motif');
     if (motif) {
       gsapLib.fromTo(
@@ -144,20 +161,6 @@
         { y: -10, opacity: 0 },
         { y: 0, opacity: 0.85, duration: 0.8, ease: 'power2.out', delay: 0.4 }
       );
-    }
-
-    // Parallax shift between hero media and following panel
-    const heroMedia = document.querySelector('.hero-media');
-    if (heroMedia) {
-      gsapLib.to(heroMedia, {
-        yPercent: 4,
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      });
     }
     };
 
