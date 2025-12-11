@@ -25,7 +25,7 @@
     .container { width: 92%; max-width: var(--container-width); margin: 0 auto; }
     header { position: sticky; top: 0; z-index: 100; background: rgba(5,10,7,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08); }
     .nav { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; gap: 1rem; }
-    .nav-brand { font-family: var(--font-heading); font-weight: 900; letter-spacing: 0.08em; font-size: 0.95rem; text-transform: uppercase; }
+    .logo { font-family: var(--font-heading); font-weight: 900; letter-spacing: 0.08em; font-size: 0.95rem; text-transform: uppercase; color: #fff; }
     .nav-links { display: flex; gap: 1.25rem; align-items: center; font-size: 0.9rem; }
     .nav-item { color: rgba(255,255,255,0.75); letter-spacing: 0.03em; text-transform: uppercase; font-weight: 600; position: relative; padding-bottom: 0.25rem; }
     .nav-item:hover { color: #fff; }
@@ -96,7 +96,7 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="nav-brand">Lone Star Faux Scapes</div>
+      <a href="index.html" class="logo">Lone Star Faux Scapes</a>
       <nav class="nav-links">
         <a class="nav-item" href="index.html">Home</a>
         <div class="nav-dropdown" aria-label="Products dropdown">
@@ -111,6 +111,7 @@
         </div>
         <a class="nav-item" href="commercial.html">Commercial</a>
         <a class="nav-item" href="residential.html">Residential</a>
+        <a class="nav-item" href="gallery.html">Gallery</a>
         <a class="nav-item" href="blog.html">Blog</a>
         <a class="nav-item nav-cta" href="index.html#contact">Get Quote</a>
       </nav>
