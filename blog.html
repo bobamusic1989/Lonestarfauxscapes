@@ -217,8 +217,9 @@
       color: var(--color-accent);
       -webkit-text-stroke: 0px;
     }
-    .hero { padding: clamp(7rem, 10vw, 9rem) 0 3.5rem; background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(5,10,7,0.95)); }
-    .hero h1 { font-family: var(--font-heading); font-size: clamp(2.8rem, 4vw, 3.6rem); letter-spacing: -0.03em; }
+    .hero { padding: clamp(7rem, 10vw, 9rem) 0 3.5rem; background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(5,10,7,0.95)); position: relative; }
+    .hero h1 { font-family: var(--font-heading); font-size: clamp(2.8rem, 4vw, 3.6rem); letter-spacing: -0.03em; color: #fff; }
+    .hero .container { position: relative; z-index: 2; }
     .hero p { color: var(--color-text-muted); max-width: 760px; margin-top: 1rem; font-size: 1.05rem; }
     .grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media(min-width: 820px) { .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
