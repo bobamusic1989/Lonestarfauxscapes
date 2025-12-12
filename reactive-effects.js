@@ -1,6 +1,14 @@
 (function() {
   'use strict';
 
+  // PERFORMANCE FIX: Disable all reactive effects
+  // These effects cause severe lag due to:
+  // 1. Duplicate listeners (magnetic.js, card-effects.js do the same thing)
+  // 2. Expensive proximity glow calculations on every mouse move
+  // 3. Multiple scroll listeners competing
+  // 4. will-change abuse reserving GPU memory
+  return;
+
   // Wait for utils to be available
   const utils = window.LonestarUtils || {
     throttleRAF: (fn) => fn,

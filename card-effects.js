@@ -2,8 +2,13 @@
  * Card Spotlight/Tilt Effects
  * Cursor-tracking spotlight and subtle 3D tilt on cards
  * DESKTOP ONLY - transforms cause scroll jank on mobile
+ *
+ * PERFORMANCE FIX: Disabled - duplicates index.js live-card handling
+ * and causes double event listeners on cards
  */
 (function() {
+  return; // Disabled for performance
+
   // Skip on mobile - transforms cause scroll jank
   const isMobile = window.innerWidth < 992 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   if (isMobile) return;
