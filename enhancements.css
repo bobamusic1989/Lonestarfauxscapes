@@ -367,20 +367,7 @@ details[open] summary::after {
    ========================================================================== */
 
 @media (max-width: 991px) {
-  /* MOBILE: Hero uses CSS background-image like commercial.html - hide ALL complex elements */
-  .hero-media,
-  .hero-blend,
-  .hero-motif,
-  .hero-gradient-glow,
-  .hero-gradient-glow-1,
-  .hero-gradient-glow-2,
-  .bg-glow,
-  .bg-glow-1,
-  .bg-glow-2,
-  .grain,
-  #canvas-container {
-    display: none !important;
-  }
+  /* MOBILE: Keep hero elements visible but simplify for performance */
 
   /* Force hero content to be simple static positioned text */
   .hero-content,

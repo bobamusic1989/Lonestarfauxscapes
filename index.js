@@ -570,8 +570,8 @@
 
   // Lazy-load Three.js when canvas container is visible
   const lazyLoadThreeJS = () => {
-    // Skip Three.js entirely on mobile - major performance win
-    if (isMobile() || prefersReducedMotion()) {
+    // Respect reduced motion preference
+    if (prefersReducedMotion()) {
       const container = document.getElementById('canvas-container');
       if (container) {
         container.style.display = 'none';

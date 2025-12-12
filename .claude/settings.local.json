@@ -29,7 +29,8 @@
       "Bash(git push:*)",
       "Bash(done)",
       "Bash(else echo \"$file not found\")",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

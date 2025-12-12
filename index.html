@@ -565,23 +565,7 @@
 
         /* Hero line accents */
 
-        /* MOBILE: Use simple background like commercial.html - NO separate elements */
-        @media (max-width: 991px) {
-            #hero {
-                background:
-                    linear-gradient(115deg, rgba(5,10,7,0.85) 0%, rgba(5,10,7,0.6) 45%, rgba(5,10,7,0.7) 70%),
-                    url('images/hero/hero-main.jpg') center/cover no-repeat !important;
-            }
-            .hero-media,
-            .hero-blend,
-            .hero-motif,
-            .hero-gradient-glow,
-            .hero-gradient-glow-1,
-            .hero-gradient-glow-2,
-            #canvas-container {
-                display: none !important;
-            }
-        }
+        /* Hero elements visible on all devices */
 
         /* DESKTOP ONLY: complex hero-media with effects */
         @media (min-width: 992px) {
@@ -968,24 +952,25 @@
             backdrop-filter: blur(4px);
         }
 
-        /* WebGL Canvas - DESKTOP ONLY */
+        /* WebGL Canvas - visible on all devices */
         #canvas-container {
-            display: none; /* Hidden by default (mobile) */
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            z-index: 1;
+            mask-image: linear-gradient(to right, transparent 0%, black 30%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
         }
 
-        @media(min-width: 992px) {
+        @media(max-width: 991px) {
             #canvas-container {
-                display: block;
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 60%;
-                height: 100%;
-                z-index: 1;
-                mask-image: linear-gradient(to right, transparent 0%, black 30%);
-                -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+                width: 100%;
+                mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+                -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
             }
-            .hero-content { margin-left: 0; }
         }
 
         /* LIVE CARDS (Spotlight + Tilt) */
