@@ -7,7 +7,13 @@ const getHtmlEntries = () => {
   const entries: Record<string, string> = {};
 
   // Root HTML files
-  const htmlFiles = readdirSync('.').filter(f => f.endsWith('.html') && !f.includes('backup') && f !== 'roadmap.html');
+  const htmlFiles = readdirSync('.').filter(
+    f =>
+      f.endsWith('.html') &&
+      !f.includes('backup') &&
+      f !== 'roadmap.html' &&
+      f !== 'navbar-component.html',
+  );
   htmlFiles.forEach(file => {
     const name = file.replace('.html', '');
     entries[name] = path.resolve(__dirname, file);

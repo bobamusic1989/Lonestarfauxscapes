@@ -1,46 +1,36 @@
-import fs from 'fs';
-import path from 'path';
-import { marked } from 'marked';
-import matter from 'gray-matter';
-
-const CONTENT_DIR = './content/blog';
-const OUTPUT_DIR = './blog';
-const POSTS_JSON = './content/posts.json';
-
-// Blog post page template - matches your existing site styling
-const generatePostHTML = (post) => `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${post.title} | Lone Star Faux Scapes Blog</title>
-  <meta name="description" content="${post.summary}">
-  <meta name="keywords" content="${post.tags.join(', ')}">
-  <link rel="canonical" href="https://lonestarfauxscapes.com/blog/${post.slug}.html">
+  <title>Untitled | Lone Star Faux Scapes Blog</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="Artificial Fire Resistant boxwood hedge">
+  <link rel="canonical" href="https://lonestarfauxscapes.com/blog/2025-12-12-article.html">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="${post.title}">
-  <meta property="og:description" content="${post.summary}">
-  <meta property="og:image" content="https://lonestarfauxscapes.com/${post.image}">
-  <meta property="og:url" content="https://lonestarfauxscapes.com/blog/${post.slug}.html">
+  <meta property="og:title" content="Untitled">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="https://lonestarfauxscapes.com/images/hedges/hedge-privacy-1.jpg">
+  <meta property="og:url" content="https://lonestarfauxscapes.com/blog/2025-12-12-article.html">
   <meta property="og:type" content="article">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${post.title}">
-  <meta name="twitter:description" content="${post.summary}">
-  <meta name="twitter:image" content="https://lonestarfauxscapes.com/${post.image}">
+  <meta name="twitter:title" content="Untitled">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://lonestarfauxscapes.com/images/hedges/hedge-privacy-1.jpg">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "${post.title}",
-    "description": "${post.summary}",
-    "image": "https://lonestarfauxscapes.com/${post.image}",
-    "datePublished": "${post.date}",
-    "dateModified": "${post.date}",
+    "headline": "Untitled",
+    "description": "",
+    "image": "https://lonestarfauxscapes.com/images/hedges/hedge-privacy-1.jpg",
+    "datePublished": "Thu Dec 11 2025 18:00:00 GMT-0600 (Central Standard Time)",
+    "dateModified": "Thu Dec 11 2025 18:00:00 GMT-0600 (Central Standard Time)",
     "author": {
       "@type": "Organization",
       "name": "Lone Star Faux Scapes"
@@ -55,7 +45,7 @@ const generatePostHTML = (post) => `<!DOCTYPE html>
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://lonestarfauxscapes.com/blog/${post.slug}.html"
+      "@id": "https://lonestarfauxscapes.com/blog/2025-12-12-article.html"
     }
   }
   </script>
@@ -458,25 +448,58 @@ const generatePostHTML = (post) => `<!DOCTYPE html>
           <span>/</span>
           <a href="/blog.html">Blog</a>
           <span>/</span>
-          <span>${post.title}</span>
+          <span>Untitled</span>
         </nav>
-        <h1>${post.title}</h1>
+        <h1>Untitled</h1>
         <div class="article-meta">
-          <span class="date-pill">${new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-          <span class="category-pill">${post.category}</span>
+          <span class="date-pill">Dec 11, 2025</span>
+          <span class="category-pill">Guides</span>
         </div>
       </div>
     </section>
 
     <div class="featured-image">
-      <img src="/${post.image}" alt="${post.title}" loading="eager">
+      <img src="/images/hedges/hedge-privacy-1.jpg" alt="Untitled" loading="eager">
     </div>
 
     <article class="article-content">
-      ${post.content}
+      <p><strong>POST TITLE:</strong> Rethink Your Greenery: Artificial vs. Real Boxwood in Texas</p>
+<p><strong>META DESCRIPTION:</strong> Weighing artificial fire resistant boxwood hedges against real plants? Explore drought tolerance, maintenance, and long-term value for Texas properties.</p>
+<h1>Making the Green Choice: The Real Deal on Boxwood for Texas Landscapes</h1>
+<p>When you picture a classic Texas property, from a Houston office park to a Dallas estate, chances are a tidy, green hedge comes to mind. Boxwood has been a landscaping staple for generations, prized for its structure and timeless look. But anyone who has tried to maintain one through a Central Texas summer knows the challenge. The relentless sun, sporadic rainfall, and soil conditions can turn that vibrant green into a brittle brown faster than you can say &quot;watering restrictions.&quot; This reality has many property managers, developers, and homeowners taking a long, hard look at a modern alternative: artificial fire resistant boxwood.</p>
+<p>The shift isn&#39;t about giving up on aesthetics. It&#39;s about adapting to our environment in a smarter way. The conversation has moved beyond the old plastic plants of the past. Today&#39;s high-quality artificial foliage is designed to withstand the Texas elements while saving significant resources. Let&#39;s break down the key factors in this green debate, moving beyond simple pros and cons to a practical Texas-sized comparison.</p>
+<h2>The Thirst Factor: Water Conservation Reality</h2>
+<p>Water is the most pressing issue. According to the Texas Water Development Board, nearly 90% of the state experienced drought conditions in the last year. Cities like Austin and San Antonio have implemented permanent, year-round watering schedules. Keeping a living boxwood hedge alive under Stage 2 restrictions is a constant battle.</p>
+<p>A live boxwood hedge requires a substantial amount of water, especially during establishment and peak heat. We&#39;re talking about gallons per linear foot, each week, from May through October. That adds up to thousands of gallons annually for a typical property border. For a commercial site in Fort Worth or El Paso, the irrigation costs and labor for monitoring soil moisture become a considerable, recurring line item.</p>
+<p>Artificial boxwood requires water exactly once. That&#39;s during the initial installation, when you might wet the area to ease positioning. After that, its hydration needs are zero. This single difference transforms your landscape from a water consumer to a water conserver. In a state where water rights and conservation are increasingly part of long-term planning, this isn&#39;t just a cost saver. It&#39;s a responsible environmental and operational choice.</p>
+<h2>The Maintenance Equation: Labor, Chemicals, and Time</h2>
+<p>Let&#39;s talk upkeep. A real boxwood hedge is not a plant-it-and-forget-it feature. It demands a calendar of care. Regular pruning is essential to maintain shape, often requiring professional landscapers with shears and trimmers multiple times a year. You&#39;re also committed to a regimen of fertilization to support growth and soil amendments to combat alkalinity common in Texas soil. Then come the pests. Spider mites, boxwood leafminers, and fungal diseases like boxwood blight are constant threats. Treating these issues means more chemicals, more labor, and the risk of unsightly damage.</p>
+<p>An artificial fire resistant boxwood hedge eliminates nearly all of this. The maintenance routine is profoundly simple. Occasional rinsing with a hose to remove dust or pollen from a South Texas breeze is typically all that&#39;s needed. There is no trimming, no feeding, and no disease management. For a property manager overseeing a large site in San Antonio or a homeowner in Lubbock who travels frequently, this translates to dramatically reduced annual landscaping contracts and predictable, low upkeep.</p>
+<h2>The Aesthetic Throughline: Year-Round Consistency</h2>
+<p>This is where perception often clashes with the new reality. The fear is that artificial plants will look fake. That might have been true a decade ago. The best artificial boxwood products available now are UV-stabilized and use multiple shades and textures of polyethylene to mimic the complex color variations and leaf structures of real plants. They are designed to look vibrant and realistic not for a season, but for years.</p>
+<p>Meanwhile, a real boxwood&#39;s appearance is at the mercy of the climate. The famous Texas heat can scorch it. A hard freeze in the Hill Country can burn it back. It goes dormant in winter, often taking on a bronze or yellowish hue. Your crisp, green boundary can look tired and ragged for months. Artificial boxwood provides 365-day consistency. Whether it&#39;s a 110-degree day in August or a chilly morning in January, the hedge looks full, green, and intentionally designed. This reliability is invaluable for commercial applications where curb appeal directly impacts client perception and property value.</p>
+<h2>Specialized Considerations: Fire Resistance and Durability</h2>
+<p>The &quot;fire resistant&quot; specification in artificial boxwood isn&#39;t just marketing jargon. It&#39;s a critical safety and durability feature, especially in Texas. Many high-quality artificial hedges are now constructed with fire-retardant materials that meet certain ASTM standards. They are engineered not to ignite easily and to self-extinguish. In regions prone to wildfires or for properties where perimeter ember intrusion is a concern, this adds a layer of protection that living, often dry vegetation does not.</p>
+<p>Durability extends beyond fire. Top-tier artificial boxwood is built to withstand extreme weather. It won&#39;t fade under the intense UV exposure of a West Texas sun. It won&#39;t rot during the humid rainy spells in Houston. It won&#39;t shed leaves or require cleanup after a windstorm. This resilience ensures the product performs as an asset, not a liability, with a lifespan often guaranteed for a decade or more.</p>
+<h2>Navigating the Initial Investment</h2>
+<p>The most significant hurdle for artificial boxwood is the upfront cost. Per linear foot, the initial installation of a premium artificial hedge is higher than planting small boxwood shrubs. This gives many decision-makers pause. However, a cost analysis over a five to ten year period tells a different story. You must factor in the avoided costs. Eliminate the recurring expenses for water, irrigation system maintenance, fertilizer, pest control, and multiple annual trimmings. The artificial option has a higher initial peak but then flattens to a nearly zero maintenance cost line. For real boxwood, that initial lower cost is just the first of many repeated annual investments.</p>
+<p>The value proposition becomes clear over time. It&#39;s a classic case of capital expenditure versus operational expenditure. For a property owner planning to stay put for the long term, or a developer looking to minimize a building&#39;s ongoing maintenance burden, the math increasingly favors the artificial solution.</p>
+<h2>Final Thoughts on a Complex Choice</h2>
+<p>Choosing between artificial and real boxwood in Texas isn&#39;t a simple verdict. It&#39;s a strategic decision based on your priorities. If you have a passion for horticulture, ample water resources, and enjoy the ritual of garden care, a living hedge has its rewards. But for those prioritizing water conservation, low maintenance, year-round curb appeal, and predictable long-term costs, modern artificial fire resistant boxwood presents a compelling, drought-proof alternative.</p>
+<p>The goal of Texas landscaping is adapting beautifully to our challenging environment. As technology improves the realism and durability of artificial greenery, it ceases to be just an imitation. It becomes a legitimate, practical tool for creating sustainable, beautiful, and resilient outdoor spaces that can withstand whatever the Texas climate delivers next.</p>
+<hr>
+<p><strong>IMAGE SUGGESTIONS for Nano Banana Pro:</strong></p>
+<ol>
+<li><strong>Prompt:</strong> A sharp, side-by-side comparison split down the middle. Left side: a slightly scorched, brown-edged real boxwood hedge under the harsh midday Texas sun with dry soil. Right side: a lush, perfectly green artificial boxwood hedge in identical light. Style: photorealistic, detailed, highlighting texture difference.</li>
+<li><strong>Prompt:</strong> A close-up detail shot of a high-quality artificial boxwood leaf. Show UV-resistant coating, subtle color variations from olive to bright green, and realistic vein texture on the polyethylene leaf. Style: macro photography, shallow depth of field, morning light.</li>
+<li><strong>Prompt:</strong> A wide-angle shot of a sleek, modern Texas commercial property entrance in Austin or Dallas. Focus on a perfectly manicured, full artificial boxwood hedge lining the driveway and foundation. Style: architectural photography, clean lines, vibrant green hedge against stucco or stone.</li>
+<li><strong>Prompt:</strong> An overhead flat lay of landscaping tools next to a small section of artificial boxwood. Include a dormant water hose, simple garden gloves, and a bucket. Contrast with tools NOT needed: no fertilizer bags, no pruning shears, no pesticide bottles. Style: bright studio lighting, minimalist composition.</li>
+<li><strong>Prompt:</strong> A dusk scene at a luxury Texas home in the Hill Country. Artificial boxwood hedges glow under subtle landscape lighting, perfectly defined and green, while native drought-tolerant grasses are brown and dormant in the background. Style: twilight ambiance, warm and cool lighting contrast, serene mood.</li>
+</ol>
+
 
       <div class="article-tags">
-        ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        <span class="tag">Artificial Fire Resistant boxwood hedge</span>
       </div>
 
       <a href="/blog.html" class="back-link">
@@ -527,97 +550,4 @@ const generatePostHTML = (post) => `<!DOCTYPE html>
     });
   </script>
 </body>
-</html>`;
-
-// Build the blog
-async function buildBlog() {
-  console.log('Building blog...');
-
-  // Create output directory if it doesn't exist
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-  }
-
-  // Check if content directory exists
-  if (!fs.existsSync(CONTENT_DIR)) {
-    console.log('No blog content directory found. Creating empty posts.json');
-    fs.writeFileSync(POSTS_JSON, JSON.stringify([], null, 2));
-    return;
-  }
-
-  // Get all markdown files
-  const files = fs.readdirSync(CONTENT_DIR).filter(f => f.endsWith('.md'));
-
-  if (files.length === 0) {
-    console.log('No blog posts found. Creating empty posts.json');
-    fs.writeFileSync(POSTS_JSON, JSON.stringify([], null, 2));
-    return;
-  }
-
-  const posts = [];
-  const scheduledPosts = [];
-  const now = new Date();
-
-  for (const file of files) {
-    const filePath = path.join(CONTENT_DIR, file);
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-
-    // Parse frontmatter and content
-    const { data, content } = matter(fileContent);
-
-    // Create post object
-    const slug = file.replace('.md', '');
-    const postDate = new Date(data.date || now);
-    const post = {
-      slug,
-      title: data.title || 'Untitled',
-      date: data.date || now.toISOString(),
-      image: data.image || 'images/hedges/hedge-privacy-1.jpg',
-      summary: data.summary || '',
-      category: data.category || 'Guides',
-      tags: data.tags || [],
-      relatedUrl: data.relatedUrl || '',
-    };
-
-    // Check if post is scheduled for the future
-    if (postDate > now) {
-      scheduledPosts.push({ ...post, publishDate: postDate });
-      console.log(`  Scheduled: ${slug} (publishes ${postDate.toLocaleDateString()})`);
-      continue; // Skip generating HTML for future posts
-    }
-
-    // Convert markdown to HTML for published posts
-    const htmlContent = marked(content);
-    post.content = htmlContent;
-
-    posts.push(post);
-
-    // Generate individual post HTML
-    const postHTML = generatePostHTML(post);
-    const outputPath = path.join(OUTPUT_DIR, `${slug}.html`);
-    fs.writeFileSync(outputPath, postHTML);
-    console.log(`  Generated: ${outputPath}`);
-  }
-
-  // Sort posts by date (newest first)
-  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  // Save posts data for blog listing (without full content)
-  const postsData = posts.map(({ content, ...rest }) => rest);
-  fs.writeFileSync(POSTS_JSON, JSON.stringify(postsData, null, 2));
-  console.log(`  Generated: ${POSTS_JSON}`);
-
-  console.log(`Blog build complete! ${posts.length} posts published, ${scheduledPosts.length} scheduled.`);
-
-  // Log upcoming scheduled posts
-  if (scheduledPosts.length > 0) {
-    console.log('\nUpcoming scheduled posts:');
-    scheduledPosts
-      .sort((a, b) => a.publishDate - b.publishDate)
-      .forEach(post => {
-        console.log(`  - ${post.title} (${post.publishDate.toLocaleDateString()})`);
-      });
-  }
-}
-
-buildBlog().catch(console.error);
+</html>

@@ -8,9 +8,11 @@ function generateSitemap() {
   console.log('Generating sitemap...');
 
   // Get all HTML files in root (static pages)
-  const staticPages = fs.readdirSync('.')
-    .filter(f => f.endsWith('.html') && !f.includes('backup') && f !== 'roadmap.html')
-    .map(f => f.replace('.html', ''));
+  const staticHtmlFiles = fs
+    .readdirSync('.')
+    .filter(f => f.endsWith('.html') && !f.includes('backup'))
+    // Not public pages (or should never be indexed)
+    .filter(f => !['roadmap.html', 'navbar-component.html', '404.html'].includes(f));
 
   // Get blog posts if they exist
   let blogPosts = [];
@@ -22,7 +24,7 @@ function generateSitemap() {
     }
   }
 
-  const today = new Date().toISOString().split('T')[0];
+  const isoDateOnly = date => date.toISOString().split('T')[0];
 
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -30,12 +32,14 @@ function generateSitemap() {
 `;
 
   // Add static pages
-  for (const page of staticPages) {
-    const url = page === 'index' ? SITE_URL : `${SITE_URL}/${page}`;
-    const priority = page === 'index' ? '1.0' : page === 'products' ? '0.9' : '0.8';
+  for (const file of staticHtmlFiles) {
+    const url = file === 'index.html' ? `${SITE_URL}/` : `${SITE_URL}/${file}`;
+    const pageKey = file.replace('.html', '');
+    const priority = pageKey === 'index' ? '1.0' : pageKey === 'products' ? '0.9' : '0.8';
+    const lastmod = isoDateOnly(fs.statSync(path.resolve(file)).mtime);
     sitemap += `  <url>
     <loc>${url}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
   </url>
@@ -50,7 +54,7 @@ function generateSitemap() {
     for (const post of blogPosts) {
       const postDate = new Date(post.date).toISOString().split('T')[0];
       sitemap += `  <url>
-    <loc>${SITE_URL}/blog/${post.slug}</loc>
+    <loc>${SITE_URL}/blog/${post.slug}.html</loc>
     <lastmod>${postDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -68,6 +72,10 @@ function generateSitemap() {
   // Generate robots.txt
   const robots = `User-agent: *
 Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /hedge-quote
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
