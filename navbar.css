@@ -4,6 +4,21 @@
  */
 
 /* ==========================================================================
+   iOS SAFARI TEXT INFLATION FIX
+   Prevents Safari from auto-scaling text on mobile
+   ========================================================================== */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Ensure body doesn't allow horizontal overflow */
+body {
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
    FLOATING ISLAND HEADER - BASE POSITIONING
    These styles MUST come first to establish the floating navbar
    ========================================================================== */
