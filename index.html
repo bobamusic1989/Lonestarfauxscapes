@@ -966,9 +966,9 @@
             #canvas-container {
                 width: 100%;
                 z-index: 4;
-                /* Full opacity on bottom, fades to transparent at top */
-                mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
-                -webkit-mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+                /* Full opacity on right, fades to transparent going left */
+                mask-image: linear-gradient(to left, black 0%, black 40%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to left, black 0%, black 40%, transparent 100%);
                 opacity: 0.8;
             }
         }
