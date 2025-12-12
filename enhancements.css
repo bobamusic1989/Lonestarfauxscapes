@@ -367,47 +367,24 @@ details[open] summary::after {
    ========================================================================== */
 
 @media (max-width: 991px) {
-  /* MOBILE: Keep hero elements visible but simplify for performance */
+  /* MOBILE: Keep hero elements visible, ensure text is readable */
 
-  /* Force hero content to be simple static positioned text */
-  .hero-content,
+  /* Hero content must stay positioned for z-index to work */
+  .hero-content {
+    position: relative !important;
+    z-index: 10 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Remove transforms from animated elements to prevent scroll jank */
   .hero-content *,
   .gs-fade-up {
-    position: static !important;
     transform: none !important;
     will-change: auto !important;
     animation: none !important;
     opacity: 1 !important;
     visibility: visible !important;
-  }
-
-  /* Add a strong gradient overlay behind hero content */
-  #hero .container {
-    position: relative;
-  }
-
-  #hero .container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -2rem;
-    right: -2rem;
-    bottom: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(5, 10, 7, 0.85) 0%,
-      rgba(5, 10, 7, 0.7) 40%,
-      rgba(5, 10, 7, 0.4) 70%,
-      transparent 100%
-    );
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  /* Ensure hero content sits above the overlay */
-  .hero-content {
-    position: relative;
-    z-index: 10 !important;
   }
 
   /* Boost text contrast on mobile */
