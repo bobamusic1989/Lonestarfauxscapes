@@ -670,6 +670,16 @@
                 color: rgba(76,175,80,0.85);
                 text-shadow: 0 0 8px rgba(76,175,80,0.3), 0 2px 4px rgba(0,0,0,0.5);
             }
+            /* Hero paragraphs: subtle blur backdrop for readability */
+            #hero .hero-description {
+                background: rgba(0,0,0,0.35);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                padding: 0.75rem 1rem;
+                border-radius: 8px;
+                margin-left: -1rem;
+                margin-right: -1rem;
+            }
         }
         .city-mission {
             display: block;
@@ -1429,10 +1439,10 @@
                     <span style="display:block; color: var(--color-text-muted);">Hedges & Living</span>
                     <span style="display:block; color: var(--color-accent);">Walls in Texas.</span>
                 </h1>
-                <p class="gs-fade-up" style="color: rgba(255,255,255,0.9); text-shadow: 0 2px 8px rgba(0,0,0,0.7);">
+                <p class="gs-fade-up hero-description" style="color: rgba(255,255,255,0.9); text-shadow: 0 2px 8px rgba(0,0,0,0.7);">
                     Engineered nature for the modern era. We design and install hyper-realistic, zero-maintenance privacy walls and commercial green textures.
                 </p>
-                <p class="gs-fade-up" style="color: rgba(255,255,255,0.75); margin-top: -0.5rem; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">Serving Austin, Dallas, Houston, and San Antonio with artificial hedge installation, faux living walls, and fence extensions.</p>
+                <p class="gs-fade-up hero-description" style="color: rgba(255,255,255,0.75); margin-top: -0.5rem; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">Serving Austin, Dallas, Houston, and San Antonio with artificial hedge installation, faux living walls, and fence extensions.</p>
                 <div style="margin-top: 3rem;" class="gs-fade-up">
                     <a href="#contact" class="btn">Start Project</a>
                     <a href="#gallery" class="btn btn-outline">View Gallery</a>
