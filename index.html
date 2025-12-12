@@ -664,6 +664,13 @@
             transform: scale(1.08);
             text-shadow: 0 0 12px rgba(76,175,80,0.4);
         }
+        /* Mobile: brighter city links with subtle glow */
+        @media (max-width: 991px) {
+            #hero .city-link {
+                color: rgba(76,175,80,0.85);
+                text-shadow: 0 0 8px rgba(76,175,80,0.3), 0 2px 4px rgba(0,0,0,0.5);
+            }
+        }
         .city-mission {
             display: block;
             margin-top: 1.5rem;
