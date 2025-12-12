@@ -60,6 +60,12 @@
 
   <!-- Service Pages -->
   <url>
+    <loc>https://lonestarfauxscapes.com/installation</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lonestarfauxscapes.com/commercial</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -113,6 +119,42 @@
   </url>
   <url>
     <loc>https://lonestarfauxscapes.com/fort-worth</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lonestarfauxscapes.com/arlington</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lonestarfauxscapes.com/plano</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lonestarfauxscapes.com/frisco</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lonestarfauxscapes.com/irving</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lonestarfauxscapes.com/sugar-land</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lonestarfauxscapes.com/the-woodlands</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
