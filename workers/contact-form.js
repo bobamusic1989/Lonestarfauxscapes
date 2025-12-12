@@ -78,7 +78,7 @@ Submitted at: ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago'
       if (!resendResponse.ok) {
         const error = await resendResponse.text();
         console.error('Resend error:', error);
-        return new Response(JSON.stringify({ error: 'Failed to send email' }), {
+        return new Response(JSON.stringify({ error: 'Failed to send email', details: error }), {
           status: 500,
           headers: {
             'Content-Type': 'application/json',

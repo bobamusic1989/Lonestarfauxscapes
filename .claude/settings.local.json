@@ -32,7 +32,14 @@
       "Bash(fi)",
       "Bash(git checkout:*)",
       "Bash(cat:*)",
-      "Bash(git fetch:*)"
+      "Bash(npx wrangler secret list:*)",
+      "Bash(npx wrangler secret delete:*)",
+      "Bash(npx wrangler secret put:*)",
+      "Bash(del nul)",
+      "Bash(npx wrangler deploy)",
+      "Bash(curl:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []
