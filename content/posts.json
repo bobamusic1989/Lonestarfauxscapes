@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "slug": "sample-post",
+    "title": "5 Benefits of Artificial Hedges for Texas Properties",
+    "date": "2024-12-10T00:00:00.000Z",
+    "image": "images/hedges/hedge-privacy-1.jpg",
+    "summary": "Discover why artificial hedges are the smart choice for Texas homeowners and businesses looking for low-maintenance, year-round greenery.",
+    "category": "Guides",
+    "tags": [
+      "artificial hedges",
+      "Texas landscaping",
+      "low maintenance",
+      "water conservation"
+    ],
+    "relatedUrl": ""
+  }
+]

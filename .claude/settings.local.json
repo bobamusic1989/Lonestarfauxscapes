@@ -30,7 +30,8 @@
       "Bash(done)",
       "Bash(else echo \"$file not found\")",
       "Bash(fi)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
