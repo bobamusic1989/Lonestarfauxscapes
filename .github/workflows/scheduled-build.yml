@@ -1,0 +1,73 @@
+name: Scheduled Cloudflare Pages Build
+
+on:
+  # Run every 4 hours
+  schedule:
+    - cron: '0 */4 * * *'
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  trigger-build:
+    name: Trigger Cloudflare Pages Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Log build trigger time
+        run: |
+          echo "=========================================="
+          echo "Scheduled Build Trigger"
+          echo "=========================================="
+          echo "Triggered at: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Run Number: ${{ github.run_number }}"
+          echo "=========================================="
+
+      - name: Trigger Cloudflare Pages build
+        id: trigger
+        run: |
+          echo "Sending POST request to Cloudflare build hook..."
+
+          # Make the request and capture response
+          HTTP_STATUS=$(curl -s -o response.txt -w "%{http_code}" \
+            -X POST \
+            "${{ secrets.CLOUDFLARE_BUILD_HOOK }}" \
+            -H "Content-Type: application/json" \
+            --connect-timeout 30 \
+            --max-time 60)
+
+          RESPONSE=$(cat response.txt 2>/dev/null || echo "No response body")
+
+          echo "HTTP Status: $HTTP_STATUS"
+          echo "Response: $RESPONSE"
+
+          # Check if request was successful
+          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
+            echo "✅ Build triggered successfully!"
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Failed to trigger build"
+            echo "HTTP Status: $HTTP_STATUS"
+            echo "Response: $RESPONSE"
+            echo "status=failed" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Log result
+        if: always()
+        run: |
+          echo "=========================================="
+          echo "Build Trigger Result"
+          echo "=========================================="
+          if [ "${{ steps.trigger.outputs.status }}" == "success" ]; then
+            echo "✅ Cloudflare Pages build was triggered successfully"
+            echo "The site will be rebuilt with any new scheduled content"
+          else
+            echo "❌ Failed to trigger Cloudflare Pages build"
+            echo "Please check:"
+            echo "  1. CLOUDFLARE_BUILD_HOOK secret is set correctly"
+            echo "  2. The webhook URL is valid and active"
+            echo "  3. Cloudflare Pages project is configured properly"
+          fi
+          echo "=========================================="
+          echo "Completed at: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
