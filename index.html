@@ -956,8 +956,9 @@
             width: 60%;
             height: 100%;
             z-index: 5;
-            mask-image: linear-gradient(to right, transparent 0%, black 30%);
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+            /* Full opacity on right, fades to transparent about 2/3 left */
+            mask-image: linear-gradient(to left, black 0%, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to left, black 0%, black 40%, transparent 100%);
             pointer-events: none;
         }
 
@@ -965,8 +966,9 @@
             #canvas-container {
                 width: 100%;
                 z-index: 4;
-                mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
-                -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+                /* Full opacity on bottom, fades to transparent at top */
+                mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
                 opacity: 0.8;
             }
         }
