@@ -567,7 +567,7 @@
             .hero-media {
                 position: absolute;
                 inset: 0;
-                z-index: 0;
+                z-index: 1;
                 overflow: hidden;
                 mask-image: linear-gradient(120deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 45%, transparent 75%);
                 -webkit-mask-image: linear-gradient(120deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 45%, transparent 75%);
@@ -591,7 +591,7 @@
         .hero-media {
             position: absolute;
             inset: 0;
-            z-index: 0;
+            z-index: 1;
             overflow: hidden;
         }
         .hero-media picture, .hero-media img {
@@ -1390,6 +1390,25 @@
         <div class="hero-gradient-glow hero-gradient-glow-1" aria-hidden="true"></div>
         <div class="hero-gradient-glow hero-gradient-glow-2" aria-hidden="true"></div>
 
+        <!-- Background image layer (z-index: 1) -->
+        <div class="hero-media image-parallax" data-parallax>
+            <picture>
+                <source type="image/avif" srcset="images/hero/hero-main.avif" media="(min-width: 768px)">
+                <source type="image/avif" srcset="images/hero/hero-main.avif">
+                <source srcset="images/hero/hero-main.jpg" media="(min-width: 768px)">
+                <picture>
+                    <source srcset="images/hero/hero-main-400w.webp 400w, images/hero/hero-main-800w.webp 800w, images/hero/hero-main-1200w.webp 1200w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px" type="image/webp">
+                    <source srcset="images/hero/hero-main-400w.jpg 400w, images/hero/hero-main-800w.jpg 800w, images/hero/hero-main-1200w.jpg 1200w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px">
+                    <img src="images/hero/hero-main.jpg" alt="Lush artificial greenery wall installation" fetchpriority="high" decoding="async" width="1600" height="1067">
+                </picture>
+            </picture>
+            <div class="hero-blend"></div>
+        </div>
+
+        <!-- WebGL Canvas layer (z-index: 5) - on top of image -->
+        <div id="canvas-container"></div>
+
+        <!-- Text content layer (z-index: 10) - on top of everything -->
         <div class="container">
             <div class="hero-content">
                 <div class="eyebrow gs-fade-up">Future of Foliage</div>
@@ -1406,27 +1425,13 @@
                     <a href="#contact" class="btn">Start Project</a>
                     <a href="#gallery" class="btn btn-outline">View Gallery</a>
                 </div>
-                    <div class="city-links gs-fade-up">
-                        <a class="city-link" href="austin.html">Austin</a><span class="city-link" style="pointer-events:none;">/</span>
-                        <a class="city-link" href="dallas.html">Dallas</a><span class="city-link" style="pointer-events:none;">/</span>
-                        <a class="city-link" href="houston.html">Houston</a><span class="city-link" style="pointer-events:none;">/</span>
-                        <a class="city-link" href="san-antonio.html">San Antonio</a>
-                    </div>
+                <div class="city-links gs-fade-up">
+                    <a class="city-link" href="austin.html">Austin</a><span class="city-link" style="pointer-events:none;">/</span>
+                    <a class="city-link" href="dallas.html">Dallas</a><span class="city-link" style="pointer-events:none;">/</span>
+                    <a class="city-link" href="houston.html">Houston</a><span class="city-link" style="pointer-events:none;">/</span>
+                    <a class="city-link" href="san-antonio.html">San Antonio</a>
                 </div>
-            <div class="hero-media image-parallax" data-parallax>
-                    <picture>
-                        <source type="image/avif" srcset="images/hero/hero-main.avif" media="(min-width: 768px)">
-                        <source type="image/avif" srcset="images/hero/hero-main.avif">
-                        <source srcset="images/hero/hero-main.jpg" media="(min-width: 768px)">
-                        <picture>
-                <source srcset="images/hero/hero-main-400w.webp 400w, images/hero/hero-main-800w.webp 800w, images/hero/hero-main-1200w.webp 1200w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px" type="image/webp">
-                <source srcset="images/hero/hero-main-400w.jpg 400w, images/hero/hero-main-800w.jpg 800w, images/hero/hero-main-1200w.jpg 1200w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px">
-                <img src="images/hero/hero-main.jpg" alt="Lush artificial greenery wall installation" fetchpriority="high" decoding="async" width="1600" height="1067">
-              </picture>
-                    <div class="hero-blend"></div>
             </div>
-            <!-- WebGL Canvas - layered on top of hero-media, below text -->
-            <div id="canvas-container"></div>
             <div class="hero-motif"></div>
         </div>
     </section>
