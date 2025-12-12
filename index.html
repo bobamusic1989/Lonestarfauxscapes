@@ -2001,7 +2001,7 @@
             setTimeout(() => piece.remove(), 950);
         }
     };
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (!validate()) {
             if (statusEl) {
@@ -2010,14 +2010,52 @@
             }
             return;
         }
-        if (statusEl) {
-            statusEl.textContent = 'Thanks! We received your request. Expect a reply within one business day.';
-            statusEl.className = 'form-status success';
+
+        // Disable button during submission
+        const originalText = ctaButton.textContent;
+        ctaButton.disabled = true;
+        ctaButton.textContent = 'Sending...';
+
+        // Gather form data
+        const formData = {
+            name: form.querySelector('#name').value.trim(),
+            email: form.querySelector('#email').value.trim(),
+            phone: form.querySelector('#location')?.value.trim() || '',
+            service: form.querySelector('#type')?.value || '',
+            message: form.querySelector('#scope').value.trim(),
+        };
+
+        try {
+            const response = await fetch('https://contact-form.lonestarfauxscapes.workers.dev', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                if (statusEl) {
+                    statusEl.textContent = 'Thanks! We received your request. Expect a reply within one business day.';
+                    statusEl.className = 'form-status success';
+                }
+                launchConfetti();
+                form.reset();
+                form.querySelectorAll('.valid').forEach(el => el.classList.remove('valid'));
+                form.querySelectorAll('.floating-field').forEach(el => el.classList.remove('filled'));
+            } else {
+                throw new Error(result.error || 'Failed to send');
+            }
+        } catch (error) {
+            console.error('Form error:', error);
+            if (statusEl) {
+                statusEl.textContent = 'Something went wrong. Please call (760) 978-7335 or try again.';
+                statusEl.className = 'form-status error';
+            }
+        } finally {
+            ctaButton.disabled = false;
+            ctaButton.textContent = originalText;
         }
-        launchConfetti();
-        form.reset();
-        form.querySelectorAll('.valid').forEach(el => el.classList.remove('valid'));
-        form.querySelectorAll('.floating-field').forEach(el => el.classList.remove('filled'));
     });
     form.querySelectorAll('input, textarea, select').forEach(el => {
         el.addEventListener('blur', validate);

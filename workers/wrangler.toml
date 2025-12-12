@@ -1,0 +1,10 @@
+name = "contact-form"
+main = "contact-form.js"
+compatibility_date = "2024-01-01"
+
+# You'll need to add these secrets after deployment:
+# wrangler secret put RESEND_API_KEY
+# wrangler secret put TO_EMAIL
+
+[vars]
+# Non-secret environment variables can go here
