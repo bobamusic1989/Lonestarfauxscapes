@@ -167,6 +167,11 @@
             body::before {
                 display: none !important;
             }
+            /* Hero container needs high z-index to be above WebGL canvas */
+            #hero .container {
+                position: relative;
+                z-index: 20 !important;
+            }
             /* Hero content stays positioned for proper z-index stacking */
             .hero-content {
                 position: relative !important;
