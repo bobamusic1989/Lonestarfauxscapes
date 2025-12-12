@@ -39,7 +39,8 @@
       "Bash(npx wrangler deploy)",
       "Bash(curl:*)",
       "Bash(git pull:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Skill(frontend-design:frontend-design)"
     ],
     "deny": [],
     "ask": []
