@@ -31,7 +31,8 @@
       "Bash(else echo \"$file not found\")",
       "Bash(fi)",
       "Bash(git checkout:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git fetch:*)"
     ],
     "deny": [],
     "ask": []
