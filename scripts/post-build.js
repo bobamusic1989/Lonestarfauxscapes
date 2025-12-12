@@ -18,6 +18,7 @@ const filesToCopy = [
   { src: './split-text.js', dest: 'split-text.js' },
   { src: './card-effects.js', dest: 'card-effects.js' },
   { src: './reactive-effects.js', dest: 'reactive-effects.js' },
+  { src: './prefetch.js', dest: 'prefetch.js' },
   // CSS files
   { src: './navbar.css', dest: 'navbar.css' },
   { src: './enhancements.css', dest: 'enhancements.css' },

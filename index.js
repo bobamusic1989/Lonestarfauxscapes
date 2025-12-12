@@ -540,8 +540,36 @@
     window.addEventListener('mousemove', onMouseMove, { passive: true });
 
     const clock = new THREE.Clock();
+    let isAnimating = true;
+
+    // Pause animation when tab is hidden (saves GPU)
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        isAnimating = false;
+        clock.stop();
+      } else {
+        isAnimating = true;
+        clock.start();
+        animate();
+      }
+    });
+
+    // Pause animation when canvas is scrolled out of view
+    const visibilityObserver = new IntersectionObserver((entries) => {
+      const isVisible = entries[0].isIntersecting;
+      if (!isVisible) {
+        isAnimating = false;
+        clock.stop();
+      } else if (!document.hidden) {
+        isAnimating = true;
+        clock.start();
+        animate();
+      }
+    }, { threshold: 0 });
+    visibilityObserver.observe(container);
 
     const animate = () => {
+      if (!isAnimating) return;
       requestAnimationFrame(animate);
 
       const time = clock.getElapsedTime();
