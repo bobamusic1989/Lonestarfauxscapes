@@ -513,10 +513,6 @@
             min-height: 100vh;
             min-height: 100svh; /* stable viewport height for iOS */
         }
-        #hero .container {
-            position: relative;
-            z-index: 20;
-        }
         #hero::after {
             content: '';
             position: absolute;
@@ -1393,8 +1389,6 @@
         <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
         <div class="hero-gradient-glow hero-gradient-glow-1" aria-hidden="true"></div>
         <div class="hero-gradient-glow hero-gradient-glow-2" aria-hidden="true"></div>
-        <!-- WebGL Target -->
-        <div id="canvas-container"></div>
 
         <div class="container">
             <div class="hero-content">
@@ -1431,6 +1425,8 @@
               </picture>
                     <div class="hero-blend"></div>
             </div>
+            <!-- WebGL Canvas - layered on top of hero-media, below text -->
+            <div id="canvas-container"></div>
             <div class="hero-motif"></div>
         </div>
     </section>
