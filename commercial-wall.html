@@ -17,20 +17,35 @@
   <meta name="twitter:title" content="Commercial Wall Covering | Lone Star Faux Scapes">
   <meta name="twitter:description" content="Commercial artificial hedge wall covering for hospitality, retail, and multifamily facades across Texas.">
   <meta name="twitter:image" content="https://lonestarfauxscapes.com/images/commercial/commercial-1.png">
+  <!-- JSON-LD Structured Data (2025 Schema.org Best Practices) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://lonestarfauxscapes.com/commercial-wall.html#service",
     "name": "Commercial Wall Covering Installation",
-    "provider": { "@type": "LocalBusiness", "name": "Lone Star Faux Scapes" },
+    "description": "Commercial artificial hedge wall covering for hospitality, retail, and multifamily facades in Texas. Features fire-rated NFPA 701 Method 2 certified materials, UV-stabilized foliage for outdoor applications, custom panel sizing, and professional turnkey installation.",
+    "provider": { "@id": "https://lonestarfauxscapes.com/#organization" },
     "areaServed": [
-      { "@type": "City", "name": "Austin", "addressRegion": "TX" },
-      { "@type": "City", "name": "Dallas", "addressRegion": "TX" },
-      { "@type": "City", "name": "Houston", "addressRegion": "TX" },
-      { "@type": "City", "name": "San Antonio", "addressRegion": "TX" }
+      { "@type": "State", "name": "Texas", "sameAs": "https://en.wikipedia.org/wiki/Texas" }
     ],
     "serviceType": "Commercial Wall Covering Installation",
-    "priceRange": "$$"
+    "termsOfService": "https://lonestarfauxscapes.com/pricing.html",
+    "serviceOutput": "Installed commercial artificial hedge wall covering",
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Hotels, Restaurants, Retail, Multifamily Properties"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Commercial Wall Covering Options",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fire-Rated NFPA 701 Wall Covering" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hotel and Hospitality Facade Greenery" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retail Storefront Green Walls" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multifamily Amenity Wall Covering" } }
+      ]
+    }
   }
   </script>
   <script type="application/ld+json">
@@ -260,7 +275,21 @@
     }
     .hero { padding: clamp(7rem, 10vw, 9rem) 0 3rem; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(5,8,6,0.7), rgba(16,26,22,0.9)); z-index: 0; }
-    .hero::after { content: ''; position: absolute; inset: 0; background: url('images/commercial/commercial-1.png') center/cover no-repeat; opacity: 0.25; z-index: 0; }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/commercial/commercial-1-800w.png');
+      background-image: image-set(
+        url('images/commercial/commercial-1.webp') type('image/webp'),
+        url('images/commercial/commercial-1-800w.png') type('image/png')
+      );
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.25;
+      z-index: 0;
+    }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
     @media (min-width: 980px) { .hero-grid { grid-template-columns: 1.05fr 0.95fr; } }
     .hero h1 { font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size: clamp(2.6rem, 4vw, 3.8rem); margin: 0 0 0.75rem; letter-spacing: -0.03em; color: #fff; }
@@ -325,7 +354,6 @@
     }
   </style>
     <link rel="preload" as="image" href="images/commercial/commercial-1.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/commercial/commercial-1.png" type="image/png">
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="navbar.css">
 </head>

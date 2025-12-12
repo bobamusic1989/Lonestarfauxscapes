@@ -23,21 +23,20 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <meta name="theme-color" content="#050a07">
 
+  <!-- JSON-LD Structured Data (2025 Schema.org Best Practices) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": "https://lonestarfauxscapes.com/artificial-boxwood-hedge.html#product",
     "name": "Custom Artificial Boxwood Hedge",
     "description": "Custom artificial boxwood hedges built to your specifications. Available as mobile hedges on casters for events, weddings, and trade shows, or permanent installations for homes and businesses.",
     "image": "https://lonestarfauxscapes.com/images/hedges/hedge-privacy-1.jpg",
     "brand": {
-      "@type": "Brand",
-      "name": "Lone Star Faux Scapes"
+      "@id": "https://lonestarfauxscapes.com/#organization"
     },
     "manufacturer": {
-      "@type": "Organization",
-      "name": "Lone Star Faux Scapes",
-      "url": "https://lonestarfauxscapes.com"
+      "@id": "https://lonestarfauxscapes.com/#organization"
     },
     "offers": {
       "@type": "AggregateOffer",
@@ -189,7 +188,21 @@
 
     .hero { padding: clamp(7rem, 10vw, 9rem) 0 3rem; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(5,8,6,0.74), rgba(17,26,22,0.9)); z-index: 0; }
-    .hero::after { content: ''; position: absolute; inset: 0; background: url('images/hedges/hedge-privacy-1.jpg') center/cover no-repeat; opacity: 0.25; z-index: 0; }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hedges/hedge-privacy-1-1200w.jpg');
+      background-image: image-set(
+        url('images/hedges/hedge-privacy-1-1200w.webp') type('image/webp'),
+        url('images/hedges/hedge-privacy-1-1200w.jpg') type('image/jpeg')
+      );
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.25;
+      z-index: 0;
+    }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
     @media (min-width: 980px) { .hero-grid { grid-template-columns: 1.1fr 0.9fr; } }
     .hero h1 { font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size: clamp(2.4rem, 4vw, 3.4rem); margin: 0 0 0.75rem; letter-spacing: -0.03em; color: #fff; line-height: 1.1; }

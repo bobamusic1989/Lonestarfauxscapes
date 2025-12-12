@@ -38,8 +38,7 @@
     <meta property="og:image:height" content="800">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://lonestarfauxscapes.com/images/hero/hero-main-1200w.jpg">
-    <link rel="preload" as="image" href="images/hero/hero-main.avif" type="image/avif">
-    <link rel="preload" as="image" href="images/hero/hero-main.jpg" type="image/jpeg" media="(max-width: 767px)">
+    <!-- Hero image is marked fetchpriority="high" in markup -->
 
     <!-- GSAP for animations - only load on desktop -->
     <script>
@@ -50,65 +49,143 @@
     </script>
     <!-- Three.js loaded lazily when canvas is visible -->
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data (Schema.org 2025 Best Practices) -->
+    <!-- Organization: Central entity for brand recognition by AI and search engines -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://lonestarfauxscapes.com/#organization",
       "name": "Lone Star Faux Scapes",
-      "image": "https://lonestarfauxscapes.com/images/hero/hero-main-1200w.jpg",
-      "telephone": "(760) 978-7335",
+      "alternateName": "Lone Star Faux Scapes",
       "url": "https://lonestarfauxscapes.com",
-      "areaServed": [
-        { "@type": "City", "name": "Austin" },
-        { "@type": "City", "name": "Dallas" },
-        { "@type": "City", "name": "Houston" },
-        { "@type": "City", "name": "San Antonio" }
-      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lonestarfauxscapes.com/images/logo.svg",
+        "width": 200,
+        "height": 60
+      },
+      "image": "https://lonestarfauxscapes.com/images/hero/hero-main-1200w.jpg",
+      "description": "Design and installation of custom artificial hedges, faux living walls, and privacy solutions across Texas. Specializing in UV-stabilized, fire-rated (NFPA 701) artificial greenery for residential and commercial properties.",
+      "telephone": "(760) 978-7335",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card, Check",
       "address": {
         "@type": "PostalAddress",
         "addressRegion": "TX",
         "addressCountry": "US"
       },
-      "description": "Design and installation of custom artificial hedges, faux living walls, faux hedges, and privacy walls across Texas.",
-      "priceRange": "$$"
+      "areaServed": [
+        { "@type": "State", "name": "Texas", "sameAs": "https://en.wikipedia.org/wiki/Texas" },
+        { "@type": "City", "name": "Austin", "sameAs": "https://en.wikipedia.org/wiki/Austin,_Texas" },
+        { "@type": "City", "name": "Dallas", "sameAs": "https://en.wikipedia.org/wiki/Dallas" },
+        { "@type": "City", "name": "Houston", "sameAs": "https://en.wikipedia.org/wiki/Houston" },
+        { "@type": "City", "name": "San Antonio", "sameAs": "https://en.wikipedia.org/wiki/San_Antonio" },
+        { "@type": "City", "name": "Fort Worth", "sameAs": "https://en.wikipedia.org/wiki/Fort_Worth,_Texas" },
+        { "@type": "City", "name": "Plano", "sameAs": "https://en.wikipedia.org/wiki/Plano,_Texas" },
+        { "@type": "City", "name": "Irving", "sameAs": "https://en.wikipedia.org/wiki/Irving,_Texas" },
+        { "@type": "City", "name": "Frisco", "sameAs": "https://en.wikipedia.org/wiki/Frisco,_Texas" },
+        { "@type": "City", "name": "Arlington", "sameAs": "https://en.wikipedia.org/wiki/Arlington,_Texas" },
+        { "@type": "City", "name": "Sugar Land", "sameAs": "https://en.wikipedia.org/wiki/Sugar_Land,_Texas" },
+        { "@type": "City", "name": "The Woodlands", "sameAs": "https://en.wikipedia.org/wiki/The_Woodlands,_Texas" }
+      ],
+      "knowsAbout": [
+        "Artificial hedge installation",
+        "Faux living wall installation",
+        "Privacy wall construction",
+        "Fence extensions",
+        "Commercial artificial greenery",
+        "Fire-rated NFPA 701 foliage",
+        "UV-stabilized artificial plants",
+        "Acoustic wall panels"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Artificial Greenery Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Residential Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Privacy Hedge Installation" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fence Extension Installation" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool Privacy Walls" } }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Commercial Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Living Wall Installation" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lobby and Amenity Walls" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fire-Rated Facade Screening" } }
+            ]
+          }
+        ]
+      }
     }
     </script>
+    <!-- Service: Artificial Hedge Installation -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": "https://lonestarfauxscapes.com/#service-hedge",
       "name": "Artificial Hedge Installation",
-      "provider": { "@type": "LocalBusiness", "name": "Lone Star Faux Scapes" },
-      "areaServed": "Texas",
-      "serviceType": "Artificial Hedge Installation"
+      "description": "Custom artificial hedge installation for fences, facades, and perimeters. Includes UV-stabilized foliage, custom panel sizing, fire-rated options (NFPA 701 Method 2), and acoustic backing upgrades.",
+      "provider": { "@id": "https://lonestarfauxscapes.com/#organization" },
+      "areaServed": { "@type": "State", "name": "Texas" },
+      "serviceType": "Artificial Hedge Installation",
+      "termsOfService": "https://lonestarfauxscapes.com/pricing.html",
+      "serviceOutput": "Installed artificial hedge panels with custom framing"
     }
     </script>
+    <!-- Service: Artificial Living Wall Installation -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": "https://lonestarfauxscapes.com/#service-living-wall",
       "name": "Artificial Living Wall Installation",
-      "provider": { "@type": "LocalBusiness", "name": "Lone Star Faux Scapes" },
-      "areaServed": "Texas",
-      "serviceType": "Artificial Living Wall Installation"
+      "description": "Custom faux living wall installation for lobbies, amenities, and feature walls. Mixed foliage designs, fire-rated options for commercial compliance, and custom frame fabrication.",
+      "provider": { "@id": "https://lonestarfauxscapes.com/#organization" },
+      "areaServed": { "@type": "State", "name": "Texas" },
+      "serviceType": "Artificial Living Wall Installation",
+      "termsOfService": "https://lonestarfauxscapes.com/pricing.html",
+      "serviceOutput": "Installed faux living wall with custom foliage design"
     }
     </script>
+    <!-- Service: Fence Extensions -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://lonestarfauxscapes.com/#service-fence-extensions",
+      "name": "Fence Extension Installation",
+      "description": "Privacy fence extensions using artificial hedge panels. Adds height to existing fences without structural modification, HOA-friendly design, and custom height options.",
+      "provider": { "@id": "https://lonestarfauxscapes.com/#organization" },
+      "areaServed": { "@type": "State", "name": "Texas" },
+      "serviceType": "Fence Extension Installation",
+      "serviceOutput": "Extended fence height with artificial hedge topper"
+    }
+    </script>
+    <!-- FAQPage: Helps AI systems and voice assistants answer questions about the business -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What is the lifespan of the foliage?", "acceptedAnswer": { "@type": "Answer", "text": "Engineered for longevity. Our UV-stabilized polymers are rated for 5-8 years of direct Texas sun exposure with minimal degradation, and 10+ years for shaded or indoor applications." } },
-        { "@type": "Question", "name": "Is it fire safe?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We offer commercial-grade, fire-retardant foliage that meets NFPA 701 Method 2, essential for hotel lobbies, restaurants, and high-density housing. Always ask for the test." } },
-        { "@type": "Question", "name": "How is it installed?", "acceptedAnswer": { "@type": "Answer", "text": "We use a proprietary grid system anchored to your existing wall or a custom-fabricated steel frame. The process is clean, rapid, and non-intrusive." } },
-        { "@type": "Question", "name": "Does it require maintenance?", "acceptedAnswer": { "@type": "Answer", "text": "Zero organic maintenance. No water, no fertilizer, no trimming. A simple rinse with water once or twice a year is all that is needed to keep dust at bay." } },
-        { "@type": "Question", "name": "Do you install artificial hedges and living walls in Texas?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We install artificial hedges, faux hedges, and artificial living walls statewide in Texas, including Austin, Dallas, Houston, and San Antonio." } },
-        { "@type": "Question", "name": "What is the difference between faux living walls and artificial hedges?", "acceptedAnswer": { "@type": "Answer", "text": "Faux living walls are vertical panels with layered foliage for feature walls and interiors. Artificial hedges are dense privacy panels for fences and facades. We fabricate both for your dimensions." } },
+        { "@type": "Question", "name": "What is the lifespan of artificial hedge foliage?", "acceptedAnswer": { "@type": "Answer", "text": "Our UV-stabilized polymers are rated for 5-8 years of direct Texas sun exposure with minimal degradation, and 10+ years for shaded or indoor applications." } },
+        { "@type": "Question", "name": "Are artificial hedges fire safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We offer commercial-grade, fire-retardant foliage that meets NFPA 701 Method 2 certification, essential for hotel lobbies, restaurants, and high-density housing." } },
+        { "@type": "Question", "name": "How are artificial hedges installed?", "acceptedAnswer": { "@type": "Answer", "text": "We use a proprietary grid system anchored to your existing wall or a custom-fabricated steel frame. The process is clean, rapid, and non-intrusive." } },
+        { "@type": "Question", "name": "Do artificial hedges require maintenance?", "acceptedAnswer": { "@type": "Answer", "text": "Zero organic maintenance. No water, no fertilizer, no trimming. A simple rinse with water once or twice a year is all that is needed to keep dust at bay." } },
+        { "@type": "Question", "name": "Where does Lone Star Faux Scapes install artificial hedges?", "acceptedAnswer": { "@type": "Answer", "text": "We install artificial hedges and faux living walls statewide in Texas, including Austin, Dallas, Houston, San Antonio, Fort Worth, Plano, Irving, Frisco, Arlington, Sugar Land, and The Woodlands." } },
+        { "@type": "Question", "name": "What is the difference between faux living walls and artificial hedges?", "acceptedAnswer": { "@type": "Answer", "text": "Faux living walls are vertical panels with layered foliage for feature walls and interiors. Artificial hedges are dense privacy panels for fences and facades. We fabricate both for custom dimensions." } },
         { "@type": "Question", "name": "Can you customize frames and panels?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build custom frames and panels to fit your wall, fence, or structure. That includes corner returns, logo recesses, and mixed foliage patterns for a tailored look." } },
-        { "@type": "Question", "name": "How fast is installation?", "acceptedAnswer": { "@type": "Answer", "text": "Most artificial hedge and faux living wall installs are completed in days, not weeks. We pre-fabricate panels offsite and install with minimal disruption." } },
+        { "@type": "Question", "name": "How fast is artificial hedge installation?", "acceptedAnswer": { "@type": "Answer", "text": "Most artificial hedge and faux living wall installs are completed in days, not weeks. We pre-fabricate panels offsite and install with minimal disruption." } },
         { "@type": "Question", "name": "Are faux living walls HOA friendly?", "acceptedAnswer": { "@type": "Answer", "text": "They are typically HOA friendly because they are non-invasive, do not require irrigation, and keep a consistent appearance. We provide photos and specs to support HOA approvals." } },
-        { "@type": "Question", "name": "Do you offer acoustic options?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can add acoustic backing to artificial hedge and artificial living wall systems to reduce noise for alleys, patios, and equipment screens." } }
+        { "@type": "Question", "name": "Do you offer acoustic options for artificial hedges?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can add acoustic backing to artificial hedge and artificial living wall systems to reduce noise for alleys, patios, and equipment screens." } }
       ]
     }
     </script>
@@ -1446,14 +1523,22 @@
         <!-- Background image layer (z-index: 1) -->
         <div class="hero-media image-parallax" data-parallax>
             <picture>
-                <source type="image/avif" srcset="images/hero/hero-main.avif" media="(min-width: 768px)">
-                <source type="image/avif" srcset="images/hero/hero-main.avif">
-                <source srcset="images/hero/hero-main.jpg" media="(min-width: 768px)">
-                <picture>
-                    <source srcset="images/hero/hero-main-400w.webp 400w, images/hero/hero-main-800w.webp 800w, images/hero/hero-main-1200w.webp 1200w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px" type="image/webp">
-                    <source srcset="images/hero/hero-main-400w.jpg 400w, images/hero/hero-main-800w.jpg 800w, images/hero/hero-main-1200w.jpg 1200w" sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px">
-                    <img src="images/hero/hero-main.jpg" alt="Lush artificial greenery wall installation" fetchpriority="high" decoding="async" width="1600" height="1067">
-                </picture>
+                <source
+                  srcset="images/hero/hero-main-400w.webp 400w, images/hero/hero-main-800w.webp 800w, images/hero/hero-main-1200w.webp 1200w"
+                  sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px"
+                  type="image/webp">
+                <source
+                  srcset="images/hero/hero-main-400w.jpg 400w, images/hero/hero-main-800w.jpg 800w, images/hero/hero-main-1200w.jpg 1200w"
+                  sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px"
+                  type="image/jpeg">
+                <img
+                  src="images/hero/hero-main-800w.jpg"
+                  alt="Lush artificial greenery wall installation"
+                  fetchpriority="high"
+                  decoding="async"
+                  loading="eager"
+                  width="1200"
+                  height="800">
             </picture>
             <div class="hero-blend"></div>
         </div>

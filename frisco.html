@@ -17,17 +17,19 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://lonestarfauxscapes.com/images/hero/hero-main-1200w.jpg">
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD Structured Data (2025 Schema.org Best Practices) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "HomeAndConstructionBusiness",
+    "@id": "https://lonestarfauxscapes.com/frisco.html#location",
     "name": "Lone Star Faux Scapes - Frisco",
     "image": "https://lonestarfauxscapes.com/images/hero/hero-main-1200w.jpg",
     "telephone": "(760) 978-7335",
     "url": "https://lonestarfauxscapes.com/frisco.html",
     "description": "Professional artificial hedge and living wall installation in Frisco, Texas. Custom fabrication for premium residential estates, $31 Corridor businesses, and The Star district properties.",
     "priceRange": "$$",
+    "parentOrganization": { "@id": "https://lonestarfauxscapes.com/#organization" },
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": "33.1507",
@@ -40,7 +42,7 @@
       "addressCountry": "US"
     },
     "areaServed": [
-      { "@type": "City", "name": "Frisco", "addressRegion": "TX" },
+      { "@type": "City", "name": "Frisco", "sameAs": "https://en.wikipedia.org/wiki/Frisco,_Texas" },
       { "@type": "Place", "name": "The Star District" },
       { "@type": "Place", "name": "Stonebriar" },
       { "@type": "Place", "name": "Hall Park" },
@@ -48,7 +50,7 @@
       { "@type": "Place", "name": "Newman Village" },
       { "@type": "Place", "name": "Prosper" }
     ],
-    "serviceType": ["Artificial Hedge Installation", "Living Wall Installation", "Privacy Wall Installation"],
+    "knowsAbout": ["Artificial hedge installation", "Faux living wall installation", "Privacy wall construction", "Fence extensions", "Fire-rated NFPA 701 foliage"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Artificial Greenery Services",
@@ -74,19 +76,17 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="/" class="nav-logo">
-        <img src="images/logo.svg" alt="Lone Star Faux Scapes" width="180" height="40">
-      </a>
+      <a href="index.html" class="nav-logo">Lone Star Faux Scapes</a>
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu">
-        <li><a href="/products">Products</a></li>
-        <li><a href="/gallery">Gallery</a></li>
-        <li><a href="/installation">Installation</a></li>
-        <li><a href="/commercial">Commercial</a></li>
-        <li><a href="/residential">Residential</a></li>
-        <li><a href="/#contact" class="nav-cta">Get Quote</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="installation.html">Installation</a></li>
+        <li><a href="commercial.html">Commercial</a></li>
+        <li><a href="residential.html">Residential</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Get Quote</a></li>
       </ul>
     </div>
   </nav>
@@ -102,8 +102,8 @@
       <h1>Artificial Hedge <span>Installation</span> in Frisco, TX</h1>
       <p>Premium custom artificial hedge solutions for Frisco's master-planned communities, thriving business corridor, and world-class entertainment venues. Every project designed specifically for your space.</p>
       <div class="hero-cta">
-        <a href="/#contact" class="btn btn-primary">Get Custom Quote</a>
-        <a href="/gallery" class="btn btn-outline">View Our Work</a>
+        <a href="index.html#contact" class="btn btn-primary">Get Custom Quote</a>
+        <a href="gallery.html" class="btn btn-outline">View Our Work</a>
       </div>
       <div class="hero-pills">
         <span class="pill">100% Custom Fabrication</span>
@@ -269,7 +269,7 @@
           </ul>
         </div>
         <div class="why-custom-image">
-          <img src="images/gallery/image6.jpg" alt="Custom hedge installation in Frisco" loading="lazy">
+          <img src="images/hedges/hedge-privacy-1.jpg" alt="Custom hedge installation in Frisco" loading="lazy">
         </div>
       </div>
     </div>
@@ -337,8 +337,8 @@
         <h2>Ready for Your Custom Frisco Installation?</h2>
         <p>Every project starts with a free consultation. We'll visit your property, discuss your vision, and provide a detailed quote for your custom artificial hedge installation.</p>
         <div class="cta-buttons">
-          <a href="/#contact" class="btn btn-primary">Request Free Consultation</a>
-          <a href="tel:+1234567890" class="btn btn-outline">Call Us Today</a>
+          <a href="index.html#contact" class="btn btn-primary">Request Free Consultation</a>
+          <a href="tel:+17609787335" class="btn btn-outline">Call Us Today</a>
         </div>
       </div>
     </div>
@@ -349,34 +349,34 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/logo.svg" alt="Lone Star Faux Scapes" width="150" height="33">
+          <a href="index.html" class="footer-logo">Lone Star Faux Scapes</a>
           <p>Texas's premier artificial hedge and living wall installation company. Custom solutions for residential and commercial properties.</p>
         </div>
         <div class="footer-links">
           <h4>Products</h4>
           <ul>
-            <li><a href="/artificial-hedge">Artificial Hedges</a></li>
-            <li><a href="/living-wall">Living Walls</a></li>
-            <li><a href="/fence-extensions">Fence Extensions</a></li>
-            <li><a href="/commercial-wall">Commercial Walls</a></li>
+            <li><a href="artificial-hedge.html">Artificial Hedges</a></li>
+            <li><a href="living-wall.html">Living Walls</a></li>
+            <li><a href="fence-extensions.html">Fence Extensions</a></li>
+            <li><a href="commercial-wall.html">Commercial Walls</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Services</h4>
           <ul>
-            <li><a href="/installation">Installation</a></li>
-            <li><a href="/commercial">Commercial</a></li>
-            <li><a href="/residential">Residential</a></li>
-            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="installation.html">Installation</a></li>
+            <li><a href="commercial.html">Commercial</a></li>
+            <li><a href="residential.html">Residential</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Service Areas</h4>
           <ul>
-            <li><a href="/dallas">Dallas</a></li>
-            <li><a href="/frisco">Frisco</a></li>
-            <li><a href="/plano">Plano</a></li>
-            <li><a href="/fort-worth">Fort Worth</a></li>
+            <li><a href="dallas.html">Dallas</a></li>
+            <li><a href="frisco.html">Frisco</a></li>
+            <li><a href="plano.html">Plano</a></li>
+            <li><a href="fort-worth.html">Fort Worth</a></li>
           </ul>
         </div>
       </div>

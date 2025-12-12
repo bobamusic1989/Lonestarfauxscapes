@@ -17,20 +17,31 @@
   <meta name="twitter:title" content="Artificial Hedge Installation | Lone Star Faux Scapes">
   <meta name="twitter:description" content="Artificial hedge installation for fences, facades, and perimeters across Texas. Custom heights, fire-rated options, acoustic upgrades.">
   <meta name="twitter:image" content="https://lonestarfauxscapes.com/images/hedges/hedge-privacy-1.jpg">
+  <!-- JSON-LD Structured Data (2025 Schema.org Best Practices) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://lonestarfauxscapes.com/artificial-hedge.html#service",
     "name": "Artificial Hedge Installation",
-    "provider": { "@type": "LocalBusiness", "name": "Lone Star Faux Scapes" },
+    "description": "Custom artificial hedge installation for fences, facades, and perimeters across Texas. Features UV-stabilized foliage rated for 5-8 years in direct sun, fire-rated options meeting NFPA 701 Method 2 certification, custom panel sizing, and acoustic backing upgrades. Installed by professional crews with fast turnarounds.",
+    "provider": { "@id": "https://lonestarfauxscapes.com/#organization" },
     "areaServed": [
-      { "@type": "City", "name": "Austin", "addressRegion": "TX" },
-      { "@type": "City", "name": "Dallas", "addressRegion": "TX" },
-      { "@type": "City", "name": "Houston", "addressRegion": "TX" },
-      { "@type": "City", "name": "San Antonio", "addressRegion": "TX" }
+      { "@type": "State", "name": "Texas", "sameAs": "https://en.wikipedia.org/wiki/Texas" }
     ],
     "serviceType": "Artificial Hedge Installation",
-    "priceRange": "$$"
+    "termsOfService": "https://lonestarfauxscapes.com/pricing.html",
+    "serviceOutput": "Installed artificial hedge panels with custom framing",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Artificial Hedge Options",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard UV-Stabilized Hedge Panels" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fire-Rated NFPA 701 Hedge Panels" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acoustic-Backed Hedge Panels" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Height Hedge Extensions" } }
+      ]
+    }
   }
   </script>
   <script type="application/ld+json">
@@ -260,7 +271,21 @@
     }
     .hero { padding: clamp(7rem, 10vw, 9rem) 0 3rem; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(5,8,6,0.74), rgba(17,26,22,0.9)); z-index: 0; }
-    .hero::after { content: ''; position: absolute; inset: 0; background: url('images/hedges/hedge-privacy-1.jpg') center/cover no-repeat; opacity: 0.28; z-index: 0; }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hedges/hedge-privacy-1-1200w.jpg');
+      background-image: image-set(
+        url('images/hedges/hedge-privacy-1-1200w.webp') type('image/webp'),
+        url('images/hedges/hedge-privacy-1-1200w.jpg') type('image/jpeg')
+      );
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.28;
+      z-index: 0;
+    }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
     @media (min-width: 980px) { .hero-grid { grid-template-columns: 1.05fr 0.95fr; } }
     .hero h1 { font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size: clamp(2.6rem, 4vw, 3.8rem); margin: 0 0 0.75rem; letter-spacing: -0.03em; color: #fff; }
@@ -342,8 +367,6 @@
       * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
     }
   </style>
-    <link rel="preload" as="image" href="images/hedges/hedge-privacy-2.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/hedges/hedge-privacy-2.jpg" type="image/jpeg">
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="navbar.css">
 </head>

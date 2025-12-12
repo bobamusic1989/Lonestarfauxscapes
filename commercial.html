@@ -22,11 +22,52 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <meta name="theme-color" content="#050a07">
 
+  <!-- JSON-LD Structured Data (2025 Schema.org Best Practices) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://lonestarfauxscapes.com/commercial.html#service",
+    "name": "Commercial Artificial Hedge and Living Wall Installation",
+    "description": "Commercial artificial hedge and living wall installation for hotels, restaurants, retail, and multifamily properties in Texas. Features fire-rated NFPA 701 Method 2 certified materials, UV-stabilized foliage, custom fabrication, and professional turnkey installation with fast turnarounds.",
+    "provider": { "@id": "https://lonestarfauxscapes.com/#organization" },
+    "areaServed": [
+      { "@type": "State", "name": "Texas", "sameAs": "https://en.wikipedia.org/wiki/Texas" }
+    ],
+    "serviceType": "Commercial Artificial Greenery Installation",
+    "termsOfService": "https://lonestarfauxscapes.com/pricing.html",
+    "serviceOutput": "Installed commercial artificial hedges and living walls",
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Hotels, Restaurants, Retail Centers, Multifamily Properties, Corporate Campuses"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Commercial Greenery Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hotel Lobby and Amenity Living Walls" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Restaurant Patio Privacy Hedges" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retail Facade Green Walls" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multifamily Pool and Amenity Screening" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fire-Rated NFPA 701 Compliant Installations" } }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lonestarfauxscapes.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Commercial", "item": "https://lonestarfauxscapes.com/commercial.html" }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/living_walls/living-wall-2.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/living_walls/living-wall-2.jpg" type="image/jpeg">
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="navbar.css">
   <style>
@@ -269,7 +310,7 @@
     .hero {
       background:
         linear-gradient(115deg, rgba(5,10,7,0.82) 0%, rgba(5,10,7,0.55) 45%, rgba(5,10,7,0.68) 70%),
-        url('images/commercial/commercial-2.jpg') center/cover no-repeat;
+        url('images/commercial/commercial-2-1200w.jpg') center/cover no-repeat;
       padding: clamp(8rem, 12vw, 10rem) 0 70px;
       position: relative;
       overflow: hidden;

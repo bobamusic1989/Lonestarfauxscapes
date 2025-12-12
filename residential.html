@@ -7,14 +7,42 @@
   <meta name="description" content="Residential artificial hedges, fence extensions, and faux living walls that deliver instant privacy for backyards, pools, and patios. HOA-friendly, custom heights, and fast installs with acoustic and fire-rated options.">
   <meta name="keywords" content="residential artificial hedges, faux living wall home, fence extension, instant privacy, HOA friendly, custom heights, acoustic backing, fire-rated options">
   <link rel="canonical" href="https://lonestarfauxscapes.com/residential.html">
+  <!-- JSON-LD Structured Data (2025 Schema.org Best Practices) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://lonestarfauxscapes.com/residential.html#service",
     "name": "Residential Artificial Hedge and Living Wall Installation",
-    "provider": { "@type": "LocalBusiness", "name": "Lone Star Faux Scapes" },
-    "areaServed": "Texas",
-    "serviceType": "Residential Artificial Greenery Installation"
+    "description": "Residential artificial hedges, fence extensions, and faux living walls for instant backyard privacy in Texas. Features HOA-friendly designs, custom heights, acoustic backing options, and fire-rated materials. Professional installation with fast turnarounds.",
+    "provider": { "@id": "https://lonestarfauxscapes.com/#organization" },
+    "areaServed": [
+      { "@type": "State", "name": "Texas", "sameAs": "https://en.wikipedia.org/wiki/Texas" }
+    ],
+    "serviceType": "Residential Artificial Greenery Installation",
+    "termsOfService": "https://lonestarfauxscapes.com/pricing.html",
+    "serviceOutput": "Installed residential artificial hedges and living walls",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Residential Greenery Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Backyard Privacy Hedge Installation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool Privacy Walls and Screening" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fence Height Extensions" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Patio Living Walls" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HOA-Friendly Privacy Solutions" } }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lonestarfauxscapes.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Residential", "item": "https://lonestarfauxscapes.com/residential.html" }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -300,7 +328,21 @@
     }
     .hero { padding: clamp(7rem, 10vw, 9rem) 0 3.5rem; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(5,8,6,0.85), rgba(17,26,22,0.95)); z-index: 0; }
-    .hero::after { content: ''; position: absolute; inset: 0; background: url('images/hedges/hedge-privacy-1.jpg') center/cover no-repeat; opacity: 0.18; z-index: 0; }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hedges/hedge-privacy-1-1200w.jpg');
+      background-image: image-set(
+        url('images/hedges/hedge-privacy-1-1200w.webp') type('image/webp'),
+        url('images/hedges/hedge-privacy-1-1200w.jpg') type('image/jpeg')
+      );
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.18;
+      z-index: 0;
+    }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
     @media (min-width: 980px) { .hero-grid { grid-template-columns: 1.05fr 0.95fr; } }
     .hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.5rem); margin: 0 0 1rem; letter-spacing: -0.04em; font-weight: 800; line-height: 1.05; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
@@ -613,8 +655,6 @@
       * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
     }
   </style>
-    <link rel="preload" as="image" href="images/fence/fence-2.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/fence/fence-2.jpg" type="image/jpeg">
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="navbar.css">
 </head>
@@ -898,7 +938,7 @@
           </div>
           <div class="card">
             <h3>Reassurance</h3>
-            <p>Most homeowners don�t need fire-rated foliage, but when you do, we already have a tested option ready.</p>
+            <p>Most homeowners don't need fire-rated foliage, but when you do, we already have a tested option ready.</p>
             <details style="margin-top:0.5rem;">
               <summary style="cursor:pointer; color:var(--accent); font-weight:700;">Learn more about fire-rated foliage</summary>
               <p class="muted">Fire-rated options are available (NFPA 701 Method 2) with documentation for property managers or HOAs if needed. Fire-rated foliage costs more but required for many commercial projects, and we can use the same tested material for residential when requested.</p>
@@ -1085,7 +1125,7 @@
     <section class="section">
       <div class="container final-cta">
         <h3>Ready to stop sharing your yard with the neighbors?</h3>
-        <p>Custom height, HOA-friendly finishes, plus optional fire-rated and noise-reducing upgrades�all designed and installed for your home.</p>
+        <p>Custom height, HOA-friendly finishes, plus optional fire-rated and noise-reducing upgrades—all designed and installed for your home.</p>
         <div class="cta-row" style="justify-content:center;">
           <a class="btn btn-primary" href="index.html#contact">Plan My Residential Project</a>
           <a class="btn btn-secondary" href="#projects">See More Residential Photos</a>

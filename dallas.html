@@ -17,17 +17,19 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://lonestarfauxscapes.com/images/hero/hero-main-1200w.jpg">
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD Structured Data (2025 Schema.org Best Practices) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "HomeAndConstructionBusiness",
+    "@id": "https://lonestarfauxscapes.com/dallas.html#location",
     "name": "Lone Star Faux Scapes - Dallas",
     "image": "https://lonestarfauxscapes.com/images/hero/hero-main-1200w.jpg",
     "telephone": "(760) 978-7335",
     "url": "https://lonestarfauxscapes.com/dallas.html",
     "description": "Professional artificial hedge and living wall installation in Dallas, Texas. Custom fabrication, NFPA 701 fire-rated materials, and fast turnarounds for retail, hospitality, and estates.",
     "priceRange": "$$",
+    "parentOrganization": { "@id": "https://lonestarfauxscapes.com/#organization" },
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": "32.7767",
@@ -40,7 +42,7 @@
       "addressCountry": "US"
     },
     "areaServed": [
-      { "@type": "City", "name": "Dallas", "addressRegion": "TX" },
+      { "@type": "City", "name": "Dallas", "sameAs": "https://en.wikipedia.org/wiki/Dallas" },
       { "@type": "Place", "name": "Uptown Dallas" },
       { "@type": "Place", "name": "Highland Park" },
       { "@type": "Place", "name": "University Park" },
@@ -48,7 +50,7 @@
       { "@type": "Place", "name": "Knox-Henderson" },
       { "@type": "Place", "name": "Preston Hollow" }
     ],
-    "serviceType": ["Artificial Hedge Installation", "Living Wall Installation", "Privacy Wall Installation"],
+    "knowsAbout": ["Artificial hedge installation", "Faux living wall installation", "Privacy wall construction", "Fence extensions", "Fire-rated NFPA 701 foliage"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Artificial Greenery Services",
