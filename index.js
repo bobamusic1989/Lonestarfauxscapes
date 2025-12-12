@@ -271,12 +271,10 @@
     foliageTexture.wrapS = THREE.RepeatWrapping;
     foliageTexture.wrapT = THREE.RepeatWrapping;
 
-    // Reduced from 50x40=2000 to 35x28=980 for better performance
-    const numCols = 35;
-    const numRows = 28;
+    const numCols = 50;
+    const numRows = 40;
     const numInstances = numCols * numRows;
-    // Reduced segments from 16x16 to 8x8 for better performance
-    const geometry = new THREE.PlaneGeometry(1.2, 1.2, 8, 8);
+    const geometry = new THREE.PlaneGeometry(1.2, 1.2, 16, 16);
 
     const instancedGeometry = new THREE.InstancedBufferGeometry();
     instancedGeometry.index = geometry.index;
@@ -365,7 +363,7 @@
       }
 
       void main() {
-          vec2 cellUVSize = vec2(1.0/35.0, 1.0/28.0);
+          vec2 cellUVSize = vec2(1.0/50.0, 1.0/40.0);
           vUv = aUvOffset + uv * cellUVSize;
 
           vec2 flowSample = aOffset.xy * 0.03 + vec2(uTime * 0.018, -uTime * 0.009);
@@ -542,41 +540,9 @@
     window.addEventListener('mousemove', onMouseMove, { passive: true });
 
     const clock = new THREE.Clock();
-    let isVisible = true;
-    let animationId = null;
-
-    // Pause when tab is hidden
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        isVisible = false;
-        clock.stop();
-      } else {
-        isVisible = true;
-        clock.start();
-      }
-    });
-
-    // Pause when scrolled past hero
-    const heroSection = document.getElementById('hero');
-    if (heroSection) {
-      const visibilityObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          isVisible = entry.isIntersecting && !document.hidden;
-          if (isVisible) {
-            clock.start();
-          } else {
-            clock.stop();
-          }
-        });
-      }, { threshold: 0.1 });
-      visibilityObserver.observe(heroSection);
-    }
 
     const animate = () => {
-      animationId = requestAnimationFrame(animate);
-
-      // Skip render if not visible
-      if (!isVisible) return;
+      requestAnimationFrame(animate);
 
       const time = clock.getElapsedTime();
       material.uniforms.uTime.value = time;
