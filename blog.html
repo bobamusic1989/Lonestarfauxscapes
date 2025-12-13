@@ -924,73 +924,65 @@
   </script>
 
   <script>
-    (async function loadBlog() {
-      // Run immediately if DOM ready, otherwise wait
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadBlog);
-        return;
-      }
+    (function loadBlog() {
       const grid = document.getElementById('blog-grid');
       const yearSpan = document.getElementById('year');
       if (yearSpan) yearSpan.textContent = new Date().getFullYear().toString();
       if (!grid) return;
 
-      async function loadPosts(retries = 3) {
-        for (let i = 0; i < retries; i++) {
-          try {
-            const res = await fetch('/content/posts.json', { cache: 'no-store' });
-            if (!res.ok) throw new Error(`${res.status}`);
-            return await res.json();
-          } catch (err) {
-            if (i === retries - 1) throw err;
-            await new Promise(r => setTimeout(r, 500));
-          }
+      // Posts data embedded at build time - no fetch needed
+      const posts = [
+        {
+          "slug": "2025-12-12-article",
+          "title": "Artificial vs. Real Boxwood in Texas: Water, Maintenance, and Long-Term Value",
+          "date": "2025-12-12T00:00:00.000Z",
+          "image": "images/hedges/hedge-privacy-2-1200w.jpg",
+          "summary": "Weighing artificial fire resistant boxwood hedges against real plants? Explore drought tolerance, maintenance, and long-term value for Texas properties.",
+          "category": "Guides",
+          "tags": ["artificial boxwood hedge", "fire resistant boxwood", "Texas landscaping", "water conservation", "low maintenance"]
+        },
+        {
+          "slug": "sample-post",
+          "title": "5 Benefits of Artificial Hedges for Texas Properties",
+          "date": "2024-12-10T00:00:00.000Z",
+          "image": "images/hedges/hedge-privacy-1-1200w.jpg",
+          "summary": "Discover why artificial hedges are the smart choice for Texas homeowners and businesses looking for low-maintenance, year-round greenery.",
+          "category": "Guides",
+          "tags": ["artificial hedges", "Texas landscaping", "low maintenance", "water conservation"]
         }
-      }
+      ];
 
-      try {
-        const posts = await loadPosts();
+      posts
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .forEach((post, idx) => {
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.setAttribute('data-reveal', '');
+          if (idx % 3 === 1) card.setAttribute('data-delay', '1');
+          if (idx % 3 === 2) card.setAttribute('data-delay', '2');
 
-        posts
-          .sort((a, b) => new Date(b.date) - new Date(a.date))
-          .forEach((post, idx) => {
-            const card = document.createElement('article');
-            card.className = 'card';
-            card.setAttribute('data-reveal', '');
-            if (idx % 3 === 1) card.setAttribute('data-delay', '1');
-            if (idx % 3 === 2) card.setAttribute('data-delay', '2');
+          const imageSrc = (post.image || '').startsWith('/') ? post.image : `/${post.image || ''}`;
+          const postUrl = `/blog/${post.slug}.html`;
 
-            const imageSrc = (post.image || '').startsWith('/') ? post.image : `/${post.image || ''}`;
-            const postUrl = `/blog/${post.slug}.html`;
-
-            card.innerHTML = `
-              <div class="card-media">
-                <img src="${imageSrc}" alt="${post.title}" loading="lazy" decoding="async">
+          card.innerHTML = `
+            <div class="card-media">
+              <img src="${imageSrc}" alt="${post.title}" loading="lazy" decoding="async">
+            </div>
+            <div class="card-body">
+              <div class="meta-row">
+                <span class="date-pill">${new Date(post.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                <span style="color: rgba(255,255,255,0.7); font-weight: 700; letter-spacing: 0.02em;">${post.category || 'Guides'}</span>
               </div>
-              <div class="card-body">
-                <div class="meta-row">
-                  <span class="date-pill">${new Date(post.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                  <span style="color: rgba(255,255,255,0.7); font-weight: 700; letter-spacing: 0.02em;">${post.category || 'Guides'}</span>
-                </div>
-                <h3>${post.title}</h3>
-                <p>${post.summary || ''}</p>
-                <div class="pill-row">
-                  ${(post.tags || []).map((tag) => `<span class="pill">${tag}</span>`).join('')}
-                </div>
-                <a class="arrow-cta" href="${postUrl}">Read Article <span>&rarr;</span></a>
+              <h3>${post.title}</h3>
+              <p>${post.summary || ''}</p>
+              <div class="pill-row">
+                ${(post.tags || []).map((tag) => `<span class="pill">${tag}</span>`).join('')}
               </div>
-            `;
-            grid.appendChild(card);
-          });
-      } catch (err) {
-        console.warn('Blog load failed:', err);
-        grid.innerHTML = `
-          <div class="card" style="padding: 1.5rem;">
-            <h3>Unable to load posts</h3>
-            <p>Please refresh the page.</p>
-          </div>
-        `;
-      }
+              <a class="arrow-cta" href="${postUrl}">Read Article <span>&rarr;</span></a>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
     })();
   </script>
   <script defer src="reveal.js"></script>
