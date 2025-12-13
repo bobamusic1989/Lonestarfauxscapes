@@ -932,25 +932,38 @@
 
       // Posts data embedded at build time - no fetch needed
       const posts = [
-        {
-          "slug": "2025-12-12-article",
-          "title": "Artificial vs. Real Boxwood in Texas: Water, Maintenance, and Long-Term Value",
-          "date": "2025-12-12T00:00:00.000Z",
-          "image": "images/hedges/hedge-privacy-2-1200w.jpg",
-          "summary": "Weighing artificial fire resistant boxwood hedges against real plants? Explore drought tolerance, maintenance, and long-term value for Texas properties.",
-          "category": "Guides",
-          "tags": ["artificial boxwood hedge", "fire resistant boxwood", "Texas landscaping", "water conservation", "low maintenance"]
-        },
-        {
-          "slug": "sample-post",
-          "title": "5 Benefits of Artificial Hedges for Texas Properties",
-          "date": "2024-12-10T00:00:00.000Z",
-          "image": "images/hedges/hedge-privacy-1-1200w.jpg",
-          "summary": "Discover why artificial hedges are the smart choice for Texas homeowners and businesses looking for low-maintenance, year-round greenery.",
-          "category": "Guides",
-          "tags": ["artificial hedges", "Texas landscaping", "low maintenance", "water conservation"]
-        }
-      ];
+                {
+                        "slug": "2025-12-12-article",
+                        "title": "Artificial vs. Real Boxwood in Texas: Water, Maintenance, and Long-Term Value",
+                        "date": "2025-12-12T00:00:00.000Z",
+                        "image": "images/hedges/hedge-privacy-2-1200w.jpg",
+                        "summary": "Weighing artificial fire resistant boxwood hedges against real plants? Explore drought tolerance, maintenance, and long-term value for Texas properties.",
+                        "category": "Guides",
+                        "tags": [
+                                "artificial boxwood hedge",
+                                "fire resistant boxwood",
+                                "Texas landscaping",
+                                "water conservation",
+                                "low maintenance"
+                        ],
+                        "relatedUrl": ""
+                },
+                {
+                        "slug": "sample-post",
+                        "title": "5 Benefits of Artificial Hedges for Texas Properties",
+                        "date": "2024-12-10T00:00:00.000Z",
+                        "image": "images/hedges/hedge-privacy-1-1200w.jpg",
+                        "summary": "Discover why artificial hedges are the smart choice for Texas homeowners and businesses looking for low-maintenance, year-round greenery.",
+                        "category": "Guides",
+                        "tags": [
+                                "artificial hedges",
+                                "Texas landscaping",
+                                "low maintenance",
+                                "water conservation"
+                        ],
+                        "relatedUrl": ""
+                }
+        ];
 
       posts
         .sort((a, b) => new Date(b.date) - new Date(a.date))

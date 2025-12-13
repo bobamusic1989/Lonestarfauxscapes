@@ -105,10 +105,11 @@ const generatePostHTML = (post) => `<!DOCTYPE html>
     }
     #lsfs-nav {
       display: flex !important; align-items: center !important; justify-content: space-between !important;
-      padding: 0.6rem 1.25rem !important; width: 100% !important; position: relative !important; z-index: 1 !important;
-      transition: padding 0.5s cubic-bezier(0.4,0,0.2,1) !important;
+      height: 52px !important; min-height: 52px !important; padding: 0 1.25rem !important;
+      width: 100% !important; position: relative !important; z-index: 1 !important;
+      transition: height 0.5s cubic-bezier(0.4,0,0.2,1), padding 0.5s cubic-bezier(0.4,0,0.2,1) !important;
     }
-    #lsfs-header.scrolled #lsfs-nav { padding: 0.5rem 0.5rem !important; }
+    #lsfs-header.scrolled #lsfs-nav { height: 44px !important; min-height: 44px !important; padding: 0 0.5rem !important; }
     #lsfs-logo {
       font-size: 0.95rem !important; font-weight: 800 !important; color: #fff !important;
       text-transform: uppercase !important; letter-spacing: 0.08em !important; white-space: nowrap !important;
@@ -129,7 +130,7 @@ const generatePostHTML = (post) => `<!DOCTYPE html>
     .lsfs-link {
       font-size: 0.78rem !important; font-weight: 600 !important; color: rgba(255,255,255,0.75) !important;
       text-transform: uppercase !important; letter-spacing: 0.04em !important; white-space: nowrap !important;
-      transition: color 0.2s ease !important; position: relative !important;
+      line-height: 1 !important; transition: color 0.2s ease !important; position: relative !important;
       transform: translateZ(0) !important; -webkit-font-smoothing: antialiased !important;
       -moz-osx-font-smoothing: grayscale !important; backface-visibility: hidden !important;
     }
@@ -175,8 +176,8 @@ const generatePostHTML = (post) => `<!DOCTYPE html>
       #lsfs-header { width: 94% !important; max-width: none !important; border-radius: 20px !important; }
       #lsfs-header.scrolled { width: 94% !important; max-width: none !important; }
       #lsfs-header.scrolled #lsfs-logo { opacity: 1 !important; max-width: none !important; margin-right: 1rem !important; pointer-events: auto !important; }
-      #lsfs-nav { padding: 0.75rem 1rem !important; }
-      #lsfs-header.scrolled #lsfs-nav { padding: 0.6rem 1rem !important; }
+      #lsfs-nav { height: 56px !important; min-height: 56px !important; padding: 0 1rem !important; }
+      #lsfs-header.scrolled #lsfs-nav { height: 52px !important; min-height: 52px !important; padding: 0 1rem !important; }
     }
     #lsfs-mobile-menu {
       position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
@@ -624,6 +625,22 @@ async function buildBlog() {
   const postsData = posts.map(({ content, ...rest }) => rest);
   fs.writeFileSync(POSTS_JSON, JSON.stringify(postsData, null, 2));
   console.log(`  Generated: ${POSTS_JSON}`);
+
+  // Update blog.html with embedded posts data
+  const BLOG_HTML = './blog.html';
+  if (fs.existsSync(BLOG_HTML)) {
+    let blogHtml = fs.readFileSync(BLOG_HTML, 'utf-8');
+    const postsJson = JSON.stringify(postsData, null, 8).replace(/^/gm, '        ').trim();
+
+    // Replace the posts array in the script
+    blogHtml = blogHtml.replace(
+      /\/\/ Posts data embedded at build time[^;]*const posts = \[[\s\S]*?\];/,
+      `// Posts data embedded at build time - no fetch needed\n      const posts = ${postsJson};`
+    );
+
+    fs.writeFileSync(BLOG_HTML, blogHtml);
+    console.log(`  Updated: ${BLOG_HTML} with ${postsData.length} posts`);
+  }
 
   console.log(`Blog build complete! ${posts.length} posts published, ${scheduledPosts.length} scheduled.`);
 
