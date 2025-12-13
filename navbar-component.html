@@ -1,7 +1,8 @@
 <!-- STANDARDIZED NAVBAR COMPONENT -->
 <!-- Copy this exact structure to all pages -->
 
-<!-- Navbar Styles (add to <style> section) -->
+<!-- Navbar Styles (add to <style>
+    html { overflow-y: scroll; } section) -->
 <style>
   /* Floating Island Header */
   #main-header {
@@ -13,7 +14,9 @@
     max-width: 1200px;
     z-index: 1000;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    padding: 1rem 1.75rem;
+    height: 64px;
+      min-height: 64px;
+      padding: 0 1.75rem;
     border-radius: 28px;
     background: rgba(10, 20, 15, 0.8);
     backdrop-filter: blur(14px);
@@ -24,7 +27,7 @@
   #main-header.scrolled {
     top: 1rem;
     background: rgba(5, 10, 7, 0.9);
-    width: 97%;
+    
   }
 
   .nav-container {
@@ -43,6 +46,7 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     white-space: nowrap;
+      line-height: 1;
   }
 
   .nav-links { display: none; }

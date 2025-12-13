@@ -190,6 +190,7 @@
     <!-- Custom Styles -->
 
     <style>
+    html { overflow-y: scroll; }
 
       /* Minimal var so navbar colors match other pages */
 
@@ -313,7 +314,7 @@
 
         background: rgba(5, 10, 7, 0.9);
 
-        width: 97%;
+        
 
       }
 
@@ -346,6 +347,7 @@
         letter-spacing: 0.1em;
 
         white-space: nowrap;
+      line-height: 1;
 
       }
 
@@ -753,7 +755,7 @@
       #main-header.scrolled {
         top: 1rem;
         background: rgba(5, 10, 7, 0.9);
-        width: 97%;
+        
       }
       .nav-container {
         display: flex;
@@ -770,6 +772,7 @@
         text-transform: uppercase;
         letter-spacing: 0.1em;
         white-space: nowrap;
+      line-height: 1;
       }
       .nav-links { display: none; }
       @media(min-width: 992px) {
@@ -923,7 +926,7 @@
     
       /* Nav overrides to match global pill sizing */
       #main-header { width: 96%; max-width: 1260px; padding: 0.85rem 1.5rem; border-radius: 28px; }
-      #main-header.scrolled { width: 74%; max-width: 900px; padding: 0.48rem 0.35rem; border-radius: 999px; }
+      #main-header.scrolled { padding: 0.48rem 0.35rem; border-radius: 999px; }
       .nav-links { gap: 2.75rem; }
       .nav-container { gap: 1rem; }
 
@@ -1093,8 +1096,6 @@
 
 /* ===== SCROLLED STATE - CONDENSED PILL ===== */
 #lsfs-header.scrolled {
-  width: 74% !important;
-  max-width: 900px !important;
   background: linear-gradient(135deg, rgba(8,16,12,0.88) 0%, rgba(8,16,12,0.76) 70%, rgba(10,20,15,0.74) 100%) !important;
   box-shadow: 0 14px 36px rgba(0,0,0,0.28), 0 0 0 1px rgba(255,255,255,0.08) !important;
   backdrop-filter: blur(18px) saturate(140%) !important;
@@ -1106,15 +1107,19 @@
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: 0.6rem 1.25rem !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  padding: 0 1.25rem !important;
   width: 100% !important;
   position: relative !important;
   z-index: 1 !important;
-  transition: padding 0.5s cubic-bezier(0.4,0,0.2,1) !important;
+  transition: height 0.5s cubic-bezier(0.4,0,0.2,1), padding 0.5s cubic-bezier(0.4,0,0.2,1) !important;
 }
 
 #lsfs-header.scrolled #lsfs-nav {
-  padding: 0.5rem 0.5rem !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  padding: 0 0.5rem !important;
 }
 
 /* ===== LOGO ===== */
@@ -1176,6 +1181,7 @@
   text-transform: uppercase !important;
   letter-spacing: 0.04em !important;
   white-space: nowrap !important;
+  line-height: 1 !important;
   transition: color 0.2s ease !important;
   position: relative !important;
   /* GPU layer + consistent font rendering to prevent shake */
@@ -1348,7 +1354,9 @@
   }
 
   #lsfs-header.scrolled #lsfs-nav {
-    padding: 0.75rem 1.25rem !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    padding: 0 1.25rem !important;
   }
 }
 
