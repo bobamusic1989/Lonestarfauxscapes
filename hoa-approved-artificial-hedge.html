@@ -431,13 +431,18 @@
   white-space: nowrap !important;
   transition: color 0.2s ease !important;
   position: relative !important;
+  /* GPU layer + consistent font rendering to prevent shake */
+  transform: translateZ(0) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  backface-visibility: hidden !important;
 }
 
 .lsfs-link:hover {
   color: #4caf50 !important;
 }
 
-/* Underline effect */
+/* Underline effect - GPU accelerated */
 .lsfs-link::after {
   content: '' !important;
   position: absolute !important;
@@ -446,13 +451,16 @@
   bottom: -4px !important;
   height: 2px !important;
   background: linear-gradient(90deg, rgba(76,175,80,0.9), rgba(76,175,80,0.5)) !important;
-  transform: scaleX(0) !important;
+  transform: scaleX(0) translateZ(0) !important;
   transform-origin: center !important;
   transition: transform 0.2s ease !important;
+  pointer-events: none !important;
+  will-change: transform !important;
+  backface-visibility: hidden !important;
 }
 
 .lsfs-link:hover::after {
-  transform: scaleX(1) !important;
+  transform: scaleX(1) translateZ(0) !important;
 }
 
 /* CTA Button */
@@ -473,10 +481,12 @@
   display: none !important;
 }
 
-/* ===== DROPDOWN ===== */
+/* ===== DROPDOWN - GPU accelerated ===== */
 .lsfs-dropdown {
   position: relative !important;
   display: inline-flex !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
 }
 
 .lsfs-caret {
@@ -484,10 +494,13 @@
   margin-left: 0.2rem !important;
   transition: transform 0.2s ease !important;
   opacity: 0.7 !important;
+  display: inline-block !important;
+  transform-origin: center !important;
+  will-change: transform !important;
 }
 
 .lsfs-dropdown:hover .lsfs-caret {
-  transform: rotate(180deg) !important;
+  transform: rotate(180deg) translateZ(0) !important;
 }
 
 .lsfs-dropdown-menu {
