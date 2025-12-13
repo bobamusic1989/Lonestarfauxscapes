@@ -49,7 +49,7 @@ section,
   /* Sizing */
   width: 96%;
   max-width: 1200px;
-  padding: 1rem 1.75rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 28px;
   overflow: hidden; /* Clip any overflowing content */
 
@@ -278,7 +278,7 @@ section,
 
 /* Unscrolled (full-width) state */
 #main-header:not(.scrolled) {
-  padding: 0.75rem 2.25rem !important;
+  padding: 0.6rem 1rem !important;
 }
 
 /* Scrolled (compact) state */
@@ -396,7 +396,7 @@ section,
 /* Full header: CTA on the right with balanced spacing */
 #main-header:not(.scrolled) .nav-item.nav-cta,
 #main-header:not(.scrolled) .nav-cta {
-  margin-left: 1.75rem !important;
+  margin-left: 1rem !important;
   margin-right: 0 !important;
 }
 
@@ -418,8 +418,8 @@ section,
 
 /* FINAL ALIGNMENT TWEAKS - FULL-WIDTH HEADER ONLY */
 #main-header:not(.scrolled) {
-  padding-left: 2rem !important;
-  padding-right: 0.2rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
 }
 
 /* make sure logo isn't adding its own left padding/margin */
@@ -430,12 +430,12 @@ section,
 
 /* keep spacing between logo/nav/CTA balanced */
 #main-header:not(.scrolled) .logo {
-  margin-right: 1.75rem !important;
+  margin-right: 1rem !important;
 }
 
 #main-header:not(.scrolled) .nav-item.nav-cta,
 #main-header:not(.scrolled) .nav-cta {
-  margin-left: 1.75rem !important;
+  margin-left: 1rem !important;
   margin-right: 0 !important;
 }
 
