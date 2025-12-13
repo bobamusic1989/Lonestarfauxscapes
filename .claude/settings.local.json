@@ -47,7 +47,10 @@
       "Bash(copy \"C:\\dev\\loanstar\\navbar.css\" \"C:\\dev\\loanstar\\dist\\navbar.css\")",
       "Bash(cmd /c copy \"C:\\dev\\loanstar\\navbar.css\" \"C:\\dev\\loanstar\\dist\\navbar.css\" /Y)",
       "Bash(git reset:*)",
-      "Bash(npx lighthouse:*)"
+      "Bash(npx lighthouse:*)",
+      "Bash(for page in products residential commercial living-wall artificial-hedge fence-extensions)",
+      "Bash(do)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []
