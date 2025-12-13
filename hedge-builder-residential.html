@@ -375,7 +375,7 @@
     textarea { resize: vertical; min-height: 90px; }
     .hidden { display:none; }
     .collapsible { overflow: hidden; transition: max-height 240ms ease, opacity 240ms ease, margin 240ms ease, padding 240ms ease, border-width 240ms ease; }
-    .collapsed { max-height: 0 !important; opacity: 0; margin: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; border-width: 0 !important; }
+    .collapsed { max-height: 0 !important; opacity: 0; margin: 0 !important; padding-top: 0 !important; padding-bottom: -4px !important; border-width: 0 !important; }
 
     .glass-subcard {
       border-radius: 14px;
@@ -716,8 +716,6 @@
   white-space: nowrap !important;
   transition: color 0.2s ease !important;
   position: relative !important;
-  padding-bottom: 4px !important;
-  display: inline-block !important;
 }
 
 .lsfs-link:hover {
@@ -730,7 +728,7 @@
   position: absolute !important;
   left: 0 !important;
   right: 0 !important;
-  bottom: 0 !important;
+  bottom: -4px !important;
   height: 2px !important;
   background: linear-gradient(90deg, rgba(76,175,80,0.9), rgba(76,175,80,0.5)) !important;
   transform: scaleX(0) !important;
@@ -885,7 +883,7 @@
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  bottom: 0 !important;
+  bottom: -4px !important;
   width: 100vw !important;
   height: 100vh !important;
   height: 100dvh !important;
