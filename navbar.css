@@ -101,14 +101,14 @@ section,
   .nav-links {
     display: flex !important;
     flex-wrap: nowrap !important;
-    gap: 1.5rem !important;
+    gap: 1rem !important;
     align-items: center;
     margin-left: auto;
     overflow: hidden;
   }
 
   .nav-item {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     white-space: nowrap;
     font-weight: 600;
     color: rgba(255,255,255,0.7);
@@ -339,12 +339,11 @@ section,
   overflow: hidden;
 }
 
-/* Nav links base */
+/* Nav links base - REMOVED gap here, set in media query above */
 .nav-links {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 0.8rem !important;
 }
 
 /* Full header: links centered between logo and CTA */
