@@ -617,19 +617,21 @@ section,
   justify-content: center;
 }
 
-/* Mobile menu links */
+/* Mobile menu links - !important overrides inline styles */
 .mobile-link {
-  font-family: var(--font-heading, 'Helvetica Neue', Helvetica, Arial, sans-serif);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-heading, 'Helvetica Neue', Helvetica, Arial, sans-serif) !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
   transition: color 0.2s ease;
   padding: 0.5rem 0;
   text-decoration: none;
 }
 
 .mobile-link:hover {
-  color: var(--color-accent, #4caf50);
+  color: var(--color-accent, #4caf50) !important;
 }
 
 /* Sub-links (indented) */
