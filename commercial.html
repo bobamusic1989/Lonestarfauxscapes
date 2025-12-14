@@ -1037,6 +1037,56 @@
       .hero-grid { grid-template-columns: 1fr; }
       .spec-grid { grid-template-columns: 1fr; }
       .cta-panel { padding: 22px; }
+
+      /* === MOBILE HERO IMPROVEMENTS === */
+      .hero::before {
+        background: rgba(0, 0, 0, 0.65) !important;
+      }
+      .hero-grid > div:first-child {
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: clamp(1.8rem, 7vw, 2.2rem) !important;
+        line-height: 1.15;
+      }
+      .hero .subcopy {
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-bullets {
+        text-align: left;
+        max-width: 320px;
+        margin: 1rem auto;
+        font-size: 0.9rem;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        max-width: 280px;
+        margin: 1rem auto 0;
+      }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-ghost,
+      .hero-actions button {
+        width: 100%;
+        text-align: center;
+      }
+      .download-strip {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .download-btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
   </head>
