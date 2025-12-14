@@ -779,10 +779,13 @@
                 z-index: 1;
             }
 
-            /* 2. Flexbox reordering */
+            /* 2. Flexbox reordering + center alignment */
             .hero-content {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0 1rem;
             }
 
             /* 3. Hide eyebrow - redundant with headline */
@@ -797,53 +800,64 @@
             .hero-content > div:has(.btn) { order: 3; }
             .hero-content .city-links { order: 5; }
 
-            /* 5. Headline: tighter, bolder */
+            /* 5. Headline: centered, tighter */
             .hero-content h1 {
-                font-size: clamp(2.2rem, 8vw, 3rem) !important;
-                line-height: 1.1 !important;
-                margin-bottom: 1.25rem;
+                font-size: clamp(2rem, 9vw, 2.8rem) !important;
+                line-height: 1.15 !important;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+            .hero-content h1 span {
+                display: block;
             }
 
-            /* 6. Description: clean, no glass card, shorter */
+            /* 6. Description: clean, centered */
             #hero .hero-description {
                 background: none;
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
                 border: none;
                 padding: 0;
-                margin: 0 0 1.5rem 0;
-                font-size: 1rem;
-                line-height: 1.5;
-                color: rgba(255,255,255,0.9);
+                margin: 0 0 2rem 0;
+                font-size: 1.05rem;
+                line-height: 1.6;
+                color: rgba(255,255,255,0.85);
+                max-width: 320px;
             }
 
-            /* 7. CTAs: more breathing room */
+            /* 7. CTAs: full width, stacked */
             .hero-content > div:has(.btn) {
                 margin-top: 0 !important;
-                margin-bottom: 2.5rem;
+                margin-bottom: 2rem;
                 display: flex;
                 flex-direction: column;
                 gap: 0.75rem;
+                width: 100%;
+                max-width: 280px;
             }
             .hero-content > div:has(.btn) .btn {
                 width: 100%;
                 text-align: center;
                 padding: 1rem 1.5rem;
+                font-size: 0.95rem;
             }
 
-            /* 8. Trust strip: subtle horizontal bar below CTAs */
+            /* 8. Trust strip: centered row */
             .trust-strip {
                 background: rgba(255,255,255,0.05);
                 border: 1px solid rgba(255,255,255,0.08);
                 border-radius: 8px;
-                padding: 0.6rem 0.75rem;
+                padding: 0.75rem 1rem;
                 margin-bottom: 1.5rem;
-                justify-content: space-between;
+                justify-content: center;
+                gap: 0.5rem 1rem;
+                width: 100%;
+                max-width: 320px;
             }
             .trust-item {
-                font-size: 0.55rem;
+                font-size: 0.6rem;
                 color: rgba(255,255,255,0.6);
-                gap: 0.25rem;
+                gap: 0.3rem;
             }
             .trust-item svg {
                 width: 10px;
@@ -854,21 +868,22 @@
                 display: none;
             }
 
-            /* 9. City links: bottom, prominent */
+            /* 9. City links: centered, prominent */
             .city-links {
-                margin-top: 0.5rem;
+                margin-top: 0;
                 justify-content: center;
-                gap: 0.4rem;
+                gap: 0.3rem;
             }
             .city-link {
-                font-size: 1.1rem !important;
+                font-size: 1rem !important;
                 font-weight: 700;
-                letter-spacing: 0.05em;
-                color: rgba(255,255,255,0.75) !important;
+                letter-spacing: 0.04em;
+                color: rgba(255,255,255,0.7) !important;
                 text-shadow: 0 1px 3px rgba(0,0,0,0.5);
             }
             .city-link:not([href]) {
-                color: rgba(255,255,255,0.4) !important;
+                color: rgba(255,255,255,0.35) !important;
+                font-size: 0.9rem !important;
             }
 
             /* 10. Disable WebGL on mobile for readability */
