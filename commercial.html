@@ -64,6 +64,91 @@
     ]
   }
   </script>
+  <!-- FAQ Schema for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What fire documentation and submittals do you provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We provide complete NFPA 701 Method 2 certification data, shop drawings, and stamped submittals. We also offer samples for Authority Having Jurisdiction (AHJ) review and digital documentation packages for GC portal uploads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between interior and exterior artificial hedge systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Interior systems feature acoustic backing and fire-rated foliage for code compliance. Exterior systems use UV-stabilized materials rated for 5-8+ years and wind-rated mounting with engineered frames and edge trims for clean seams."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can you mobilize for a commercial project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can mobilize within 24-72 hours on stocked SKUs. Our panels are pre-fabricated to minimize site time, and we maintain dedicated installation crews across Texas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What maintenance is required for commercial artificial hedges?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minimal maintenance is needed. Our low-VOC installations require only periodic light rinsing or brush-down. We provide care guides for facilities teams and offer optional refresh visit services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do your artificial hedges meet building fire codes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our commercial foliage is NFPA 701 Method 2 certified, which is required for hotels, restaurants, multifamily properties, and commercial buildings in Texas. We provide all necessary documentation for inspectors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you provide CAD drawings and specifications?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We provide spec-ready CAD files, detailed shop drawings, submittals, and stamped documentation for architects, designers, and general contractors."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Commercial Artificial Hedge System",
+    "description": "Fire-rated NFPA 701 artificial hedge panels and living walls for commercial properties. Custom fabrication, UV-stabilized materials, and professional installation across Texas.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Lone Star Faux Scapes"
+    },
+    "category": "Commercial Landscaping",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "offerCount": "3",
+      "lowPrice": "50",
+      "highPrice": "150",
+      "priceValidUntil": "2025-12-31"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "47"
+    }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -304,6 +389,198 @@
       transition: border 150ms ease, transform 150ms ease;
     }
     .btn-ghost:hover { border-color: rgba(34,197,94,0.45); transform: translateY(-1px); }
+
+    /* ===== DOWNLOAD BUTTONS ===== */
+    .download-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .download-btn:hover {
+      background: rgba(76,175,80,0.1);
+      border-color: rgba(76,175,80,0.3);
+      color: #fff;
+    }
+    .download-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2;
+    }
+    .download-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== COMPARISON TABLE ===== */
+    .comparison-section {
+      padding: 5rem 0;
+      background: var(--bg-section);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .comparison-table th {
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      background: rgba(0,0,0,0.3);
+    }
+    .comparison-table th:first-child {
+      border-radius: 12px 0 0 0;
+    }
+    .comparison-table th:last-child {
+      border-radius: 0 12px 0 0;
+    }
+    .comparison-table td {
+      color: rgba(255,255,255,0.85);
+    }
+    .comparison-table tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+    .comparison-table .highlight-col {
+      background: rgba(76,175,80,0.08);
+      border-left: 2px solid var(--accent);
+    }
+    .comparison-table th.highlight-col {
+      background: rgba(76,175,80,0.15);
+      color: var(--accent);
+    }
+    .check-icon {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .x-icon {
+      color: rgba(255,255,255,0.3);
+    }
+    @media (max-width: 768px) {
+      .comparison-table {
+        font-size: 0.8rem;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        padding: 0.75rem 0.5rem;
+      }
+    }
+
+    /* ===== CASE STUDY BLOCK ===== */
+    .case-study-section {
+      padding: 5rem 0;
+    }
+    .case-study-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+    @media (min-width: 768px) {
+      .case-study-card {
+        grid-template-columns: 1fr 1.2fr;
+      }
+    }
+    .case-study-image {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .case-study-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .case-study-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .case-study-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .case-study-tag {
+      padding: 0.3rem 0.75rem;
+      background: rgba(76,175,80,0.1);
+      border: 1px solid rgba(76,175,80,0.25);
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .case-study-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #fff;
+    }
+    .case-study-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .case-study-stats {
+      display: flex;
+      gap: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .case-stat {
+      text-align: left;
+    }
+    .case-stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .case-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 0.25rem;
+    }
+
     main { overflow: hidden; }
     section { position: relative; }
     .section-wrap {
@@ -1393,6 +1670,26 @@
             <button class="btn-primary hero-cta">Start a commercial project</button>
             <button class="btn-ghost">View installs</button>
           </div>
+
+          <!-- Download Buttons - Above the fold for specifiers -->
+          <div class="download-strip">
+            <div class="download-label">Spec Documents</div>
+          </div>
+          <div class="download-strip" style="margin-top: 0; padding-top: 0; border-top: none;">
+            <a href="/downloads/LSFS-Spec-Sheet.pdf" class="download-btn" download>
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Spec Sheet (PDF)
+            </a>
+            <a href="/downloads/NFPA-701-Sample-Report.pdf" class="download-btn" download>
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              NFPA 701 Report
+            </a>
+            <a href="/downloads/LSFS-Warranty-Overview.pdf" class="download-btn" download>
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Warranty Overview
+            </a>
+          </div>
+
           <div class="quick-jump" id="quick-jump">
             <div class="jump-pill active" data-target="systems">Systems</div>
             <div class="jump-pill" data-target="fire">Fire & Code</div>
@@ -1412,6 +1709,112 @@
             <div><span>Docs</span><strong>CAD + submittals</strong></div>
             <div><span>Options</span><strong>Acoustic backers</strong></div>
             <div><span>Use</span><strong>Interior / Exterior</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="comparison-section" id="compare">
+      <div class="section-wrap io-reveal">
+        <div class="section-header">
+          <h2>Commercial Greenery Options Compared</h2>
+          <p class="section-lead">Not all artificial greenery systems are equal. Here's how our commercial-grade installs stack up.</p>
+        </div>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Cheap Mat Systems</th>
+              <th>Basic Framed Panels</th>
+              <th class="highlight-col">LSFS Commercial System</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fire Rating</strong></td>
+              <td><span class="x-icon">✕</span> None</td>
+              <td><span class="x-icon">✕</span> Often uncertified</td>
+              <td class="highlight-col"><span class="check-icon">✓</span> NFPA 701 Method 2</td>
+            </tr>
+            <tr>
+              <td><strong>UV Stability</strong></td>
+              <td>1-2 years</td>
+              <td>2-3 years</td>
+              <td class="highlight-col"><span class="check-icon">✓</span> 5-8+ years rated</td>
+            </tr>
+            <tr>
+              <td><strong>Custom Sizing</strong></td>
+              <td><span class="x-icon">✕</span> Fixed sizes only</td>
+              <td>Limited options</td>
+              <td class="highlight-col"><span class="check-icon">✓</span> Any dimension</td>
+            </tr>
+            <tr>
+              <td><strong>Spec Documents</strong></td>
+              <td><span class="x-icon">✕</span> None</td>
+              <td><span class="x-icon">✕</span> Basic only</td>
+              <td class="highlight-col"><span class="check-icon">✓</span> CAD, submittals, stamps</td>
+            </tr>
+            <tr>
+              <td><strong>Professional Install</strong></td>
+              <td><span class="x-icon">✕</span> DIY</td>
+              <td>Third-party crews</td>
+              <td class="highlight-col"><span class="check-icon">✓</span> In-house TX teams</td>
+            </tr>
+            <tr>
+              <td><strong>Wind Rating</strong></td>
+              <td><span class="x-icon">✕</span> None</td>
+              <td><span class="x-icon">✕</span> Not engineered</td>
+              <td class="highlight-col"><span class="check-icon">✓</span> Engineered frames</td>
+            </tr>
+            <tr>
+              <td><strong>Warranty</strong></td>
+              <td>30-90 days</td>
+              <td>1 year</td>
+              <td class="highlight-col"><span class="check-icon">✓</span> 5-year coverage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study-section" id="case-study">
+      <div class="section-wrap io-reveal">
+        <div class="section-header">
+          <h2>Featured Project</h2>
+          <p class="section-lead">See how we deliver for commercial clients across Texas.</p>
+        </div>
+        <div class="case-study-card">
+          <div class="case-study-image">
+            <img src="images/living_walls/living-wall-2-800w.webp" alt="Austin Hotel Living Wall Installation" loading="lazy">
+          </div>
+          <div class="case-study-content">
+            <div class="case-study-meta">
+              <span class="case-study-tag">Hospitality</span>
+              <span class="case-study-tag">Austin, TX</span>
+              <span class="case-study-tag">Interior</span>
+            </div>
+            <h3 class="case-study-title">Boutique Hotel Lobby Transformation</h3>
+            <p class="case-study-desc">
+              A downtown Austin boutique hotel needed a dramatic lobby feature wall that would photograph well for social media while meeting strict fire codes. We designed a 24' x 12' mixed-foliage living wall with custom logo integration, installed in under 3 days with zero disruption to hotel operations.
+            </p>
+            <div class="case-study-stats">
+              <div class="case-stat">
+                <div class="case-stat-value">288 sq ft</div>
+                <div class="case-stat-label">Coverage</div>
+              </div>
+              <div class="case-stat">
+                <div class="case-stat-value">3 days</div>
+                <div class="case-stat-label">Install Time</div>
+              </div>
+              <div class="case-stat">
+                <div class="case-stat-value">NFPA 701</div>
+                <div class="case-stat-label">Fire Rated</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
