@@ -2,7 +2,7 @@
 title: "Artificial vs. Real Living Walls for Texas Homes"
 summary: "Comparing artificial and real living walls for Texas homeowners. Learn which option suits your climate, budget, and maintenance preferences."
 date: 2025-12-13
-image: static/images/blog/artificial-living-walls-001.jpg
+image: images/blog/artificial-living-walls-001.jpg
 category: "Guides"
 tags:
   - artificial-living-walls

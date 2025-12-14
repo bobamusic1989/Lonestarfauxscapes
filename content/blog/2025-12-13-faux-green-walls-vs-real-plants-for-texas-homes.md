@@ -2,7 +2,7 @@
 title: "Faux Green Walls vs. Real Plants for Texas Homes"
 summary: "Comparing faux green walls and live plants for Texas businesses—cost, maintenance, and design impact."
 date: 2025-12-13
-image: /static/images/blog/2aaa9a49-fcce-4d64-a358-2ece9df9aa63.jpg
+image: images/blog/artificial-living-walls-002.jpg
 category: "Guides"
 tags:
   - faux-green-walls
@@ -34,7 +34,7 @@ For commercial spaces, there are also branding considerations. A consistent, pol
 
 But it's not just about survival. There’s design flexibility, fire codes for commercial spaces, and the sheer practicality of not having a plant funeral every three months. Let’s break down the real trade-offs, with Texas-specific quirks front and center.  
 
-![artificial living walls 003](/static/images/blog/artificial living walls-003.jpg)  
+![Artificial living walls](/images/blog/artificial-living-walls-001.jpg)  
 
 ## The Maintenance Battle: Faux Wins on Paper  
 
@@ -52,7 +52,7 @@ A living wall dripping with pothos and philodendrons looks incredible—for abou
 
 The reality of living walls often falls short of the ideal. Plants may grow unevenly, creating patchy areas. Some species outcompete others, disrupting the designed pattern. Seasonal changes can cause unexpected dieback, especially during Texas' volatile spring weather transitions. Maintenance teams must constantly monitor and replace struggling plants to maintain visual continuity.  
 
-Faux walls don’t grow, but they don’t die either. The [mixed bush fluid wall](/static/images/blog/mixed bush fluid wall example-1-min.jpg) maintains the same density year-round, which is key for businesses needing consistency (think hotel atriums or medical offices). Some clients even mix real potted plants at the base with faux panels above to cheat the eye.  
+Faux walls don't grow, but they don't die either. A mixed bush fluid wall maintains the same density year-round, which is key for businesses needing consistency (think hotel atriums or medical offices). Some clients even mix real potted plants at the base with faux panels above to cheat the eye.  
 
 For high-traffic commercial spaces, faux walls offer another advantage: they can be designed with branding in mind. Companies can incorporate specific color schemes or even logo elements within the wall design. This level of customization is impossible with living plants that follow their own growth patterns.  
 
@@ -78,7 +78,7 @@ The financial advantages of faux become clearer when considering total cost of o
 
 By year three, faux usually pulls ahead. For businesses, that predictability matters more than the initial sticker shock. Additionally, many faux wall providers offer extended warranties (5-10 years) that further protect your investment. These warranties often cover fading, structural integrity, and other potential issues that could arise over time.  
 
-![2aaa9a49 fcce 4d64 a358 2ece9df9aa63](/static/images/blog/2aaa9a49-fcce-4d64-a358-2ece9df9aa63.jpg)  
+![Faux green wall installation](/images/blog/artificial-living-walls-002.jpg)  
 
 ## The Allergy Argument  
 
