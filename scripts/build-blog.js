@@ -7,6 +7,55 @@ const CONTENT_DIR = './content/blog';
 const OUTPUT_DIR = './blog';
 const POSTS_JSON = './content/posts.json';
 
+// Generate Table of Contents from HTML content
+const generateTableOfContents = (htmlContent) => {
+  const headingRegex = /<h([23])>(.*?)<\/h\1>/gi;
+  const headings = [];
+  let match;
+
+  while ((match = headingRegex.exec(htmlContent)) !== null) {
+    const level = parseInt(match[1]);
+    const text = match[2].replace(/<[^>]*>/g, ''); // Strip any HTML tags from heading text
+    const id = text
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .substring(0, 50);
+
+    headings.push({ level, text, id });
+  }
+
+  if (headings.length < 3) {
+    return { toc: '', content: htmlContent }; // Don't show TOC for short articles
+  }
+
+  // Add IDs to headings in content
+  let modifiedContent = htmlContent;
+  headings.forEach(({ level, text, id }) => {
+    const originalHeading = new RegExp(`<h${level}>${text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</h${level}>`, 'i');
+    modifiedContent = modifiedContent.replace(originalHeading, `<h${level} id="${id}">${text}</h${level}>`);
+  });
+
+  // Generate TOC HTML
+  const tocItems = headings.map(({ level, text, id }) => {
+    const indent = level === 3 ? ' class="toc-sub"' : '';
+    return `<li${indent}><a href="#${id}">${text}</a></li>`;
+  }).join('\n        ');
+
+  const toc = `
+      <nav class="table-of-contents">
+        <div class="toc-header">
+          <span class="toc-icon">📑</span>
+          <span>Table of Contents</span>
+        </div>
+        <ol>
+        ${tocItems}
+        </ol>
+      </nav>`;
+
+  return { toc, content: modifiedContent };
+};
+
 // Generate FAQ schema if FAQs exist
 const generateFAQSchema = (faq) => {
   if (!faq || !Array.isArray(faq) || faq.length === 0) return '';
@@ -354,6 +403,68 @@ const generatePostHTML = (post) => `<!DOCTYPE html>
       padding: 0;
     }
 
+    /* Table of Contents */
+    .table-of-contents {
+      margin: 0 0 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .toc-icon {
+      font-size: 1.1rem;
+    }
+    .table-of-contents ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: toc;
+    }
+    .table-of-contents li {
+      counter-increment: toc;
+      margin-bottom: 0.5rem;
+    }
+    .table-of-contents li::before {
+      content: counter(toc) ".";
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-right: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .table-of-contents li.toc-sub {
+      padding-left: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .table-of-contents li.toc-sub::before {
+      content: "•";
+      color: var(--color-text-muted);
+    }
+    .table-of-contents a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.95rem;
+    }
+    .table-of-contents a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Smooth scroll for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* Tags */
     .article-tags {
       display: flex;
@@ -482,6 +593,7 @@ const generatePostHTML = (post) => `<!DOCTYPE html>
     </div>
 
     <article class="article-content">
+      ${post.toc}
       ${post.content}
 
       <div class="article-tags">
@@ -634,7 +746,11 @@ async function buildBlog() {
 
     // Convert markdown to HTML for published posts
     const htmlContent = marked(content);
-    post.content = htmlContent;
+
+    // Generate table of contents
+    const { toc, content: contentWithIds } = generateTableOfContents(htmlContent);
+    post.toc = toc;
+    post.content = contentWithIds;
 
     posts.push(post);
 
@@ -648,8 +764,8 @@ async function buildBlog() {
   // Sort posts by date (newest first)
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // Save posts data for blog listing (without full content)
-  const postsData = posts.map(({ content, faq, ...rest }) => rest);
+  // Save posts data for blog listing (without full content, faq, or toc)
+  const postsData = posts.map(({ content, faq, toc, ...rest }) => rest);
   fs.writeFileSync(POSTS_JSON, JSON.stringify(postsData, null, 2));
   console.log(`  Generated: ${POSTS_JSON}`);
 

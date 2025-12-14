@@ -377,6 +377,68 @@
       padding: 0;
     }
 
+    /* Table of Contents */
+    .table-of-contents {
+      margin: 0 0 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .toc-icon {
+      font-size: 1.1rem;
+    }
+    .table-of-contents ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: toc;
+    }
+    .table-of-contents li {
+      counter-increment: toc;
+      margin-bottom: 0.5rem;
+    }
+    .table-of-contents li::before {
+      content: counter(toc) ".";
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-right: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .table-of-contents li.toc-sub {
+      padding-left: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .table-of-contents li.toc-sub::before {
+      content: "•";
+      color: var(--color-text-muted);
+    }
+    .table-of-contents a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.95rem;
+    }
+    .table-of-contents a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Smooth scroll for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* Tags */
     .article-tags {
       display: flex;
@@ -505,13 +567,30 @@
     </div>
 
     <article class="article-content">
-      <h2>Introduction</h2>
+      
+      <nav class="table-of-contents">
+        <div class="toc-header">
+          <span class="toc-icon">📑</span>
+          <span>Table of Contents</span>
+        </div>
+        <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#why-texas-offices-are-switching-to-faux">Why Texas Offices Are Switching to Faux</a></li>
+        <li><a href="#customization-options-you-didn39t-know-existed">Customization Options You Didn&#39;t Know Existed</a></li>
+        <li><a href="#fire-safety-you-can39t-get-with-real-plants">Fire Safety You Can&#39;t Get With Real Plants</a></li>
+        <li><a href="#installation-secrets-for-texas-climates">Installation Secrets for Texas Climates</a></li>
+        <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#references">References</a></li>
+        </ol>
+      </nav>
+      <h2 id="introduction">Introduction</h2>
 <p>Texas business owners face a dilemma: how to bring nature indoors without the headaches of live plants. Real greenery in office spaces comes with watering schedules, lighting requirements, and the inevitable brown leaves that make lobbies look neglected.  </p>
 <p>Modern faux living walls solve these problems through advanced material science and design innovation. Today&#39;s premium artificial plants incorporate photorealistic details like veined leaves, natural color variations, and even simulated dew droplets. Manufacturers now use 3D scanning technology to replicate plant specimens down to the microscopic texture of each leaf surface.  </p>
 <p>The commercial advantages extend beyond aesthetics. Unlike live walls that require structural reinforcement for water reservoirs, faux installations utilize lightweight modular panels that attach directly to standard drywall or concrete. This eliminates the need for costly architectural modifications during retrofits.  </p>
 <p>For facilities managers, the benefits are measurable. Corporate campuses report eliminating 15-20 hours monthly previously spent on plant maintenance staff. Energy savings also accrue from removing irrigation systems that often account for 5-8% of a building&#39;s water usage.  </p>
 <p><img src="/images/blog/heat-flow-artificial-living-wall-001.jpg" alt="Heat flow artificial living wall">  </p>
-<h2>Why Texas Offices Are Switching to Faux</h2>
+<h2 id="why-texas-offices-are-switching-to-faux">Why Texas Offices Are Switching to Faux</h2>
 <p>The Dallas-Fort Worth metroplex saw a 40% increase in commercial building permits last year[1], and many of these new constructions include biophilic design elements. But Texas heat creates unique challenges for live plants—even indoors.  </p>
 <p>Regional climate factors make faux walls particularly advantageous:  </p>
 <ul>
@@ -536,7 +615,7 @@
 </li>
 </ul>
 <p>The operational savings compound over time. A 2024 facilities management study showed Texas businesses recoup faux wall investments within 18-24 months through reduced maintenance costs.  </p>
-<h2>Customization Options You Didn&#39;t Know Existed</h2>
+<h2 id="customization-options-you-didn39t-know-existed">Customization Options You Didn&#39;t Know Existed</h2>
 <p>Standard pre-fab panels work for some, but Texas businesses often need tailored solutions. That&#39;s where fully custom faux walls shine.  </p>
 <p><strong>Material innovations</strong> now allow:  </p>
 <ul>
@@ -570,7 +649,7 @@
 <li>Prototype panels evaluated for visual realism  </li>
 <li>Final installation with precision laser alignment</li>
 </ol>
-<h2>Fire Safety You Can&#39;t Get With Real Plants</h2>
+<h2 id="fire-safety-you-can39t-get-with-real-plants">Fire Safety You Can&#39;t Get With Real Plants</h2>
 <p>NFPA 701 Method 2 certification[1] isn&#39;t just paperwork—it&#39;s what allows these installations in fire-regulated spaces. The testing process subjects materials to:  </p>
 <ul>
 <li>12-second direct flame exposure  </li>
@@ -601,7 +680,7 @@
 <li>Verification of flame retardant coatings  </li>
 <li>Documentation of cleaning product compatibility</li>
 </ul>
-<h2>Installation Secrets for Texas Climates</h2>
+<h2 id="installation-secrets-for-texas-climates">Installation Secrets for Texas Climates</h2>
 <p>Proper installation accounts for regional environmental factors:  </p>
 <p><strong>Coastal installations</strong> require:  </p>
 <ul>
@@ -634,7 +713,7 @@
 <li>Post-installation tension adjustments as materials settle</li>
 </ul>
 <p><img src="/images/blog/artificial-living-walls-002.jpg" alt="Artificial living walls installation">  </p>
-<h2>Frequently Asked Questions</h2>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <details>  
 <summary>How long do faux living walls last in direct sunlight?</summary>  
 
@@ -671,7 +750,7 @@
 <p>They don&#39;t actively purify air like live plants, but high-quality materials won&#39;t off-gas VOCs. Look for GREENGUARD Gold certified products that meet strict chemical emission standards for sensitive environments.  </p>
 </details>  
 
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>Faux living walls solve Texas-sized problems through innovative design and material science. They deliver biophilic benefits without the operational burdens of live plants, making them ideal for:  </p>
 <ul>
 <li>Corporate headquarters needing consistent first impressions  </li>
@@ -691,7 +770,7 @@
 <li>Full-service installation with certified technicians  </li>
 <li>Custom maintenance programs tailored to your environment</li>
 </ul>
-<h2>References</h2>
+<h2 id="references">References</h2>
 <p>[1] <a href="https://www.nfpa.org/codes-and-standards/all-codes-and-standards/list-of-codes-and-standards/detail?code=701">https://www.nfpa.org/codes-and-standards/all-codes-and-standards/list-of-codes-and-standards/detail?code=701</a><br>[2] <a href="https://www.austintexas.gov/department/codes-and-standards">https://www.austintexas.gov/department/codes-and-standards</a></p>
 
 

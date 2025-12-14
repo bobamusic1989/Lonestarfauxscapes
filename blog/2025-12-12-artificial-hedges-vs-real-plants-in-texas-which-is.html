@@ -321,6 +321,68 @@
       padding: 0;
     }
 
+    /* Table of Contents */
+    .table-of-contents {
+      margin: 0 0 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .toc-icon {
+      font-size: 1.1rem;
+    }
+    .table-of-contents ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: toc;
+    }
+    .table-of-contents li {
+      counter-increment: toc;
+      margin-bottom: 0.5rem;
+    }
+    .table-of-contents li::before {
+      content: counter(toc) ".";
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-right: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .table-of-contents li.toc-sub {
+      padding-left: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .table-of-contents li.toc-sub::before {
+      content: "•";
+      color: var(--color-text-muted);
+    }
+    .table-of-contents a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.95rem;
+    }
+    .table-of-contents a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Smooth scroll for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* Tags */
     .article-tags {
       display: flex;
@@ -449,15 +511,35 @@
     </div>
 
     <article class="article-content">
+      
+      <nav class="table-of-contents">
+        <div class="toc-header">
+          <span class="toc-icon">📑</span>
+          <span>Table of Contents</span>
+        </div>
+        <ol>
+        <li><a href="#the-upfront-cost-purchase-amp-installation">The Upfront Cost: Purchase &amp; Installation</a></li>
+        <li><a href="#the-hidden-killer-long-term-maintenance-costs-in-t">The Hidden Killer: Long-Term Maintenance Costs in Texas</a></li>
+        <li><a href="#answering-your-top-questions-real-vs-artificial-in">Answering Your Top Questions: Real vs. Artificial in Texas</a></li>
+        <li class="toc-sub"><a href="#how-long-do-artificial-hedges-last-in-the-texas-su">How long do artificial hedges last in the Texas sun?</a></li>
+        <li class="toc-sub"><a href="#is-a-quotdrought-tolerantquot-real-hedge-actually-">Is a &quot;drought-tolerant&quot; real hedge actually cheaper?</a></li>
+        <li class="toc-sub"><a href="#can-an-artificial-hedge-withstand-texas-storms-and">Can an artificial hedge withstand Texas storms and wind?</a></li>
+        <li class="toc-sub"><a href="#do-artificial-hedges-look-fake">Do artificial hedges look fake?</a></li>
+        <li class="toc-sub"><a href="#which-option-is-better-for-my-property-value">Which option is better for my property value?</a></li>
+        <li><a href="#local-texas-considerations-you-can39t-ignore">Local Texas Considerations You Can&#39;t Ignore</a></li>
+        <li><a href="#the-bottom-line-for-texas-homeowners">The Bottom Line for Texas Homeowners</a></li>
+        <li class="toc-sub"><a href="#faq-artificial-hedge-costs-in-texas">FAQ: Artificial Hedge Costs in Texas</a></li>
+        </ol>
+      </nav>
       <p>When you add up the initial purchase, installation, water bills, and ongoing maintenance, <strong>artificial hedges are almost always cheaper than real plants for Texas homeowners over a 5-10 year period.</strong> While a live hedge may have a lower sticker price, the relentless Texas climate turns it into a money pit of water, labor, and replacement costs.</p>
 <p>This detailed cost breakdown will show you exactly where your money goes with both options, proving why so many Texans are switching to high-quality artificial greenery for a beautiful, permanent, and cost-effective landscape.</p>
-<h2>The Upfront Cost: Purchase &amp; Installation</h2>
+<h2 id="the-upfront-cost-purchase-amp-installation">The Upfront Cost: Purchase &amp; Installation</h2>
 <p>Let&#39;s start with what you pay at the register and to get it in the ground.</p>
 <p><strong>Real Hedge Plants:</strong> For common screening plants like Ligustrum (Privet), Indian Hawthorn, or Dwarf Yaupon Holly, expect to pay <strong>$25-$75 per plant</strong> at a Texas nursery. To create a dense, 10-foot linear hedge, you may need 8-10 plants. That’s <strong>$200-$750</strong> just for the plants. Professional installation can add <strong>$500-$1,500+</strong>, depending on soil prep, labor, and size of the project. Total Day-1 outlay: <strong>$700-$2,250+</strong>.</p>
 <p><strong>Artificial Hedges (Premium Quality):</strong> A commercial-grade, UV-stabilized artificial hedge panel (typically 1&#39;x1&#39; or 2&#39;x4&#39;) ranges from <strong>$40-$120 per panel</strong>. For that same 10-foot span, you might need 5-10 panels, costing <strong>$400-$1,200</strong>. Professional installation by a specialist like Lonestar Fauxcapes ensures a seamless, secure fit and typically costs <strong>$300-$800</strong> for a project of this size. Total Day-1 outlay: <strong>$700-$2,000</strong>.</p>
 <p><img src="/images/after-artificial-hedge-replacing-live-hedge.webp" alt="Comparison of live hedge vs artificial hedge installation cost in Texas"></p>
 <p><strong>Verdict:</strong> The initial costs are surprisingly comparable. A cheap live hedge can <em>seem</em> less expensive, but a proper installation with good soil amendments and healthy plants brings the price close to a premium artificial solution right from the start.</p>
-<h2>The Hidden Killer: Long-Term Maintenance Costs in Texas</h2>
+<h2 id="the-hidden-killer-long-term-maintenance-costs-in-t">The Hidden Killer: Long-Term Maintenance Costs in Texas</h2>
 <p>This is where artificial hedges pull decisively ahead. The Texas sun, sporadic droughts, and soil conditions create relentless ongoing expenses for live plants.</p>
 <p><strong>The Real Cost of a &quot;Drought-Tolerant&quot; Live Hedge in Texas:</strong></p>
 <ul>
@@ -517,34 +599,34 @@
 </tr>
 </tbody></table>
 <p>The math is stark. The artificial hedge pays for itself in saved maintenance costs within just a few Texas summers.</p>
-<h2>Answering Your Top Questions: Real vs. Artificial in Texas</h2>
-<h3>How long do artificial hedges last in the Texas sun?</h3>
+<h2 id="answering-your-top-questions-real-vs-artificial-in">Answering Your Top Questions: Real vs. Artificial in Texas</h2>
+<h3 id="how-long-do-artificial-hedges-last-in-the-texas-su">How long do artificial hedges last in the Texas sun?</h3>
 <p>Premium artificial hedges made with UV-inhibited materials can last <strong>10-15 years or more</strong> in direct Texas sun without significant fading. At Lonestar Fauxcapes, our products carry extensive warranties specifically because they are engineered to withstand harsh UV exposure, a critical factor cheaper online imports often fail at.</p>
-<h3>Is a &quot;drought-tolerant&quot; real hedge actually cheaper?</h3>
+<h3 id="is-a-quotdrought-tolerantquot-real-hedge-actually-">Is a &quot;drought-tolerant&quot; real hedge actually cheaper?</h3>
 <p>No, not when you factor in total cost of ownership. While plants like Cenizo or Mountain Laurel survive on less water, they still require:</p>
 <ul>
 <li>Heavy watering for the first 1-2 years to establish.</li>
 <li>Increased watering during drought declarations and extreme heat (105°F+ days).</li>
 <li>All the other costs of pruning, soil care, and potential loss. Their initial cost is lower, but their lifetime cost remains high.</li>
 </ul>
-<h3>Can an artificial hedge withstand Texas storms and wind?</h3>
+<h3 id="can-an-artificial-hedge-withstand-texas-storms-and">Can an artificial hedge withstand Texas storms and wind?</h3>
 <p>Yes, when installed correctly. Professional installation uses heavy-duty framing, industrial-grade fasteners, and secure substrates anchored to walls or posts. We design for Texas weather, ensuring panels are rated for high wind zones and won&#39;t blow away in a thunderstorm.</p>
-<h3>Do artificial hedges look fake?</h3>
+<h3 id="do-artificial-hedges-look-fake">Do artificial hedges look fake?</h3>
 <p>Not anymore. High-fidelity artificial hedges use varied leaf colors, textures, and randomized patterns to mimic nature. From a few feet away, the best are indistinguishable from real plants—without the brown spots, wilting, or inconsistent growth.</p>
-<h3>Which option is better for my property value?</h3>
+<h3 id="which-option-is-better-for-my-property-value">Which option is better for my property value?</h3>
 <p>Both can enhance curb appeal. Artificial hedges offer a unique, <strong>permanently perfect</strong> look that requires no work from future homeowners—a selling point for the low-maintenance lifestyle. They are a finished landscaping feature, not a future chore.</p>
-<h2>Local Texas Considerations You Can&#39;t Ignore</h2>
+<h2 id="local-texas-considerations-you-can39t-ignore">Local Texas Considerations You Can&#39;t Ignore</h2>
 <ul>
 <li><strong>Water Restrictions:</strong> Many Texas municipalities enact seasonal or permanent water restrictions. Your live hedge can become a liability, potentially browning under water rationing. Artificial hedges are compliance-proof.</li>
 <li><strong>Soil Challenges:</strong> Clay soil, caliche rock, and alkaline conditions limit what will thrive and add to amendment costs. Artificial hedges eliminate soil problems entirely.</li>
 <li><strong>Extreme Weather Resilience:</strong> A well-installed artificial hedge will look perfect the day after a hail storm or a hard freeze that devastates live plants. This reliability saves money and stress.</li>
 </ul>
 <p><img src="/images/hotel-del-coronado-artificial-hedge.webp" alt="Professional artificial hedge installation at a large Texas property"></p>
-<h2>The Bottom Line for Texas Homeowners</h2>
+<h2 id="the-bottom-line-for-texas-homeowners">The Bottom Line for Texas Homeowners</h2>
 <p>If you&#39;re looking only at the price tag on a small plant at the nursery, real seems cheaper. But for any homeowner who values their time, water resources, and long-term budget, <strong>artificial hedges are the unequivocally cheaper choice for Texas landscapes.</strong></p>
 <p>The investment in a quality artificial hedge from a trusted Texas supplier pays for itself in saved water bills, eliminated landscaping fees, and the peace of mind of a green, lush barrier that survives whatever the climate throws at it. You&#39;re not just buying a product; you&#39;re buying decades of freedom from yard work and unpredictable costs.</p>
 <hr>
-<h3>FAQ: Artificial Hedge Costs in Texas</h3>
+<h3 id="faq-artificial-hedge-costs-in-texas">FAQ: Artificial Hedge Costs in Texas</h3>
 <p><strong>Q: What is the price per square foot for an artificial hedge in Texas?</strong>
 A: For premium, UV-protected artificial hedge panels, expect to pay <strong>$12-$25 per square foot</strong>, including materials. Professional installation adds to this but is recommended for a durable, seamless result.</p>
 <p><strong>Q: Do I need a permit to install an artificial hedge fence in Texas?</strong>

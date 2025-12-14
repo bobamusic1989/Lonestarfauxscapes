@@ -321,6 +321,68 @@
       padding: 0;
     }
 
+    /* Table of Contents */
+    .table-of-contents {
+      margin: 0 0 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .toc-icon {
+      font-size: 1.1rem;
+    }
+    .table-of-contents ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: toc;
+    }
+    .table-of-contents li {
+      counter-increment: toc;
+      margin-bottom: 0.5rem;
+    }
+    .table-of-contents li::before {
+      content: counter(toc) ".";
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-right: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .table-of-contents li.toc-sub {
+      padding-left: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .table-of-contents li.toc-sub::before {
+      content: "•";
+      color: var(--color-text-muted);
+    }
+    .table-of-contents a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.95rem;
+    }
+    .table-of-contents a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Smooth scroll for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* Tags */
     .article-tags {
       display: flex;
@@ -449,10 +511,24 @@
     </div>
 
     <article class="article-content">
+      
+      <nav class="table-of-contents">
+        <div class="toc-header">
+          <span class="toc-icon">📑</span>
+          <span>Table of Contents</span>
+        </div>
+        <ol>
+        <li><a href="#1-zero-water-requirements">1. Zero Water Requirements</a></li>
+        <li><a href="#2-year-round-beauty">2. Year-Round Beauty</a></li>
+        <li><a href="#3-no-maintenance-costs">3. No Maintenance Costs</a></li>
+        <li><a href="#4-instant-privacy">4. Instant Privacy</a></li>
+        <li><a href="#5-uv-resistant-technology">5. UV-Resistant Technology</a></li>
+        </ol>
+      </nav>
       <p>Texas weather can be brutal on landscaping. From scorching summers to unpredictable freezes, maintaining natural hedges requires constant attention and resources. That&#39;s why more Texas property owners are turning to artificial hedges as a smart, sustainable alternative.</p>
-<h2>1. Zero Water Requirements</h2>
+<h2 id="1-zero-water-requirements">1. Zero Water Requirements</h2>
 <p>In a state where water conservation is increasingly important, artificial hedges eliminate irrigation costs entirely. No sprinklers, no drip systems, no water bills. Your hedges stay lush and green whether it&#39;s a record-breaking drought or the middle of August.</p>
-<h2>2. Year-Round Beauty</h2>
+<h2 id="2-year-round-beauty">2. Year-Round Beauty</h2>
 <p>Natural hedges in Texas often struggle with:</p>
 <ul>
 <li>Summer heat stress and browning</li>
@@ -460,7 +536,7 @@
 <li>Seasonal pest infestations</li>
 </ul>
 <p>Artificial hedges maintain their vibrant appearance 365 days a year, regardless of weather conditions.</p>
-<h2>3. No Maintenance Costs</h2>
+<h2 id="3-no-maintenance-costs">3. No Maintenance Costs</h2>
 <p>Think about what you spend annually on:</p>
 <ul>
 <li>Trimming and shaping</li>
@@ -469,14 +545,14 @@
 <li>Professional landscaping services</li>
 </ul>
 <p>With artificial hedges, these recurring costs disappear. A simple occasional rinse is all that&#39;s needed.</p>
-<h2>4. Instant Privacy</h2>
+<h2 id="4-instant-privacy">4. Instant Privacy</h2>
 <p>Unlike natural hedges that take years to grow to full height, artificial hedge installations provide immediate privacy. Perfect for:</p>
 <ul>
 <li>New construction projects</li>
 <li>Commercial properties needing quick solutions</li>
 <li>Homeowners tired of waiting</li>
 </ul>
-<h2>5. UV-Resistant Technology</h2>
+<h2 id="5-uv-resistant-technology">5. UV-Resistant Technology</h2>
 <p>Modern artificial hedges are engineered with UV-resistant materials specifically designed for the intense Texas sun. No fading, no brittleness, just lasting color and texture.</p>
 <hr>
 <p><strong>Ready to transform your Texas property?</strong> <a href="/index.html#contact">Contact Lone Star Faux Scapes</a> for a free consultation and quote.</p>

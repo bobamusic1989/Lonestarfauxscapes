@@ -385,6 +385,68 @@
       padding: 0;
     }
 
+    /* Table of Contents */
+    .table-of-contents {
+      margin: 0 0 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .toc-icon {
+      font-size: 1.1rem;
+    }
+    .table-of-contents ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: toc;
+    }
+    .table-of-contents li {
+      counter-increment: toc;
+      margin-bottom: 0.5rem;
+    }
+    .table-of-contents li::before {
+      content: counter(toc) ".";
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-right: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .table-of-contents li.toc-sub {
+      padding-left: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .table-of-contents li.toc-sub::before {
+      content: "•";
+      color: var(--color-text-muted);
+    }
+    .table-of-contents a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.95rem;
+    }
+    .table-of-contents a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Smooth scroll for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* Tags */
     .article-tags {
       display: flex;
@@ -513,23 +575,47 @@
     </div>
 
     <article class="article-content">
-      <h2>Introduction</h2>
+      
+      <nav class="table-of-contents">
+        <div class="toc-header">
+          <span class="toc-icon">📑</span>
+          <span>Table of Contents</span>
+        </div>
+        <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#the-fire-safety-problem-nobody-talks-about">The Fire Safety Problem Nobody Talks About</a></li>
+        <li><a href="#how-they-survive-texas-weather-when-real-plants-ca">How They Survive Texas Weather (When Real Plants Can’t)</a></li>
+        <li><a href="#why-homeowner-associations-approve-these-and-often">Why Homeowner Associations Approve These (And Often Reject Real Plants)</a></li>
+        <li><a href="#the-installation-secret-for-high-rise-balconies">The Installation Secret for High-Rise Balconies</a></li>
+        <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+        <li class="toc-sub"><a href="#do-fire-rated-hedges-look-cheap">Do fire rated hedges look cheap?</a></li>
+        <li class="toc-sub"><a href="#how-long-do-they-last-outdoors">How long do they last outdoors?</a></li>
+        <li class="toc-sub"><a href="#can-i-install-them-myself">Can I install them myself?</a></li>
+        <li class="toc-sub"><a href="#will-they-blow-away">Will they blow away?</a></li>
+        <li class="toc-sub"><a href="#are-they-safe-for-pets">Are they safe for pets?</a></li>
+        <li class="toc-sub"><a href="#can-fire-rated-hedges-be-customized-to-fit-odd-sha">Can fire rated hedges be customized to fit odd-shaped balconies?</a></li>
+        <li class="toc-sub"><a href="#do-they-provide-any-sound-dampening-benefits">Do they provide any sound dampening benefits?</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#references">References</a></li>
+        </ol>
+      </nav>
+      <h2 id="introduction">Introduction</h2>
 <p>Texas high-rise living comes with a unique set of challenges—especially when it comes to balcony landscaping. Real plants wilt under the scorching sun, require constant watering (a problem during droughts), and most critically, can become fire hazards in a state prone to wildfires. That’s where artificial fire rated hedges step in.  </p>
 <p>These aren’t your grandma’s plastic plants. Modern fire-resistant artificial hedges pass strict safety standards like NFPA 701[1] and California Title 19[2] (adopted by many Texas jurisdictions), meaning they won’t ignite or spread flames. They look identical to real boxwood or ivy but survive 110°F summers without fading. For homeowners in Dallas high-rises or Austin condos, it’s a way to get greenery without the risk or maintenance.  </p>
 <p>The technology behind these products has advanced significantly in recent years. High-end manufacturers now use multi-layer construction with fire retardants built into the material rather than just surface treatments. This ensures long-term protection even after years of sun exposure and weathering.  </p>
 <p>[IMAGE_1]  </p>
-<h2>The Fire Safety Problem Nobody Talks About</h2>
+<h2 id="the-fire-safety-problem-nobody-talks-about">The Fire Safety Problem Nobody Talks About</h2>
 <p>Most high-rise balconies in Texas are governed by fire codes that restrict combustible materials within 10 feet of the building. Real plants—even drought-resistant ones—dry out and become kindling. During wildfire season, embers can travel miles and land on your 30th-floor balcony.  </p>
 <p>Artificial hedges solve this if they’re properly rated. The key is the flame-retardant treatment: when exposed to fire, the material self-extinguishes instead of melting or dripping (a common issue with cheap faux plants). Builders in Houston have started specifying these for new developments because insurers are cracking down on balcony fire risks.  </p>
 <p>The testing process for fire-rated artificial greenery is rigorous. Materials must demonstrate they won&#39;t contribute to flame spread when exposed to direct flame for 12 seconds. They&#39;re also tested for smoke density and heat release rates. Some premium products go beyond basic requirements by incorporating intumescent technology that swells to form an insulating barrier when heated.  </p>
 <p>One thing to watch: not all “fire-resistant” products are equal. Look for explicit certification to NFPA 701 or ASTM E84. Some sellers use vague terms like “fireproof” without testing. Always ask for documentation showing independent laboratory testing results—reputable suppliers will provide these willingly.  </p>
-<h2>How They Survive Texas Weather (When Real Plants Can’t)</h2>
+<h2 id="how-they-survive-texas-weather-when-real-plants-ca">How They Survive Texas Weather (When Real Plants Can’t)</h2>
 <p>Central Texas summers destroy live hedges. Even native plants like yaupon holly need shade and daily watering—impossible on a west-facing balcony. Artificial hedges don’t just avoid dying; they avoid looking fake.  </p>
 <p>The best ones use UV-stabilized polyethylene that won’t fade after years in direct sun. The material composition includes special additives that absorb UV radiation and convert it to harmless heat. Higher-end products use color-fast dyes that resist bleaching, with some manufacturers offering 10-year color warranties.  </p>
 <p>Construction details matter too. Quality panels have varying leaf densities (sparser toward the center, denser at edges) to mimic natural growth patterns. The stems are often reinforced with flexible steel wires that allow for natural-looking arrangement while resisting wind damage. Some designs even incorporate brown &quot;dead&quot; leaves randomly throughout for added realism.  </p>
 <p>Maintenance? A quick rinse with a hose every few months to remove dust. No fertilizers, no replacing dead sections, and no worrying about watering bans. For stubborn grime, a mild soap solution and soft brush will restore the vibrant color. Avoid pressure washers as they can damage the foliage texture.  </p>
 <p>[IMAGE_2]  </p>
-<h2>Why Homeowner Associations Approve These (And Often Reject Real Plants)</h2>
+<h2 id="why-homeowner-associations-approve-these-and-often">Why Homeowner Associations Approve These (And Often Reject Real Plants)</h2>
 <p>HOA rules in high-rises frequently ban live plants on balconies due to fire risks and maintenance concerns. But fire-rated artificial hedges often get approved because:  </p>
 <ul>
 <li>They meet fire codes (submit the certification with your HOA application)  </li>
@@ -545,7 +631,7 @@
 <li>Maintenance guidelines showing minimal upkeep</li>
 </ol>
 <p>Pro tip: If your HOA is hesitant, offer to install a small test section for review before committing to the full balcony. Many boards become more receptive once they see the quality firsthand.  </p>
-<h2>The Installation Secret for High-Rise Balconies</h2>
+<h2 id="the-installation-secret-for-high-rise-balconies">The Installation Secret for High-Rise Balconies</h2>
 <p>Wind is the enemy on the 40th floor. Standard artificial hedges can sail away during a storm if not anchored properly. The fix?  </p>
 <p>Professional installers use these techniques for secure high-rise applications:  </p>
 <ol>
@@ -563,26 +649,26 @@
 <li>Add bottom weights in fabric pouches for temporary installations</li>
 </ul>
 <p>Spacing matters too. Leave a 1-inch gap between panels and walls to prevent heat buildup that could warp the material. In direct sun areas, consider light-colored backing material to reflect heat.  </p>
-<h2>Frequently Asked Questions</h2>
-<h3>Do fire rated hedges look cheap?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="do-fire-rated-hedges-look-cheap">Do fire rated hedges look cheap?</h3>
 <p>Not the high-end ones. Premium artificial hedges use varied leaf patterns and color gradients to mimic real plants. Up close, you might see the difference—but from a neighbor’s balcony or street view, they’re indistinguishable.  </p>
-<h3>How long do they last outdoors?</h3>
+<h3 id="how-long-do-they-last-outdoors">How long do they last outdoors?</h3>
 <p>Expect 7–10 years in Texas weather if they’re UV-treated. Cheaper options might fade or crack in 2–3 years.  </p>
-<h3>Can I install them myself?</h3>
+<h3 id="can-i-install-them-myself">Can I install them myself?</h3>
 <p>Yes, if you’re comfortable drilling into balcony rails. For rentals or complex layouts, professional installation ensures compliance with building codes.  </p>
-<h3>Will they blow away?</h3>
+<h3 id="will-they-blow-away">Will they blow away?</h3>
 <p>Not if installed correctly. Aluminum framing and tight panel connections prevent movement, even in high winds.  </p>
-<h3>Are they safe for pets?</h3>
+<h3 id="are-they-safe-for-pets">Are they safe for pets?</h3>
 <p>Yes. The materials are non-toxic, though some pets might try to chew them (just like real plants).  </p>
-<h3>Can fire rated hedges be customized to fit odd-shaped balconies?</h3>
+<h3 id="can-fire-rated-hedges-be-customized-to-fit-odd-sha">Can fire rated hedges be customized to fit odd-shaped balconies?</h3>
 <p>Many manufacturers offer custom sizing or trim-to-fit panels that can adapt to curved railings or angled corners. Some even provide templates for complex installations.  </p>
-<h3>Do they provide any sound dampening benefits?</h3>
+<h3 id="do-they-provide-any-sound-dampening-benefits">Do they provide any sound dampening benefits?</h3>
 <p>While not their primary purpose, dense artificial hedge panels can slightly reduce street noise—a bonus in urban high-rises near busy roads or construction sites.  </p>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>For Texas high-rise homeowners, artificial fire rated hedges check all the boxes: safety, durability, and zero maintenance. They bypass HOA headaches, survive the climate, and most importantly, reduce fire risks that real plants can’t.  </p>
 <p>The initial investment in quality fire-rated artificial hedging pays off through years of worry-free use. You&#39;ll save on water bills, landscaping services, and potential fire damage repairs. As more Texas cities adopt stricter fire codes for high-rises, these solutions will likely become standard rather than optional.  </p>
 <p>If you&#39;re tired of staring at a barren balcony, this might be the only solution that works long-term. Consult with a specialty supplier who understands local code requirements to ensure you get a system that looks great and meets all safety regulations.  </p>
-<h2>References</h2>
+<h2 id="references">References</h2>
 <p>[1] <a href="https://www.nfpa.org/codes-and-standards/all-codes-and-standards/list-of-codes-and-standards/detail?code=701">https://www.nfpa.org/codes-and-standards/all-codes-and-standards/list-of-codes-and-standards/detail?code=701</a><br>[2] <a href="https://www.dgs.ca.gov/BSC/Codes">https://www.dgs.ca.gov/BSC/Codes</a></p>
 
 
