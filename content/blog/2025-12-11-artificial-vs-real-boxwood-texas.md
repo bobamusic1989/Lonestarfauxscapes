@@ -1,6 +1,6 @@
 ---
 title: "Artificial vs. Real Boxwood in Texas: Water, Maintenance, and Long-Term Value"
-date: 2025-12-12
+date: 2025-12-11
 image: images/blog/hero-artificial-vs-real-boxwood-texas.webp
 summary: "Weighing artificial fire resistant boxwood hedges against real plants? Explore drought tolerance, maintenance, and long-term value for Texas properties."
 category: "Guides"

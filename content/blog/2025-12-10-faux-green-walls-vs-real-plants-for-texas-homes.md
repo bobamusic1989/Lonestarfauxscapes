@@ -1,7 +1,7 @@
 ---
 title: "Faux Green Walls vs. Real Plants for Texas Homes"
 summary: "Comparing faux green walls and live plants for Texas businesses—cost, maintenance, and design impact."
-date: 2025-12-13
+date: 2025-12-10
 image: images/blog/artificial-living-walls-002.jpg
 category: "Guides"
 tags:

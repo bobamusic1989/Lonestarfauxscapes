@@ -1,7 +1,7 @@
 ---
 title: "Artificial Hedges vs. Real Plants in Texas: Which is Cheaper?"
 summary: "We compare upfront & long-term costs of artificial vs real hedges in Texas. See which saves more money with drought & maintenance."
-date: 2025-12-12
+date: 2025-12-09
 image: images/blog/hero-artificial-vs-real-hedges-cost-texas.webp
 category: "Guides"
 tags:
