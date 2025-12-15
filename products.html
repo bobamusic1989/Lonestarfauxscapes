@@ -1287,7 +1287,6 @@
                 <button class="carousel-control" data-dir="prev" aria-label="Previous slide">&#10094;</button>
                 <button class="carousel-control" data-dir="next" aria-label="Next slide">&#10095;</button>
               </div>
-              <div class="carousel-overlay"></div>
               <div class="carousel-dots"></div>
             </div>
           </div>
@@ -1331,7 +1330,6 @@
                 <button class="carousel-control" data-dir="prev" aria-label="Previous slide">&#10094;</button>
                 <button class="carousel-control" data-dir="next" aria-label="Next slide">&#10095;</button>
               </div>
-              <div class="carousel-overlay"></div>
               <div class="carousel-dots"></div>
             </div>
           </div>
@@ -1375,7 +1373,6 @@
                 <button class="carousel-control" data-dir="prev" aria-label="Previous slide">&#10094;</button>
                 <button class="carousel-control" data-dir="next" aria-label="Next slide">&#10095;</button>
               </div>
-              <div class="carousel-overlay"></div>
               <div class="carousel-dots"></div>
             </div>
           </div>
@@ -1433,7 +1430,6 @@
                   <button class="carousel-control" data-dir="prev" aria-label="Previous slide">&#10094;</button>
                   <button class="carousel-control" data-dir="next" aria-label="Next slide">&#10095;</button>
                 </div>
-                <div class="carousel-overlay"></div>
                 <div class="carousel-dots"></div>
               </div>
              </div>
@@ -1483,7 +1479,6 @@
       carousels.forEach((carousel) => {
         const slides = carousel.querySelectorAll('.carousel-slide');
         const dotsContainer = carousel.querySelector('.carousel-dots');
-        const caption = carousel.querySelector('.carousel-overlay');
         const controls = carousel.querySelectorAll('.carousel-control');
         const pauseBtn = carousel.querySelector('.carousel-pause');
         if (!slides.length || !dotsContainer) return;
@@ -1512,10 +1507,6 @@
           dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === index);
           });
-          if (caption) {
-            const alt = slides[index]?.querySelector('img')?.alt || '';
-            caption.textContent = alt;
-          }
         };
 
         let timer;

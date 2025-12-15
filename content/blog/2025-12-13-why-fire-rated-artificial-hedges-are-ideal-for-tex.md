@@ -2,7 +2,7 @@
 title: "Why Fire Rated Artificial Hedges Are Ideal for Texas High-Rises"
 summary: "Discover how artificial fire rated hedges solve balcony landscaping challenges in Texas high-rises while meeting strict safety codes."
 date: 2025-12-13
-image: images/hedges/hedge-privacy-2-1200w.jpg
+image: images/blog/fire-rated-artificial-hedge-texas-highrise-balcony.png
 category: "Guides"
 tags:
   - fire rated artificial hedges
