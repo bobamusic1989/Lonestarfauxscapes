@@ -60,6 +60,8 @@ This is where artificial hedges pull decisively ahead. The Texas sun, sporadic d
 
 The math is stark. The artificial hedge pays for itself in saved maintenance costs within just a few Texas summers.
 
+![Infographic: 10-Year Hedge Cost Comparison](/images/blog/infographic-10-year-hedge-cost-comparison.webp)
+
 ## Answering Your Top Questions: Real vs. Artificial in Texas
 
 ### How long do artificial hedges last in the Texas sun?

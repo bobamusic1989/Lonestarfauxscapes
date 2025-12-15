@@ -34,7 +34,9 @@ For commercial spaces, there are also branding considerations. A consistent, pol
 
 But it's not just about survival. There’s design flexibility, fire codes for commercial spaces, and the sheer practicality of not having a plant funeral every three months. Let’s break down the real trade-offs, with Texas-specific quirks front and center.  
 
-![Artificial living walls](/images/blog/artificial-living-walls-001.jpg)  
+![Artificial living walls](/images/blog/artificial-living-walls-001.jpg)
+
+![Infographic: Faux vs Live Green Walls 5-Year Cost](/images/blog/infographic-faux-vs-live-green-walls-cost.webp)
 
 ## The Maintenance Battle: Faux Wins on Paper  
 

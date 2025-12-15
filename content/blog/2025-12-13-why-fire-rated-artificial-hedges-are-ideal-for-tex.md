@@ -32,7 +32,9 @@ These aren’t your grandma’s plastic plants. Modern fire-resistant artificial
 
 The technology behind these products has advanced significantly in recent years. High-end manufacturers now use multi-layer construction with fire retardants built into the material rather than just surface treatments. This ensures long-term protection even after years of sun exposure and weathering.  
 
-![Fire-rated artificial hedge on Texas high-rise balcony](/images/blog/balcony-artificial-hedge-highrise-001.jpg)  
+![Fire-rated artificial hedge on Texas high-rise balcony](/images/blog/balcony-artificial-hedge-highrise-001.jpg)
+
+![Infographic: Fire Rated Hedges High-Rise Safety](/images/blog/infographic-fire-rated-hedges-high-rise-safety.webp)
 
 ## The Fire Safety Problem Nobody Talks About  
 Most high-rise balconies in Texas are governed by fire codes that restrict combustible materials within 10 feet of the building. Real plants—even drought-resistant ones—dry out and become kindling. During wildfire season, embers can travel miles and land on your 30th-floor balcony.  

@@ -33,7 +33,9 @@ The commercial advantages extend beyond aesthetics. Unlike live walls that requi
 
 For facilities managers, the benefits are measurable. Corporate campuses report eliminating 15-20 hours monthly previously spent on plant maintenance staff. Energy savings also accrue from removing irrigation systems that often account for 5-8% of a building's water usage.  
 
-![Heat flow artificial living wall](/images/blog/heat-flow-artificial-living-wall-001.jpg)  
+![Heat flow artificial living wall](/images/blog/heat-flow-artificial-living-wall-001.jpg)
+
+![Infographic: Faux Living Walls Texas Office Benefits](/images/blog/infographic-faux-living-walls-texas-office-benefits.webp)
 
 ## Why Texas Offices Are Switching to Faux  
 

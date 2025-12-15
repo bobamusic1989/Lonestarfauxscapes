@@ -29,7 +29,9 @@ This isn't just about aesthetics—it's about durability against 110°F heat, su
 
 The decision impacts your home's microclimate too. Real plants can cool surrounding areas through evapotranspiration, while advanced artificial materials now incorporate heat-reflective properties. We'll examine how both perform in different Texas regions—from the humid Gulf Coast to the arid Trans-Pecos.  
 
-![Artificial living wall installation](/images/blog/artificial-living-walls-001.jpg)  
+![Artificial living wall installation](/images/blog/artificial-living-walls-001.jpg)
+
+![Infographic: Artificial vs Real Living Walls Comparison](/images/blog/infographic-artificial-vs-real-living-walls-comparison.webp)
 
 ## The Water Problem Nobody Talks About  
 Real living walls in Texas require 2-3 times more water than ground-level landscaping. Municipal restrictions in cities like Austin and San Antonio often prohibit the necessary irrigation. Artificial walls eliminate water use entirely—a selling point during drought years.  
