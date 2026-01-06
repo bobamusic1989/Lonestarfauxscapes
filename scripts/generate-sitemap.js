@@ -12,7 +12,7 @@ function generateSitemap() {
     .readdirSync('.')
     .filter(f => f.endsWith('.html') && !f.includes('backup'))
     // Not public pages (or should never be indexed)
-    .filter(f => !['roadmap.html', 'navbar-component.html', '404.html'].includes(f));
+    .filter(f => !['roadmap.html', 'navbar-component.html', 'navbar-universal.html', '404.html'].includes(f));
 
   // Get blog posts if they exist
   let blogPosts = [];

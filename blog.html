@@ -258,6 +258,7 @@
   <link rel="stylesheet" href="enhancements.css">
   </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
   
 
   
@@ -521,6 +522,15 @@
   color: #4caf50 !important;
 }
 
+/* Focus visible styles for keyboard accessibility */
+#lsfs-header a:focus-visible,
+#lsfs-header button:focus-visible,
+#lsfs-mobile-menu a:focus-visible,
+#lsfs-mobile-menu button:focus-visible {
+  outline: 2px solid #4caf50 !important;
+  outline-offset: 2px !important;
+}
+
 /* Underline effect - GPU accelerated */
 .lsfs-link::after {
   content: '' !important;
@@ -607,6 +617,7 @@
   visibility: visible !important;
   transform: translateX(-50%) translateY(0) !important;
 }
+.lsfs-dropdown:focus-within .lsfs-dropdown-menu { opacity: 1 !important; visibility: visible !important; transform: translateX(-50%) translateY(0) !important; }
 
 .lsfs-dropdown-menu a {
   display: block !important;
@@ -859,7 +870,7 @@
 
 
 <main>
-    <section class="hero">
+    <section id="main-content" class="hero">
       <div class="container">
         <h1>Insights on Artificial Hedges & Living Walls</h1>
         <p>Guides, installs, and best practices for artificial hedge installation, faux living walls, and acoustic greenery across Texas. Fresh looks straight from the field.</p>
@@ -933,6 +944,18 @@
 
       // Posts data embedded at build time - no fetch needed
       const posts = [
+                {
+                        "slug": "2026-01-03-artificial-living-walls-the-ultimate-guide-to-main",
+                        "title": "Artificial Living Walls: The Ultimate Guide to Maintenance-Free Greenery",
+                        "date": "2026-01-03T00:00:00.000Z",
+                        "image": "/images/2026-01-03-artificial-living-walls-the-ultimate-guide-to-main-image.png",
+                        "summary": "Artificial living walls give you instant greenery without watering, pruning or sunlight. See realistic designs for homes & businesses that even fool horticulturists.",
+                        "category": "Guides",
+                        "tags": [
+                                "artificial-living-wall"
+                        ],
+                        "relatedUrl": ""
+                },
                 {
                         "slug": "2025-12-14-faux-living-walls-transforming-texas-office-spaces",
                         "title": "Faux Living Walls Transforming Texas Office Spaces",

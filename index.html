@@ -1474,7 +1474,7 @@
             gap: 2rem;
             margin-top: 3rem;
         }
-        .stat-item h4 { font-size: 3rem; color: var(--color-accent); margin-bottom: 0.5rem; }
+        .stat-item .stat-value { font-size: 3rem; color: var(--color-accent); margin-bottom: 0.5rem; font-weight: 700; }
         .stat-item p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; }
 
         /* Gallery Styles */
@@ -1708,6 +1708,7 @@
     <link rel="stylesheet" href="enhancements.css">
     </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
     <div class="grain"></div>
 
@@ -1974,6 +1975,15 @@
   color: #4caf50 !important;
 }
 
+/* Focus visible styles for keyboard accessibility */
+#lsfs-header a:focus-visible,
+#lsfs-header button:focus-visible,
+#lsfs-mobile-menu a:focus-visible,
+#lsfs-mobile-menu button:focus-visible {
+  outline: 2px solid #4caf50 !important;
+  outline-offset: 2px !important;
+}
+
 /* Underline effect - GPU accelerated */
 .lsfs-link::after {
   content: '' !important;
@@ -2060,6 +2070,7 @@
   visibility: visible !important;
   transform: translateX(-50%) translateY(0) !important;
 }
+.lsfs-dropdown:focus-within .lsfs-dropdown-menu { opacity: 1 !important; visibility: visible !important; transform: translateX(-50%) translateY(0) !important; }
 
 .lsfs-dropdown-menu a {
   display: block !important;
@@ -2312,6 +2323,7 @@
 
 
 <!-- Hero Section -->
+    <div id="main-content" tabindex="-1" style="outline:none;"></div>
     <section id="hero">
         <!-- Ambient glows -->
         <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
@@ -2392,9 +2404,9 @@
                     <a href="#gallery" class="btn btn-outline">View Our Work</a>
                 </div>
                 <div class="city-links gs-fade-up">
-                    <a class="city-link" href="austin.html">Austin</a><span class="city-link" style="pointer-events:none;">/</span>
-                    <a class="city-link" href="dallas.html">Dallas</a><span class="city-link" style="pointer-events:none;">/</span>
-                    <a class="city-link" href="houston.html">Houston</a><span class="city-link" style="pointer-events:none;">/</span>
+                    <a class="city-link" href="austin.html">Austin</a><span class="city-link" style="pointer-events:none;" aria-hidden="true">/</span>
+                    <a class="city-link" href="dallas.html">Dallas</a><span class="city-link" style="pointer-events:none;" aria-hidden="true">/</span>
+                    <a class="city-link" href="houston.html">Houston</a><span class="city-link" style="pointer-events:none;" aria-hidden="true">/</span>
                     <a class="city-link" href="san-antonio.html">San Antonio</a>
                 </div>
             </div>
@@ -2428,7 +2440,7 @@
                         <li>Modular Grid System</li>
                         <li>Acoustic Dampening</li>
                     </ul>
-                    <div style="margin-top:1rem;"><a class="btn btn-outline" href="living-wall.html">Learn more</a></div>
+                    <div style="margin-top:1rem;"><a class="btn btn-outline" href="living-wall.html">Learn more about Living Walls</a></div>
                 </div>
                   <div class="live-card gs-reveal" data-reveal>
                       <div class="card-media">
@@ -2446,7 +2458,7 @@
                         <li>UV Stabilized</li>
                         <li>Fire Rated (NFPA 701)</li>
                     </ul>
-                    <div style="margin-top:1rem;"><a class="btn btn-outline" href="artificial-hedge.html">Learn more</a></div>
+                    <div style="margin-top:1rem;"><a class="btn btn-outline" href="artificial-hedge.html">Learn more about Artificial Hedges</a></div>
                 </div>
                   <div class="live-card gs-reveal" data-reveal>
                       <div class="card-media">
@@ -2464,7 +2476,7 @@
                         <li>Optional Noise Blocking</li>
                         <li>Instant Obscurity</li>
                     </ul>
-                    <div style="margin-top:1rem;"><a class="btn btn-outline" href="fence-extensions.html">Learn more</a></div>
+                    <div style="margin-top:1rem;"><a class="btn btn-outline" href="fence-extensions.html">Learn more about Fence Extensions</a></div>
                 </div>
                   <div class="live-card gs-reveal" data-reveal>
                       <div class="card-media">
@@ -2482,7 +2494,7 @@
                         <li>Brand Integration</li>
                         <li>UV Stabilized</li>
                     </ul>
-                    <div style="margin-top:1rem;"><a class="btn btn-outline" href="commercial-wall.html">Learn more</a></div>
+                    <div style="margin-top:1rem;"><a class="btn btn-outline" href="commercial-wall.html">Learn more about Commercial Walls</a></div>
                 </div>
             </div>
         </div>
@@ -2499,15 +2511,15 @@
                     
                     <div class="stat-grid">
                         <div class="stat-item">
-                            <h4>15+</h4>
+                            <div class="stat-value">15+</div>
                             <p>Years Exp.</p>
                         </div>
                         <div class="stat-item">
-                            <h4>Custom</h4>
+                            <div class="stat-value">Custom</div>
                             <p>Creations</p>
                         </div>
                         <div class="stat-item">
-                            <h4>Tx</h4>
+                            <div class="stat-value">Tx</div>
                             <p>Statewide</p>
                         </div>
                     </div>
@@ -2546,9 +2558,9 @@
                     <p>Based in Texas, serving the major metropolitan hubs with precision installation teams.</p>
                     <div class="city-mission">
                         <div class="city-links" style="margin-top: 0;">
-                            <a class="city-link" href="austin.html">Austin</a><span class="city-link" style="pointer-events:none;">/</span>
-                            <a class="city-link" href="dallas.html">Dallas</a><span class="city-link" style="pointer-events:none;">/</span>
-                            <a class="city-link" href="houston.html">Houston</a><span class="city-link" style="pointer-events:none;">/</span>
+                            <a class="city-link" href="austin.html">Austin</a><span class="city-link" style="pointer-events:none;" aria-hidden="true">/</span>
+                            <a class="city-link" href="dallas.html">Dallas</a><span class="city-link" style="pointer-events:none;" aria-hidden="true">/</span>
+                            <a class="city-link" href="houston.html">Houston</a><span class="city-link" style="pointer-events:none;" aria-hidden="true">/</span>
                             <a class="city-link" href="san-antonio.html">San Antonio</a>
                         </div>
                         <div class="mission-stack">
@@ -2848,7 +2860,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-big-text">LONE STAR</div>
+            <div class="footer-big-text" aria-hidden="true">LONE STAR</div>
             <div class="grid-4" style="border-top: 1px solid #222; padding-top: 2rem; gap: 4rem;">
                 <div>
                     <div style="font-weight: 700; color: #fff; margin-bottom: 1rem;">Lone Star Faux Scapes</div>
@@ -2865,16 +2877,16 @@
                 <div>
                     <div style="font-weight: 700; color: #fff; margin-bottom: 1rem;">Connect</div>
                     <ul style="font-size: 0.9rem; color: #777; line-height: 2;">
-                        <li><a href="https://instagram.com/lonestarfauxscapes" target="_blank" rel="noopener" style="color: inherit; transition: color 0.2s;" onmouseover="this.style.color='#4caf50'" onmouseout="this.style.color='inherit'">Instagram</a></li>
-                        <li><a href="https://linkedin.com/company/lonestarfauxscapes" target="_blank" rel="noopener" style="color: inherit; transition: color 0.2s;" onmouseover="this.style.color='#4caf50'" onmouseout="this.style.color='inherit'">LinkedIn</a></li>
-                        <li><a href="#contact" style="color: inherit; transition: color 0.2s;" onmouseover="this.style.color='#4caf50'" onmouseout="this.style.color='inherit'">Email Us</a></li>
+                        <li><a href="https://instagram.com/lonestarfauxscapes" target="_blank" rel="noopener" class="footer-link">Instagram</a></li>
+                        <li><a href="https://linkedin.com/company/lonestarfauxscapes" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
+                        <li><a href="#contact" class="footer-link">Email Us</a></li>
                     </ul>
                 </div>
                 <div>
                     <div style="font-weight: 700; color: #fff; margin-bottom: 1rem;">Legal</div>
                     <ul style="font-size: 0.9rem; color: #777; line-height: 2;">
-                        <li><a href="/privacy.html" style="color: inherit; transition: color 0.2s;" onmouseover="this.style.color='#4caf50'" onmouseout="this.style.color='inherit'">Privacy Policy</a></li>
-                        <li><a href="/terms.html" style="color: inherit; transition: color 0.2s;" onmouseover="this.style.color='#4caf50'" onmouseout="this.style.color='inherit'">Terms of Service</a></li>
+                        <li><a href="/privacy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="footer-link">Terms of Service</a></li>
                     </ul>
                     <p style="font-size: 0.8rem; margin-top: 1rem;">&copy; <span id="year"></span> LSFS. Licensed & Insured.</p>
                 </div>

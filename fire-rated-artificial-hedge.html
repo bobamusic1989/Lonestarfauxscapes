@@ -199,6 +199,7 @@
   <link rel="stylesheet" href="enhancements.css">
   </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
   
 
   
@@ -462,6 +463,15 @@
   color: #4caf50 !important;
 }
 
+/* Focus visible styles for keyboard accessibility */
+#lsfs-header a:focus-visible,
+#lsfs-header button:focus-visible,
+#lsfs-mobile-menu a:focus-visible,
+#lsfs-mobile-menu button:focus-visible {
+  outline: 2px solid #4caf50 !important;
+  outline-offset: 2px !important;
+}
+
 /* Underline effect - GPU accelerated */
 .lsfs-link::after {
   content: '' !important;
@@ -548,6 +558,7 @@
   visibility: visible !important;
   transform: translateX(-50%) translateY(0) !important;
 }
+.lsfs-dropdown:focus-within .lsfs-dropdown-menu { opacity: 1 !important; visibility: visible !important; transform: translateX(-50%) translateY(0) !important; }
 
 .lsfs-dropdown-menu a {
   display: block !important;
@@ -801,7 +812,7 @@
 
 <main>
     <!-- Hero -->
-    <section class="hero">
+    <section id="main-content" class="hero">
       <div class="container">
         <div class="hero-content">
           <span class="hero-label">NFPA 701 Method 2 Certified</span>

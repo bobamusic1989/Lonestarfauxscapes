@@ -12,6 +12,11 @@
   <meta property="og:url" content="https://lonestarfauxscapes.com/gallery.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://lonestarfauxscapes.com/images/hedges/hedge-privacy-1.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Project Gallery | Lone Star Faux Scapes">
+  <meta name="twitter:description" content="Browse our portfolio of artificial hedge installations and living walls across Texas.">
+  <meta name="twitter:image" content="https://lonestarfauxscapes.com/images/hedges/hedge-privacy-1.jpg">
   <style>
     :root {
       --bg: #050806;
@@ -275,6 +280,7 @@
   <link rel="stylesheet" href="enhancements.css">
   </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
   
 
   
@@ -538,6 +544,15 @@
   color: #4caf50 !important;
 }
 
+/* Focus visible styles for keyboard accessibility */
+#lsfs-header a:focus-visible,
+#lsfs-header button:focus-visible,
+#lsfs-mobile-menu a:focus-visible,
+#lsfs-mobile-menu button:focus-visible {
+  outline: 2px solid #4caf50 !important;
+  outline-offset: 2px !important;
+}
+
 /* Underline effect - GPU accelerated */
 .lsfs-link::after {
   content: '' !important;
@@ -624,6 +639,7 @@
   visibility: visible !important;
   transform: translateX(-50%) translateY(0) !important;
 }
+.lsfs-dropdown:focus-within .lsfs-dropdown-menu { opacity: 1 !important; visibility: visible !important; transform: translateX(-50%) translateY(0) !important; }
 
 .lsfs-dropdown-menu a {
   display: block !important;
@@ -876,7 +892,7 @@
 
 
 <main>
-    <section class="hero">
+    <section id="main-content" class="hero">
       <div class="container">
         <h1>Our Work</h1>
         <p>Browse installations across Texas — from rooftop privacy hedges to dramatic living walls in commercial lobbies.</p>

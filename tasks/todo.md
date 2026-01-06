@@ -132,3 +132,70 @@ AVIF: Chrome 85+, Firefox 93+, Safari 16.4+
 WebP fallback: All modern browsers
 JPG fallback: Universal
 
+---
+
+# Lighthouse Accessibility & SEO Fixes (2026-01-06)
+
+## Goal
+
+Fix Lighthouse scores to achieve:
+- **Performance**: 90+ ✅ (achieved 99)
+- **Accessibility**: 100 (from 94)
+- **SEO**: 100 (from 92)
+
+## Completed Fixes
+
+### Phase 1: Accessibility Fixes (Batch Applied)
+
+| Fix | File(s) | Description |
+|-----|---------|-------------|
+| 1 | `shared.css` | Added `.skip-link` and `.footer-link` CSS classes |
+| 2 | `scripts/fix-accessibility.cjs` | Created batch script for 35+ HTML files |
+| 3 | All HTML files | Added skip navigation link after `<body>` |
+| 4 | All HTML files | Added `id="main-content"` to first section |
+| 5 | All HTML files | Added `focus-visible` CSS for keyboard navigation |
+| 6 | All HTML files | Added `focus-within` CSS for dropdown menus |
+
+### Phase 2: Index.html Specific Fixes
+
+| Fix | Lines | Description |
+|-----|-------|-------------|
+| 1 | 2391-2398, 2545-2552 | Added `aria-hidden="true"` to decorative "/" separators |
+| 2 | 2868-2877 | Replaced inline `onmouseover/onmouseout` with `.footer-link` class |
+| 3 | 2863 | Added `aria-hidden="true"` to decorative `.footer-big-text` watermark |
+| 4 | 2514-2523 | Changed stat `<h4>` elements to `<div class="stat-value">` (heading order fix) |
+| 5 | 2443, 2461, 2479, 2497 | Made "Learn more" links descriptive (e.g., "Learn more about Living Walls") |
+
+### Phase 3: SEO Fixes
+
+| Fix | File | Description |
+|-----|------|-------------|
+| 1 | `residential.html` | Added `og:image` and `twitter:card` meta tags |
+| 2 | `gallery.html` | Added `twitter:card` meta tags |
+| 3 | `scripts/generate-sitemap.js` | Excluded `navbar-universal.html` from sitemap |
+
+## Expected Final Scores (After Deployment)
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Performance | 99 | 99 |
+| Accessibility | 94 | 100 |
+| SEO | 92 | 100 |
+| Best Practices | 100 | 100 |
+
+## Issues Resolved
+
+1. **Color contrast**: Decorative watermark now `aria-hidden`
+2. **Heading order**: Stat `<h4>`s changed to non-heading `<div>`s
+3. **Link text**: "Learn more" buttons now include product name
+4. **Focus outlines**: Keyboard navigation now visible
+5. **Skip navigation**: Users can skip to main content
+6. **Missing meta tags**: Social sharing images now specified
+
+## Notes
+
+- All changes are additive and non-destructive
+- No existing functionality removed
+- Mobile experience preserved
+- Deploy to Cloudflare Pages to see updated scores
+
