@@ -82,3 +82,53 @@
   - Using `will-change` hints strategically
   - Lazy loading GSAP library itself (not just delaying init)
 
+---
+
+# Image Optimization - AVIF with WebP Fallback
+
+## Problem
+
+Lighthouse flagged ~1,277 KiB potential savings from images:
+- fence-1.jpg (405KB → 397KB savings)
+- commercial-2-1200w.jpg (275KB → 269KB savings)
+- hedge-banner-1200w.jpg (273KB → 267KB savings)
+- hero-main-1200w.jpg (408KB → 256KB savings)
+- living-wall-1-800w.jpg (94KB → 87KB savings)
+
+## Solution
+
+Implemented AVIF format with WebP fallback using `<picture>` elements.
+
+### Changes Made
+
+| Fix | File | Description |
+|-----|------|-------------|
+| 1 | `scripts/optimize-images.cjs` | New script to generate AVIF from source images using Sharp |
+| 2 | `index.html` | Added AVIF `<source>` to all `<picture>` elements |
+| 3 | `index.html` | Wrapped fence-1.jpg in `<picture>` with AVIF/WebP/JPG |
+
+### AVIF Files Generated
+
+70 AVIF files created across all image directories:
+- `images/hero/` - hero-main variants
+- `images/hedges/` - hedge-banner, hedge-privacy variants
+- `images/fence/` - fence-1, fence-2, fence-3 variants
+- `images/commercial/` - commercial-1, commercial-2, commercial-3 variants
+- `images/living_walls/` - living-wall-1, living-wall-2, living-wall-3 variants
+- `images/blog/` - all blog images
+
+### Expected Savings
+
+AVIF compression results (vs original JPG):
+- hero-main: 68-92% smaller
+- hedge-banner: 73-89% smaller
+- commercial-2: 75-98% smaller
+- living-wall-1: 55-70% smaller
+- fence-1: 32-55% smaller
+
+### Browser Support
+
+AVIF: Chrome 85+, Firefox 93+, Safari 16.4+
+WebP fallback: All modern browsers
+JPG fallback: Universal
+
