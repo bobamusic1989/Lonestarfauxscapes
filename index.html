@@ -608,46 +608,61 @@
         .mobile-toggle { color: #fff; font-size: 1.2rem; cursor: pointer; display: block; }
         @media(min-width: 992px) { .mobile-toggle { display: none; } }
 
-        /* ===== PREMIUM HERO v2 - High-End Architecture Firm Aesthetic ===== */
+        /* ===== PREMIUM HERO v3 - "THE STATEMENT" (Awwwards Inspired) ===== */
 
         /* Cinematic Animation Keyframes */
-        @keyframes imageZoom {
-            from { transform: scale(1.05); }
+        @keyframes kenBurns {
+            from { transform: scale(1.1); }
             to { transform: scale(1); }
         }
         @keyframes clipRevealUp {
-            from { clip-path: inset(100% 0 0 0); }
-            to { clip-path: inset(0 0 0 0); }
-        }
-        @keyframes clipRevealRight {
-            from { clip-path: inset(0 100% 0 0); }
-            to { clip-path: inset(0 0 0 0); }
+            from {
+                clip-path: inset(100% 0 0 0);
+                transform: translateY(20px);
+            }
+            to {
+                clip-path: inset(0 0 0 0);
+                transform: translateY(0);
+            }
         }
         @keyframes subtlePush {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes accentSlideIn {
-            from { transform: scaleY(0); opacity: 0; }
-            to { transform: scaleY(1); opacity: 0.7; }
+        @keyframes underlineSweep {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
         }
-        @keyframes accentPulse {
-            0%, 100% { opacity: 0.5; box-shadow: 0 0 15px rgba(76,175,80,0.3); }
-            50% { opacity: 0.8; box-shadow: 0 0 30px rgba(76,175,80,0.5); }
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            60% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes badgeFadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         @keyframes cityFadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-        /* Hero Container - CSS Grid Layout */
+        /* Hero Container - Asymmetric Grid Layout */
         #hero.hero {
             position: relative;
             min-height: 100vh;
             min-height: 100svh;
             display: grid;
-            grid-template-columns: clamp(4rem, 8vw, 8rem) 1fr clamp(4rem, 8vw, 8rem);
-            grid-template-rows: 1fr auto 1fr;
+            grid-template-columns: 55% 45%;
+            grid-template-rows: 1fr;
             overflow: hidden;
             background: #050a07;
         }
@@ -665,24 +680,22 @@
             height: 100%;
             object-fit: cover;
             object-position: center 30%;
-            animation: imageZoom 2s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation: kenBurns 3s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
-        /* Multi-Layer Gradient Scrim */
+        /* Dramatic Multi-Layer Scrim */
         .hero__scrim {
             position: absolute;
             inset: 0;
             z-index: 2;
             pointer-events: none;
             background:
-                /* Bottom fade for text */
-                linear-gradient(to top, rgba(5,10,7,0.95) 0%, rgba(5,10,7,0.7) 25%, transparent 60%),
-                /* Left vignette */
-                linear-gradient(to right, rgba(5,10,7,0.6) 0%, transparent 40%),
-                /* Green accent glow */
-                radial-gradient(ellipse 80% 50% at 70% 60%, rgba(76,175,80,0.08) 0%, transparent 50%),
-                /* Top-right highlight */
-                radial-gradient(ellipse 60% 40% at 85% 15%, rgba(255,255,255,0.03) 0%, transparent 50%);
+                /* Strong left vignette for text contrast */
+                linear-gradient(to right, rgba(5,10,7,0.9) 0%, rgba(5,10,7,0.6) 40%, transparent 70%),
+                /* Bottom fade */
+                linear-gradient(to top, rgba(5,10,7,0.8) 0%, transparent 40%),
+                /* Green ambient glow */
+                radial-gradient(ellipse 60% 60% at 80% 50%, rgba(76,175,80,0.1) 0%, transparent 60%);
         }
 
         /* Film Grain Texture */
@@ -695,30 +708,16 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
 
-        /* Signature Vertical Accent Bar */
-        .hero__accent-bar {
-            position: absolute;
-            left: clamp(1rem, 4vw, 5rem);
-            top: 20%;
-            height: 40%;
-            width: 3px;
-            background: linear-gradient(to bottom, transparent 0%, #4caf50 20%, #4caf50 80%, transparent 100%);
-            border-radius: 2px;
-            z-index: 15;
-            box-shadow: 0 0 20px rgba(76,175,80,0.4);
-            transform-origin: top center;
-            animation:
-                accentSlideIn 800ms cubic-bezier(0.16,1,0.3,1) 100ms both,
-                accentPulse 4s ease-in-out 1s infinite;
-        }
-
-        /* Hero Content - Grid Positioned */
+        /* Hero Content - Left Side, Flex Centered */
         .hero__content {
-            grid-column: 2;
-            grid-row: 2;
+            grid-column: 1;
+            grid-row: 1;
             z-index: 10;
-            max-width: 700px;
-            padding-left: clamp(1rem, 3vw, 2rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(2rem, 5vw, 6rem);
+            padding-right: 0;
         }
 
         /* Eyebrow Text */
@@ -730,74 +729,107 @@
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.5);
             margin-bottom: 1.5rem;
-            animation: clipRevealRight 500ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+            animation: subtlePush 500ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
         }
 
-        /* Headline Typography - Instrument Serif */
+        /* MASSIVE Headline Typography */
         .hero__headline {
             font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(3.5rem, 10vw, 8rem);
+            font-size: clamp(4rem, 15vw, 12rem);
             font-weight: 400;
-            line-height: 0.95;
-            letter-spacing: -0.04em;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
             color: #fff;
-            margin: 0 0 1.5rem 0;
+            margin: 0 0 2rem 0;
         }
         .hero__headline-line {
             display: block;
-            animation: clipRevealUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation: clipRevealUp 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         .hero__headline-line:nth-child(1) {
-            animation-delay: 400ms;
+            animation-delay: 500ms;
         }
         .hero__headline-line:nth-child(2) {
-            animation-delay: 600ms;
+            animation-delay: 800ms;
         }
 
-        /* Gradient Italic Accent */
+        /* Signature Element: Animated Underline */
         .hero__headline-accent {
-            font-style: italic;
-            background: linear-gradient(135deg, #4caf50 0%, #7ec881 50%, #4caf50 100%);
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(135deg, #4caf50 0%, #81c784 50%, #4caf50 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        /* Subhead */
-        .hero__subhead {
-            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-            font-weight: 500;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.6);
-            margin: 0 0 2rem 0;
-            animation: subtlePush 500ms cubic-bezier(0.16, 1, 0.3, 1) 900ms both;
+        .hero__headline-accent::after {
+            content: '';
+            position: absolute;
+            bottom: 0.02em;
+            left: 0;
+            width: 100%;
+            height: 0.08em;
+            background: linear-gradient(90deg, #4caf50 0%, #81c784 50%, #4caf50 100%);
+            transform-origin: left;
+            animation: underlineSweep 1.2s cubic-bezier(0.65, 0, 0.35, 1) 1000ms both;
+            box-shadow: 0 4px 30px rgba(76,175,80,0.5);
+            border-radius: 4px;
         }
 
-        /* CTA Button */
-        .hero__cta.btn {
-            display: inline-block;
-            padding: 1.1rem 2.5rem;
-            font-size: 0.9rem;
+        /* Feature Badges */
+        .hero__badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .hero__badge {
+            padding: 0.5rem 1rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            animation: subtlePush 500ms cubic-bezier(0.16, 1, 0.3, 1) 1100ms both;
+            color: rgba(255,255,255,0.9);
+            background: rgba(76,175,80,0.15);
+            border: 1px solid rgba(76,175,80,0.3);
+            border-radius: 100px;
+            animation: badgeFadeUp 500ms ease-out both;
+        }
+        .hero__badge:nth-child(1) { animation-delay: 1200ms; }
+        .hero__badge:nth-child(2) { animation-delay: 1300ms; }
+        .hero__badge:nth-child(3) { animation-delay: 1400ms; }
+
+        /* CTA Button - Bigger with Arrow */
+        .hero__cta.btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            animation: bounceIn 600ms cubic-bezier(0.34, 1.56, 0.64, 1) 1500ms both;
+        }
+        .hero__cta.btn::after {
+            content: '→';
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .hero__cta.btn:hover::after {
+            transform: translateX(4px);
         }
 
-        /* City Navigation - Vertical on Desktop */
+        /* City Navigation - Bottom Right */
         .hero__cities {
-            grid-column: 3;
-            grid-row: 2;
+            position: absolute;
+            bottom: clamp(2rem, 4vw, 3rem);
+            right: clamp(2rem, 4vw, 4rem);
             z-index: 10;
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: center;
-            gap: 0.75rem;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            padding-right: clamp(1rem, 2vw, 2rem);
+            align-items: center;
+            gap: 1rem;
         }
         .hero__cities a {
             font-size: 0.7rem;
@@ -805,40 +837,57 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.4);
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
             animation: cityFadeIn 400ms ease-out both;
         }
-        .hero__cities a:nth-child(1) { animation-delay: 1400ms; }
-        .hero__cities a:nth-child(3) { animation-delay: 1500ms; }
-        .hero__cities a:nth-child(5) { animation-delay: 1600ms; }
-        .hero__cities a:nth-child(7) { animation-delay: 1700ms; }
+        .hero__cities a:nth-child(1) { animation-delay: 1800ms; }
+        .hero__cities a:nth-child(2) { animation-delay: 1900ms; }
+        .hero__cities a:nth-child(3) { animation-delay: 2000ms; }
+        .hero__cities a:nth-child(4) { animation-delay: 2100ms; }
         .hero__cities a:hover {
             color: var(--color-accent);
-            transform: translateX(-2px);
         }
-        .hero__cities span {
-            color: rgba(255, 255, 255, 0.15);
-            font-size: 0.6rem;
-            animation: cityFadeIn 400ms ease-out 1450ms both;
+
+        /* Scroll Indicator */
+        .hero__scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            animation: fadeIn 500ms ease-out 2500ms both;
+        }
+        .hero__scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(76,175,80,0.6), transparent);
+            animation: scrollBounce 2s ease-in-out infinite;
         }
 
         /* ===== REDUCED MOTION ===== */
         @media (prefers-reduced-motion: reduce) {
             .hero__media img,
-            .hero__accent-bar,
             .hero__eyebrow,
             .hero__headline-line,
-            .hero__subhead,
+            .hero__headline-accent::after,
+            .hero__badge,
             .hero__cta.btn,
             .hero__cities a,
-            .hero__cities span {
-                animation: none;
+            .hero__scroll,
+            .hero__scroll-line {
+                animation: none !important;
                 opacity: 1;
                 transform: none;
                 clip-path: none;
-            }
-            .hero__accent-bar {
-                opacity: 0.6;
             }
         }
 
@@ -847,40 +896,40 @@
             #hero.hero {
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-end;
+                justify-content: center;
                 align-items: stretch;
-                padding-bottom: 5rem;
             }
 
             /* Stronger scrim on mobile */
             .hero__scrim {
                 background:
                     linear-gradient(to top, rgba(5,10,7,0.95) 0%, rgba(5,10,7,0.7) 40%, rgba(5,10,7,0.3) 70%, transparent 100%),
-                    linear-gradient(to right, rgba(5,10,7,0.4) 0%, transparent 50%);
-            }
-
-            /* Hide accent bar on mobile */
-            .hero__accent-bar {
-                display: none;
+                    linear-gradient(to right, rgba(5,10,7,0.5) 0%, transparent 60%);
             }
 
             /* Center content on mobile */
             .hero__content {
                 text-align: center;
                 padding: 0 1.5rem;
-                max-width: 100%;
+                padding-bottom: 6rem;
             }
 
             /* Smaller headline on mobile */
             .hero__headline {
-                font-size: clamp(2.5rem, 12vw, 4rem);
-                line-height: 1;
+                font-size: clamp(3rem, 14vw, 5rem);
+                line-height: 0.9;
+            }
+
+            /* Center badges */
+            .hero__badges {
+                justify-content: center;
             }
 
             /* Full-width CTA */
             .hero__cta.btn {
                 width: 100%;
-                max-width: 280px;
+                max-width: 300px;
+                justify-content: center;
             }
 
             /* Horizontal city nav at bottom */
@@ -889,19 +938,18 @@
                 bottom: 1.5rem;
                 left: 0;
                 right: 0;
-                writing-mode: horizontal-tb;
-                text-orientation: initial;
-                flex-direction: row;
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: 0.5rem;
                 padding: 0 1rem;
             }
             .hero__cities a {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
-            .hero__cities a:hover {
-                transform: none;
+
+            /* Hide scroll indicator on mobile */
+            .hero__scroll {
+                display: none;
             }
         }
 
@@ -2319,10 +2367,10 @@
 </script>
 
 
-<!-- Hero Section - Premium v2 Design -->
+<!-- Hero Section - Premium v3 Design "THE STATEMENT" -->
     <div id="main-content" tabindex="-1" style="outline:none;"></div>
     <section id="hero" class="hero" aria-labelledby="hero-heading">
-        <!-- LCP Image Layer -->
+        <!-- Full-bleed LCP Image -->
         <div class="hero__media">
             <picture>
                 <source
@@ -2351,29 +2399,35 @@
         <!-- Visual Layers -->
         <div class="hero__scrim" aria-hidden="true"></div>
         <div class="hero__grain" aria-hidden="true"></div>
-        <div class="hero__accent-bar" aria-hidden="true"></div>
 
-        <!-- Content - Direct Over Image -->
+        <!-- Content - Asymmetric Left -->
         <div class="hero__content">
             <span class="hero__eyebrow">Texas Installations</span>
             <h1 id="hero-heading" class="hero__headline">
                 <span class="hero__headline-line">Custom</span>
-                <span class="hero__headline-line hero__headline-accent">Greenery.</span>
+                <span class="hero__headline-line hero__headline-accent">Greenery</span>
             </h1>
-            <p class="hero__subhead">Fire-rated · UV-stable · Zero maintenance</p>
+            <div class="hero__badges">
+                <span class="hero__badge">Fire-Rated</span>
+                <span class="hero__badge">UV-Stable 5-8 Years</span>
+                <span class="hero__badge">Zero Maintenance</span>
+            </div>
             <a href="#contact" class="hero__cta btn">Schedule Consultation</a>
         </div>
 
-        <!-- City Navigation - Vertical on Desktop -->
+        <!-- City Navigation -->
         <nav class="hero__cities" aria-label="Service areas">
             <a href="austin.html">Austin</a>
-            <span aria-hidden="true">/</span>
             <a href="dallas.html">Dallas</a>
-            <span aria-hidden="true">/</span>
             <a href="houston.html">Houston</a>
-            <span aria-hidden="true">/</span>
             <a href="san-antonio.html">San Antonio</a>
         </nav>
+
+        <!-- Scroll Indicator -->
+        <div class="hero__scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
     </section>
 
     <!-- Products Section -->
