@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"></noscript>
 
+    <!-- Preload hero image (LCP element) for faster mobile performance -->
+    <link rel="preload" as="image" href="images/hero/hero-main-400w.avif" type="image/avif" media="(max-width: 600px)">
+    <link rel="preload" as="image" href="images/hero/hero-main-800w.avif" type="image/avif" media="(min-width: 601px)">
+
     <!-- SEO Metadata -->
     <title>Artificial Hedges & Living Walls in Texas | Lone Star Faux Scapes</title>
     <meta name="description" content="Premium artificial hedges, custom living walls, and privacy solutions in Texas. Commercial and residential installation of faux greenery, fence extensions, and privacy walls.">
@@ -2462,15 +2466,15 @@
             <picture>
                 <source
                   srcset="images/hero/hero-main-400w.avif 400w, images/hero/hero-main-800w.avif 800w, images/hero/hero-main-1200w.avif 1200w"
-                  sizes="100vw"
+                  sizes="(max-width: 400px) 100vw, (max-width: 800px) 800px, 1200px"
                   type="image/avif">
                 <source
                   srcset="images/hero/hero-main-400w.webp 400w, images/hero/hero-main-800w.webp 800w, images/hero/hero-main-1200w.webp 1200w"
-                  sizes="100vw"
+                  sizes="(max-width: 400px) 100vw, (max-width: 800px) 800px, 1200px"
                   type="image/webp">
                 <source
                   srcset="images/hero/hero-main-400w.jpg 400w, images/hero/hero-main-800w.jpg 800w, images/hero/hero-main-1200w.jpg 1200w"
-                  sizes="100vw"
+                  sizes="(max-width: 400px) 100vw, (max-width: 800px) 800px, 1200px"
                   type="image/jpeg">
                 <img
                   src="images/hero/hero-main-800w.jpg"
