@@ -542,7 +542,7 @@ Hook up Resend email service so contact form submissions arrive tagged as `[MODE
 - Styled to match existing dark theme
 
 ### User Action Required
-Add these environment variables to Netlify (Site Settings → Environment Variables):
-1. `RESEND_API_KEY` = `re_FDq3QTSh_HMtuTDauHnSnmoZbXuQPMjbF`
-2. `TO_EMAIL` = `answers@modernfenceanddeck.com`
+Add these environment variables to Cloudflare Pages (Settings → Environment Variables):
+1. `RESEND_API_KEY` = (your Resend API key)
+2. `TO_EMAIL` = (destination email address)
 
