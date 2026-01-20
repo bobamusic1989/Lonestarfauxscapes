@@ -344,50 +344,121 @@
       height: 16px;
     }
 
-    /* Calendly Section */
-    .calendly-section {
+    /* Contact Form Section */
+    .contact-form-section {
       padding: 4rem 0 6rem;
       background: var(--color-bg-alt);
     }
-    .calendly-section h2 {
+    .contact-form-section h2 {
       font-family: var(--font-heading);
       font-size: clamp(1.8rem, 4vw, 2.4rem);
       font-weight: 700;
       text-align: center;
       margin-bottom: 0.75rem;
     }
-    .calendly-section > p {
+    .contact-form-section > .container > p {
       text-align: center;
       color: var(--color-text-muted);
       max-width: 500px;
       margin: 0 auto 2.5rem;
     }
-    .calendly-embed {
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      min-height: 650px;
-      max-width: 900px;
+    .contact-form {
+      max-width: 600px;
       margin: 0 auto;
-    }
-    .calendly-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 400px;
-      color: var(--color-text-muted);
-      text-align: center;
+      background: var(--color-bg);
+      border-radius: 16px;
       padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.06);
     }
-    .calendly-placeholder svg {
-      width: 64px;
-      height: 64px;
-      margin-bottom: 1.5rem;
-      opacity: 0.5;
+    .form-group {
+      margin-bottom: 1.25rem;
     }
-    .calendly-placeholder p {
-      font-size: 1.1rem;
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: var(--color-bg-alt);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(76,175,80,0.15);
+    }
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23889990' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+    .form-honeypot {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .form-submit:hover {
+      background: var(--color-accent-light);
+    }
+    .form-submit:active {
+      transform: scale(0.98);
+    }
+    .form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .form-status {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+    }
+    .form-status.success {
+      display: block;
+      background: rgba(76,175,80,0.15);
+      color: var(--color-accent-light);
+    }
+    .form-status.error {
+      display: block;
+      background: rgba(255,100,100,0.15);
+      color: #ff9999;
     }
 
     /* Footer */
@@ -569,24 +640,53 @@
       </div>
     </section>
 
-    <!-- Calendly Section -->
-    <section class="calendly-section">
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
       <div class="container">
-        <h2>Schedule a Consultation</h2>
-        <p>Book a free call to discuss your project and get a custom quote.</p>
+        <h2>Send Us a Message</h2>
+        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
 
-        <div class="calendly-embed">
-          <!-- CALENDLY EMBED - Replace the placeholder below with your Calendly embed code -->
-          <!-- Example: <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-USERNAME" style="min-width:320px;height:630px;"></div> -->
-          <!-- <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
-
-          <div class="calendly-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-            </svg>
-            <p>Calendly scheduling will appear here.<br>Call us at <a href="tel:+17609787335" style="color: #4caf50;">(760) 978-7335</a> to schedule now.</p>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
           </div>
-        </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Interest</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="Fence Installation">Fence Installation</option>
+              <option value="Deck Building">Deck Building</option>
+              <option value="Fence Repair">Fence Repair</option>
+              <option value="Deck Repair">Deck Repair</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+          </div>
+
+          <!-- Honeypot field for spam protection -->
+          <div class="form-honeypot" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="form-submit">Send Message</button>
+          <div id="form-status" class="form-status"></div>
+        </form>
       </div>
     </section>
   </main>
@@ -599,6 +699,56 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact Form Submission
+    (function() {
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+      const submitBtn = form.querySelector('.form-submit');
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Disable button and show loading
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        status.className = 'form-status';
+        status.textContent = '';
+
+        const formData = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          phone: form.phone.value.trim(),
+          service: form.service.value,
+          message: form.message.value.trim(),
+          website: form.website.value // honeypot
+        };
+
+        try {
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
+
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+            status.className = 'form-status success';
+            status.textContent = 'Message sent successfully! We\'ll be in touch soon.';
+            form.reset();
+          } else {
+            throw new Error(data.error || 'Failed to send message');
+          }
+        } catch (err) {
+          status.className = 'form-status error';
+          status.textContent = err.message || 'Something went wrong. Please try again or call us.';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
+      });
+    })();
 
     // Navbar JS
     (function() {

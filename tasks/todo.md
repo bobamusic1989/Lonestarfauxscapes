@@ -487,3 +487,62 @@ v6: They guess greenery, landscaping, or nature company.
 
 That's the difference between generic and on-brand.
 
+---
+
+# Contact Form + Resend Email Integration (2026-01-20)
+
+## Goal
+Hook up Resend email service so contact form submissions arrive tagged as `[MODERN FENCE CONTACT FORM]`.
+
+## Current State
+- Serverless function exists at `functions/api/contact.js` with Resend integration already built
+- Contact page (`contact.html`) displays contact info but has NO actual form
+- Email subject currently says `[WEBSITE CONTACT]` - needs to change to `[MODERN FENCE CONTACT FORM]`
+
+## Plan
+
+### 1. Update email subject tag
+- [x] Change subject in `functions/api/contact.js` from `[WEBSITE CONTACT]` to `[MODERN FENCE CONTACT FORM]`
+
+### 2. Add contact form HTML to contact.html
+- [x] Add form with fields: name, email, phone, service interest, message
+- [x] Add honeypot field for spam protection (already supported by backend)
+- [x] Style to match existing page design
+
+### 3. Add form submission JavaScript
+- [x] Add fetch POST to `/api/contact` endpoint
+- [x] Handle loading, success, and error states
+
+### 4. Environment variable setup (USER ACTION REQUIRED)
+- [ ] Add `RESEND_API_KEY` to Netlify/Cloudflare environment variables
+- [ ] Add `TO_EMAIL` = `answers@modernfenceanddeck.com`
+
+## Security Note
+⚠️ **API keys must NEVER be in code.** Store in environment variables only.
+
+---
+
+## Review
+
+### Changes Made
+
+| File | Lines | Description |
+|------|-------|-------------|
+| `functions/api/contact.js` | 182 | Changed subject from `[WEBSITE CONTACT]` to `[MODERN FENCE CONTACT FORM]` |
+| `contact.html` | 347-462 | Added form CSS styles |
+| `contact.html` | 643-691 | Replaced Calendly placeholder with contact form HTML |
+| `contact.html` | 703-751 | Added form submission JavaScript |
+
+### Form Features
+- Fields: name (required), email (required), phone, service dropdown, message (required)
+- Service options: Fence Installation, Deck Building, Fence Repair, Deck Repair, Other
+- Honeypot spam protection
+- Loading state on submit
+- Success/error feedback messages
+- Styled to match existing dark theme
+
+### User Action Required
+Add these environment variables to Netlify (Site Settings → Environment Variables):
+1. `RESEND_API_KEY` = `re_FDq3QTSh_HMtuTDauHnSnmoZbXuQPMjbF`
+2. `TO_EMAIL` = `answers@modernfenceanddeck.com`
+

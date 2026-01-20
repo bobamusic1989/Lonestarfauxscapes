@@ -179,7 +179,7 @@ Referer: ${referer}
     body: JSON.stringify({
       from: `${fromName} <${fromEmail}>`,
       to: toEmail,
-      subject: `[WEBSITE CONTACT] New inquiry from ${name}`,
+      subject: `[MODERN FENCE CONTACT FORM] New inquiry from ${name}`,
       text: emailBody,
       reply_to: email,
     }),
